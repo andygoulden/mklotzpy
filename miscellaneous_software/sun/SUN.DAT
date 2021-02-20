@@ -1,0 +1,56 @@
+Data for SUN.EXE
+
+Latitude is measured positive north of the equator, negative south of the
+equator - permissible range is -90 <= latitude <= 90 deg.
+
+Longitude is measured positive WESTWARD from Greenwich, negative eastwards
+ - permissible range is -180 <= longitude <= 180 deg.
+
+One way to get fairly accurate values for lat and lon is to find someone who
+has a GPS (Global Positioning System) receiver and ask him to take a reading. 
+Your local airport may also be able to supply accurate values.
+
+UT (Universal Time) offsets are measured negative westward from Greenwich.  In
+the absence of any daylight saving adjustments, Los Angeles time = Universal
+time - 8 hours (i.e., it's 8 hours earlier in LA than it is in London).  The
+correct values for the conus time zones are shown below.
+
+	Eastern time zone	-5,-4
+	Central time zone	-6,-5
+	Mountain time zone	-7,-6
+	Pacific time zone	-8,-7
+
+Note that UT is not ALWAYS the same as the time in London. UT NEVER 'goes on
+daylight savings'.  The British DO employ daylight savings (I think it's
+called something like 'British Summer Time').  If you have access to a
+short-wave receiver capable of receiving WWV or WWVH (the USNBS time broadcast
+stations), you can determine UT from their transmissions.  Alternatively, with
+a web browser, go to:
+
+        http://www.hilink.com.au/times/
+
+and you can determine UT as well as local time in many locations around the
+world.
+
+If daylight savings is not used in your area (e.g., Hawaii), enter the same
+value as used for the standard time offset.  Some areas of the world have half
+hour offsets - enter as a decimal fraction, e.g., -9.5 hr.
+
+Four data items must be entered in the order shown below.
+
+Anything entered before the next line will be ignored by the program.
+STARTOFDATA
+
+;this is a comment within the data field - note the leading semicolon
+
+33.7775436			;latitude (deg)
+118.3769558			;longitude (deg)
+-8.				;standard time offset from UT (hr)
+-7.				;daylight saving time offset from UT (hr)
+
+;Anything entered below the next line will be ignored by the program.
+ENDOFDATA
+
+You can add notes here without the need to preface each line with the
+comment character (";").
+

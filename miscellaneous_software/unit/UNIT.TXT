@@ -1,0 +1,222 @@
+Update: 12/30/03
+
+Added option 'A' to allow one to see all the units corresponding to a
+particular type, e.g., all the units of pressure that the program understands.
+
+============================================================================
+
+	When you run the program you'll see the following initial display.
+
+NUMBER OF FUNDAMENTAL UNITS = 7		(view them with [F])
+NUMBER OF PREFIXES = 23			(view them with [P])
+NUMBER OF UNITS = 240			(view them with [U])
+Esc/Q   Quit
+B       display Breakdown of a unit into fundamental units
+C       display units Compatible with input unit
+D       Define a new unit (not saved)
+F       display Fundamental units
+H       Help (display this list of options)
+I       display units with input Initial letter
+J/space perform a unit conversion
+L       redo Last conversion with different destination units
+P       display list of Prefixes
+U       display list of allowable Units
+?
+
+	Now suppose you want to convert 60 miles per hour to feet per second.
+You might not be sure that UNIT understands miles.  So type:
+
+	[I]				(command letter)
+	INITIAL LETTER ?		(program query)
+	m				(answer to query)
+
+(this notation means you press the command letter I (display units with input
+inital letter) at which point UNIT responds with the query "INITIAL LETTER ?"
+UNIT tells you all the units it understands that start with the letter 'm'.
+
+M               MACH            MAGNUM          MASSEARTH       MASSELECTRON
+MASSNEUTRON     MASSPROTON      MAXWELL         MEGABYTE        METER
+MG              MI              MICRON          MIL             MILE
+MILES           MILLENIUM       MIN             MINIM           MINUTE
+ML              MM              MMHG            MOLE            MONTH
+MONTHLUNAR      MPH
+
+	As expected, the unit 'mile' is there as is its abbreviation 'mi'.
+
+	You can repeat this process to check that the other units involved in
+the conversion - hours, feet, and seconds are there but I'll skip that.  If you
+use a unit that UNIT doesn't understand, it will tell you.  So lets just do the
+conversion.
+
+	[J]			(command letter)
+	UNIT SYNTAX:    (prefix)UNIT[^m [[/] (prefix)UNIT[^n]]]
+	[VALUE] [UNITS] TO CONVERT (or Quit) ?
+	60 miles/hour		(your input)
+	TO UNIT(S) ?		(second program query)
+	FEET/SEC		(your input)
+
+	Note that we typed "miles" although UNIT says (above) that the unit is
+"mile".  UNIT is smart enough to understand most pluralization so you can be as
+natural as possible with your answers.  Also, we used both upper (FEET,SEC) and
+lower (miles,hour) case.  UNIT is case insensitive.  UNIT will respond to the
+above input with:
+
+	60 MILES/HOUR = 88 FEET/SEC = 26.8224 (METER) / (SEC)
+
+	UNIT produces the desired answer as well as the conversion to the
+fundamental (metric) units that it uses internally.  (You can list the
+fundamental units with the [F] command.)  If all we had wanted was the
+conversion factor, we could have left off the '60'.
+
+	[J]			(do a conversion)
+	UNIT SYNTAX:    (prefix)UNIT[^m [[/] (prefix)UNIT[^n]]]
+	[VALUE] [UNITS] TO CONVERT (or Quit) ?
+	mile/hour		(no value specified)
+	TO UNIT(S) ?
+	feet/second
+
+and gotten:
+
+	1 MILES/HOUR = 1.46667 FEET/SEC = 0.44704 (METER) / (SEC)
+
+If a [VALUE] isn't specified, it's assumed to be one (1).  Note that 'second'
+and its abbreviation 'sec' are both understood.  Both 'miles per hour' and
+'feet per second' are used frequently enough that UNIT understands them as
+what are called compound units (mph & fps).  So the following interchange
+minimizes typing.
+
+	UNIT SYNTAX:    (prefix)UNIT[^m [[/] (prefix)UNIT[^n]]]
+	[VALUE] [UNITS] TO CONVERT (or Quit) ?
+	60 mph		(your input)
+	TO UNIT(S) ?
+	fps		(your input)
+
+	60 MPH = 88 FPS = 26.8224 (METER) / (SEC)
+
+	UNIT also understands perfixes (e.g. milli, micro) and exponents of
+units (the 'm' and 'n' in the UNIT SYNTAX reminder).  Suppose we want to
+convert:
+
+	10 pounds per cubic foot
+	to
+	milligrams per cubic centimeter
+
+
+	UNIT SYNTAX:    (prefix)UNIT[^m [[/] (prefix)UNIT[^n]]]
+	[VALUE] [UNITS] TO CONVERT (or Quit) ? 10 lb/ft^3
+	TO UNIT(S) ? milligram/centimeter^3
+	10 LB/FT^3 = 160.185 MILLIGRAM/CENTIMETER^3 =
+	   160.185 (KILOGRAM) / (METER^3)
+
+	Note that if we use the [I] command, neither milligram nor centimeter
+are listed as allowable units.  However gram and meter ARE permissible units
+and the prefixes 'milli' and 'centi' are listed when we use the [P] command.
+Therefore we can attach these prefixes to ANY of the allowed units and UNIT
+will understand our input.
+
+	Of course, milligram and centimeter are so common they already have
+their own abbreviations:
+
+	UNIT SYNTAX:    (prefix)UNIT[^m [[/] (prefix)UNIT[^n]]]
+	[VALUE] [UNITS] TO CONVERT (or Quit) ? 10 pounds/foot^3
+	TO UNIT(S) ? mg/cm^3
+	10 POUNDS/FOOT^3 = 160.185 MG/CM^3 = 160.185 (KILOGRAM) / (METER^3)
+
+	Another example of the use of exponents:
+
+	UNIT SYNTAX:    (prefix)UNIT[^m [[/] (prefix)UNIT[^n]]]
+	[VALUE] [UNITS] TO CONVERT (or Quit) ? 20 ft^2
+	TO UNIT(S) ? in^2
+	20 FT^2 = 2880 IN^2 = 1.85806 (METER^2)
+
+	Unit allows you to define any unit I've missed by editing the ascii
+file UNIT.DAT supplied with the program.  This process is not for the
+mathematically faint-of-heart so I've supplied the ability to define a
+temporary unit "on the fly" while using the program.  Such units will not be
+remembered when you exit the program but they'll be available during the
+session in which they were defined.  Suppose you have a lot of
+values expressed in feet squared per cubic mile (ft^2/mile^3) that you want to
+convert to meters squared per cubic kilometer (m^2/km^3).  (Ok, kind of
+meaningless, but it makes a good example.)  You don't relish having to type
+ft^2/mile^3 and m^2/km^3 for each conversion so we'll define two new units on
+the fly.
+
+	define: xx=ft^2/mile^3
+	define: yy=m^2/km^3
+
+(note that I've picked names for the new units that don't correspond with any
+of the pre-defined units - UNIT will ding you if you use a name already in use).
+The following interchange does this:
+
+[D]					(define a unit command)
+NEW UNIT NAME ? xx
+PRIMARY UNIT [default=done] ? ft
+INTEGER EXPONENT [1] ? 2
+PRIMARY UNIT [default=done] ? mile
+INTEGER EXPONENT [1] ? -3		(minus cause it's in the denominator)
+PRIMARY UNIT [default=done] ?		(no input means we're done)
+to save this unit, add the line below to UNIT.DAT
+XX=4.48659e+010,-1,0,0,0,0,0,0		(you can ignore these two lines)
+
+[D]					(define a unit command)
+NEW UNIT NAME ? yy
+PRIMARY UNIT [default=done] ? m
+INTEGER EXPONENT [1] ? 2
+PRIMARY UNIT [default=done] ? km
+INTEGER EXPONENT [1] ? -3
+PRIMARY UNIT [default=done] ?
+to save this unit, add the line below to UNIT.DAT
+YY=1e+009,-1,0,0,0,0,0,0
+
+	Then you can do your multiple conversions as follows:
+
+	UNIT SYNTAX:    (prefix)UNIT[^m [[/] (prefix)UNIT[^n]]]
+	[VALUE] [UNITS] TO CONVERT (or Quit) ? 10 xx
+	TO UNIT(S) ? yy
+	10 XX = 0.222886 YY = 222.886230E-012 () / (METER)
+
+	UNIT SYNTAX:    (prefix)UNIT[^m [[/] (prefix)UNIT[^n]]]
+	[VALUE] [UNITS] TO CONVERT (or Quit) ? 80 xx
+	TO UNIT(S) ? yy
+	80 XX = 1.78309 YY =   1.783090E-009 () / (METER)
+
+	You can experiment with the other commands - they're mostly
+self-explanatory.
+
+	One word of caution.  The English system of units can be very
+confusing in its notation.  In fact, that's one of the reasons the metric
+system is preferred.  For instance, the English system uses 'pound' to refer to
+both a unit of mass AND a unit of force.  For instance:
+
+	UNIT SYNTAX:    (prefix)UNIT[^m [[/] (prefix)UNIT[^n]]]
+	[VALUE] [UNITS] TO CONVERT (or Quit) ?
+	pound				(a unit of mass)
+	TO UNIT(S) ?
+	newton				(the metric unit of force)
+	INCOMPATIBLE UNITS		(whoops! - UNIT knows the difference)
+
+	UNIT SYNTAX:    (prefix)UNIT[^m [[/] (prefix)UNIT[^n]]]
+	[VALUE] [UNITS] TO CONVERT (or Quit) ?
+	pound				(mass)
+	TO UNIT(S) ?
+	kg				(the metric unit of mass)
+	1 POUND = 0.453592 KG = 0.453592 (KILOGRAM)	(everything ok)
+
+	UNIT SYNTAX:    (prefix)UNIT[^m [[/] (prefix)UNIT[^n]]]
+	[VALUE] [UNITS] TO CONVERT (or Quit) ?
+	poundforce			(the English unit of force, also 'lbf')
+	TO UNIT(S) ?
+	newton				(metric force)
+	1 POUNDFORCE = 4.44822 NEWTON = 4.44822 (METER * KILOGRAM) / (SEC^2)
+
+	UNIT will allow you to convert lb/ft^2 to kg/m^2 but you will have to
+be aware that what you're really doing is converting mass/area to mass/area. 
+If you try to convert psi to kg/m^2, UNIT will ding you because the 'pound'
+referred to in 'psi' is poundforce.  The proper conversion in that case is psi
+to newton/area.  Poundforce can be abbreviated 'lbf' and ounceforce is
+abbreviated 'ozf'.  If you get confused about what's what, use the [B] command
+to view the breakdown of the unit in question into its fundamental components.
+If the fundamental units of two units don't match, UNIT (properly) considers
+them incompatible.  The [C] command will display what's compatible with the
+unit you're using.
+

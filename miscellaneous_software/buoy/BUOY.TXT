@@ -1,0 +1,12 @@
+The upward buoyant force on a buoy is equal to the weight of the liquid
+displaced when the buoy is immersed.  In turn, this weight is equal to the
+volume of the buoy below the liquid surface multiplied by the density of the
+liquid in which it is immersed.
+
+The buoy sinks into the liquid to such a point that the upward buoyant force is
+just equal to the weight of the buoy plus any load that the buoy supports.
+
+Given the pertinent information mentioned above (liquid density, buoy geometry
+and buoy weight plus load), the program calculates how far the buoy will sink
+into the liquid.
+

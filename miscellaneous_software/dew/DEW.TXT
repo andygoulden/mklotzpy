@@ -1,0 +1,16 @@
+Rust is the bane of the HSM.  Condensation will form on metal tools if the tool
+temperature falls below the dew point temperature.  One way to prevent this is
+to warm the tools in some way so their temperature remains above the dew point
+temperature.
+
+Of course, to do this one needs to be able to calculate the dew point
+temperature.  It depends on the ambient temperature and the relative humidity
+in the air.  Enter values for these two parameters into the program and it will
+print out the dew point temperature.
+
+The region of validity for the program is:
+
+Ambient temperatures between 0 degC (32 degF) and 60 degC (140 degF)
+
+Relative humidity between 1 and 100 percent
+

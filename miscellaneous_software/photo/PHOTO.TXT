@@ -1,0 +1,33 @@
+	Frequently one of my (or somebody else's) programs writes a nice
+solution to a problem on the (text) screen.  You'd like to save this screen and
+incorporate it into something you're writing via your favorite editor or do
+some other problem with the program and assemble all the solutions into a
+single file for printing, transmitting, or incorporating.
+
+	These are cases where printing the text screen doesn't accomplish what
+you need.  I wrote PHOTO to deal with such situations.
+
+	Every time you type PHOTO at the DOS prompt, the program appends what
+is currently on the text screen to the file C:\PHOTO.  If C:\PHOTO doesn't
+exist, it will be created automatically.  If it does exist and already
+contains some screen copies, the current screen contents will be appended to
+whatever is already there.
+
+	So, for example, you can sit there knocking out mixtures (with MIXTURE
+- see MIXTURE.ZIP) and after each solution appears on the screen, type PHOTO
+(make sure PHOTO is in the path) and compile all these solutions into
+one file (C:\PHOTO).  When done, attach C:\PHOTO to the email you're sending
+to your friend who needs the data or print it for your own use.  After you've
+played with PHOTO for a while, you'll probably think of other creative ways to
+use it.  If you've downloaded L.COM (see L.ZIP), you can use it to view what
+is currently contained in C:\PHOTO or, more clumsily, type C:\PHOTO to the
+screen via MORE.
+
+	PHOTO is written in assembly language so I won't guarantee that it
+will work on everybody's system.  It doesn't do anything dangerous so, the
+worst damage it can cause if it doesn't work is to create a useless file in
+your root directory - no worse than running windows, which seems to consist
+mainly of self-created useless files.
+
+	PHOTO will NOT work with graphic screens.
+

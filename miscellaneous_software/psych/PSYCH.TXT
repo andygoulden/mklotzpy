@@ -1,0 +1,15 @@
+The relative humidity can be found by using a psychrometer.  The conventional
+style uses two identical thermometers.  One of these has the bulb cooled with
+a wick soaked in water - one of the older 'tubular' shoelaces works well as a
+wick.  Arrange a gentle flow of air over the wick.  Naturally, the 'wet bulb'
+thermometer will read a lower temperature than the 'dry bulb' thermometer due
+to the cooling afforded by the evaporation of water from the wick.
+
+From the temperature difference between the two thermometers, it's possible to
+compute the relative humidity and the dew point temperature.  That's what this
+program does.
+
+The reference for the equations used is:
+
+http://www.uswcl.ars.ag.gov/exper/relhumeq.htm
+

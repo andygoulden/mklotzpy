@@ -1,0 +1,59 @@
+Data for COLSORT (multi-column sorting)
+
+You can add notes here without the need to preface each line with the
+comment character (";").
+
+Anything entered before the next line will be ignored by the program.
+STARTOFDATA
+
+;this is a comment within the data field - note the leading semicolon
+
+2		;number of columns (8 maximum)
+a		;type of first column (a=alphabetic, n=numeric)
+n		;type of second column
+;... etc. for each column
+2		;column to sort on
+d		;type of sort (i=increasing, d=decreasing)
+
+
+;comma-delimited data
+;up to 200 lines are allowed
+;entries for each column must be no greater than 30 characters
+
+Zinc,17.
+Lead,16.3
+Magnesium,14.44
+Aluminum,12.44
+Tin,14.96
+Brass,10.
+Silver,10.25
+Steel-stainless,9.6
+Bronze,10.
+Copper,9.
+Beryllium-copper,9.3
+Nickel,7.
+Steel-carbon,6.3
+Gold,7.78
+Iron-cast,6.55
+Iron-wrought,6.61
+Titanium,4.9
+Cobalt,6.83
+Beryllium,6.4
+Platinum,4.96
+Vanadium,4.8
+Iridium,3.61
+Silicon-carbide,2.3
+Tungsten,2.39
+Carbon,1.4
+Glass,5.
+Granite,4.4
+Brick,3.
+Concrete,6.
+Pine,2.8
+
+;Anything entered below the next line will be ignored by the program.
+ENDOFDATA
+
+You can add notes here without the need to preface each line with the
+comment character (";").
+

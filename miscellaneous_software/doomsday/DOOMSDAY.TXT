@@ -1,0 +1,58 @@
+The so-called doomsday algorithm is a neat trick that will allow you to
+mentally work out the day-of-the-week (DOW) for any date.  It's amazing how
+frequently this trick will come in handy.
+
+The algorithm is based on two observations:
+
+For months 4,6,8,10,12, the dates 4/4, 6/6, 8/8, 10/10, and 12/12 the DOW is
+the same.  Call this DOW the 'doomsday' for that year.
+
+Remember the mnemonic, "I work from 9 to 5 in the 7-11".  (For non-US readers,
+'7-11' is the name of a chain of popular convenience stores in the USA,
+presumably named for the hours when they are open for business.)
+
+Observe that the dates 5/9, 9/5, 7/11 and 11/7 also fall on the doomsday DOW.
+
+So, if I know the doomsday for the current year, I can quickly work out the
+DOW for any date in that year.
+
+An example will help.  The doomsday for 2003 (the year of this writing) is
+Friday.  On what DOW will Christmas fall this year?  From the algorithm, we
+know that 12/12 is a Friday.  So, adding two weeks (14 days), we know that
+12/26 is a Friday.  Therefore, Christmas must fall on a Thursday.
+
+Observant readers will notice that I haven't addressed the first three months
+of the year.  The last day of February (2/28 or 2/29 in a leap year) is
+*always* a doomsday.  If it's not a leap year, then the last day of January
+(1/31) is a doomsday.  If it is a leap year, then 1/25 is a doomsday.  (The
+easiest way to remember this that I've found is last-last in a non-leap year
+and last-of-February and last-of-February minus 4 (29-4 = 25) for January in a
+leap year.  (Since leap years happen every four years, remembering to subtract
+4 is easy to remember.)  Since the last day of February is always a doomsday,
+7 March (3/7) is always a doomsday, leap year or not.
+
+So, the algorithm allows you to mentally establish the DOW for a specific
+date in each month.  From that, it's a simple matter of doing some modulo
+seven arithmetic to get to whichever date is of interest - as I did in the
+Christmas example above.
+
+The procedure then becomes one of memorizing the DOW for the last day of
+February at the start of the year.  From that knowledge and the algorithm
+above, finding the DOW for any other date in the year is straightforward.
+[American readers may find it easier to remember that, since 7/11 is a
+doomsday, the Fourth of July (7/4) is always a doomsday.  Memorize the DOW for
+this major American holiday.  Non-US readers may be able to establish a
+similar relationship for one of their own memorable holidays.]
+
+I wrote the attached program to test the doomsday algorithm.  It computes DOW
+for an input date using a proven Julian date technique and also using the
+doomsday algorithm.  The two DOWs so-computed should agree (and they do).
+
+The program contains an algorithm one can use to compute the doomsday for any
+year.  This is more complicated than the basic doomsday algorithm and so is
+harder to remember, so I haven't included it in this explanation.  For the
+casual user, normally interested in only the current year, it's easier to
+follow my instructions above and simply memorize the doomsday DOW for the
+current year.  Regardless, the program will supply doomsday for any year and
+so I've included it in the archive.
+

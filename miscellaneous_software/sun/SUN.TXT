@@ -1,0 +1,23 @@
+The program is based on information found in:
+
+		Almanac for Computers for the year 1978
+
+published by the
+
+		Nautical Almanac Office
+		United States Naval Observatory
+		Washington, DC 20390
+
+In this publication, two types of series expansions are presented.  A short
+term Chebyshev series valid only for 1978 is useless for long term
+computation.  However, a much more complex trigonometric series is described
+which is valid for a 300 year span 1800-2100.  It is this latter series that
+is implemented in the program.  The Almanac lists the following accuracies for
+computed quantities:
+
+	sun position		1E-4 AU
+	sun velocity		1E-5 AU/day
+	right ascension		0.1 minute
+	declination		1 arc minute
+	distance		5E-5 AU
+
