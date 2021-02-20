@@ -1,0 +1,24 @@
+		TAP SHANK DIAMETER vs. THREAD MINOR DIAMETER
+			HSM 1/1/97 - PG. 23
+
+TAP		MAJOR		SHANK		MINOR
+SIZE		DIAMETER	DIAMETER	THREAD DIAMETER
+						(coarse thread)
+
+0		.060		.141		.0465
+1		.073		.141		.0561
+2		.086		.141		.0580
+4		.112		.141		.0764
+5		.125		.141		.0979
+6		.138		.141		.1040
+8		.164		.168		.1300
+10		.190		.194		.1450
+12		.216		.220		.1710
+
+1/4		.250		.255		.1960
+5/16		.312		.318		.2520
+3/8		.375		.381		.3070
+
+Taps 7/16" diameter and larger have shanks that are smaller than the thread
+minor diameter.
+

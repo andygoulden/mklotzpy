@@ -1,0 +1,146 @@
+	I don't turn very many spherical shapes on the lathe and when I do the
+application is seldom critical.  Usually the shape is decorative (e.g.
+ball-ended tool handles) and so doesn't need to be very precise.
+
+	I built a ball turning attachment but, frankly, it's a pain to set up
+for a one-off non-critical job.
+
+	A much easier way to do it is to make a number of plunge cuts with a
+cutoff tool ground with a squared off end.  This yields a 'staircase' shape
+that approximates the shape of the ball.  After making the cuts, I slather the
+work with marking out dye.  Using a fine file, I then file the shape until all
+the dye disappears - voila, a quite acceptable ball.
+
+	Input the diameter of the sphere you require and the angular step
+size. The smaller the angular step, the less filing you'll have to do (but the
+more cuts you'll have to make).  When the program runs it produces an output
+that looks like:
+
+============================================================================
+Incremental Sphere Turning Data
+Sphere diameter = 1.0000 in
+Stock diameter = 1.0000 in
+Angular increment = 5.0000 deg
+
+N = cut number
+XF = axial (along lathe bed) position of tool
+DX = increment in x from last cut
+YF = depth of cut
+DY = increment in y from last cut
+WD = work diameter resulting from depth of cut YF
+
+  N       XF       DX       YF       DY       WD
+
+  0    0.000   +0.000    0.500   +0.000    0.000
+  1    0.002   +0.002    0.456   -0.044    0.087
+  2    0.008   +0.006    0.413   -0.043    0.174
+  3    0.017   +0.009    0.371   -0.043    0.259
+  4    0.030   +0.013    0.329   -0.042    0.342
+  5    0.047   +0.017    0.289   -0.040    0.423
+  6    0.067   +0.020    0.250   -0.039    0.500
+  7    0.090   +0.023    0.213   -0.037    0.574
+  8    0.117   +0.027    0.179   -0.035    0.643
+  9    0.146   +0.029    0.146   -0.032    0.707
+ 10    0.179   +0.032    0.117   -0.029    0.766
+ 11    0.213   +0.035    0.090   -0.027    0.819
+ 12    0.250   +0.037    0.067   -0.023    0.866
+ 13    0.289   +0.039    0.047   -0.020    0.906
+ 14    0.329   +0.040    0.030   -0.017    0.940
+ 15    0.371   +0.042    0.017   -0.013    0.966
+ 16    0.413   +0.043    0.008   -0.009    0.985
+ 17    0.456   +0.043    0.002   -0.006    0.996
+ 18    0.500   +0.044    0.000   -0.002    1.000
+============================================================================
+
+	Set your compound so it's motion is parallel to the lathe bed. Zero
+the crossfeed dial with the tool tip just touching the work (YF = 0).  Bring
+the left edge of the tool up against the (faced off) surface of the work and
+zero the compound dial.  This is the (XF = 0) position.
+
+	Move the compound to the left until the dial reads 0.002 (step 1). Now
+plunge cut until the crossfeed dial reads 0.456.  You will have produced a
+'step' with diameter 0.087 on the end of the work.  Move the compound until it
+reads 0.008 (increment its position by DX=0.006) and cut to depth 0.413
+(DY=-.043 less than last cut) to produce a second step of diameter 0.174. 
+Continue as indicated.  When you reach the last step you will have cut a
+stepped approximation to a hemisphere of diameter 1.00" on the end of your
+stock.
+
+	To cut a complete sphere we need to use the same calculations on
+the other "side" of the completed hemisphere.  When I want a sphere I generally
+start by relieving the stock so that a cylinder of length equal to the sphere
+diameter is formed on the end of the stock, attached by a "stalk" to the stock.
+That way I can touch the *right* edge of the tool to the left side of this
+cylinder to establish the XF=0 position.  Then I proceed as before, moving the
+tool to the *right* as I make the cuts indicated in the print out. 
+Alternatively, you can set the right edge of the tool on the "equator" of the
+hemisphere and continue cutting to the left working backwards through the cuts
+in the print out, but I find that technique a bit confusing.
+
+	If you're making a ball handle that will be threaded onto a shaft or
+whatever, drill and thread the stock, then cut the hemisphere as outlined
+above.  Cut off so that the overall length of the cutoff piece is equal to the
+sphere diameter.  Mount the half-completed sphere on a suitably threaded
+spigot (or the target shaft if that's possible), reinsert in chuck and cut the
+other half of the sphere.
+
+	In the simple example above the diameter of the sphere matched the
+diameter of the stock (1" in both cases).  If we had wanted a 2" radius
+cut on the end of the 1" diameter stock, the program would report:
+
+============================================================================
+Incremental Sphere Turning Data
+Sphere diameter = 2.0000 in
+Stock diameter = 1.0000 in
+Angular increment = 5.0000 deg
+
+N = cut number
+XF = axial (along lathe bed) position of tool
+DX = increment in x from last cut
+YF = depth of cut
+DY = increment in y from last cut
+WD = work diameter resulting from depth of cut YF
+
+  N       XF       DX       YF       DY       WD
+
+  0    0.000   +0.000    0.500   +0.000    0.000
+  1    0.004   +0.004    0.413   -0.087    0.174
+  2    0.015   +0.011    0.326   -0.086    0.347
+  3    0.034   +0.019    0.241   -0.085    0.518
+  4    0.060   +0.026    0.158   -0.083    0.684
+  5    0.094   +0.033    0.077   -0.081    0.845
+============================================================================
+
+	After step 5, YF becomes negative - we're cutting into material that
+'isn't there' if the stock is only 1" in diameter - so the program doesn't
+report these 'impossible' cuts.  In this case it would probably have been
+better to use a smaller angular increment to more closely approximate the
+radius on the end of the stock.
+
+	This same procedure can be used to approximate shapes other than
+spherical.  I had to make some handles for a miniature Victorian drill press
+I'm building.  The handles were smoothly curved.  Not being the world's most
+adept freehand turner, I described their shape mathematically (spline fit to
+diameters measured at a number of points) and built a program similar to 
+BALLCUT to produce the required cutting schedule.  Once the staircase shape was
+visible it was quick work with a jeweler's file to make very acceptable
+handles.
+
+	Should you have need of such a capability, let me know and I'll try to
+generalize the handle-shaping program and put it up on my website.  You can
+reach me via email at:  mklotz@alum.mit.edu
+
+Update 11/00:
+
+	The generalized version of ballcut mentioned above is now available on
+the website as PROFILE.ZIP.
+
+	Several people have requested a version of the program where, instead
+of using a fixed angular increment to determine the size of the step in x, a
+fixed x step size is used.  Rather than write a separate program, I've included
+the ability to use a fixed step in x in the existing program.  A fixed step in
+x makes tracking the cuts a little easier at the expense of having to make more
+cuts to get the same definition as when using a fixed angluar step.  Fixed
+angular step remains the default but it can be overridden when the program is
+run.
+

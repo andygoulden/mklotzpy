@@ -1,0 +1,71 @@
+	Dennis Blagirowicz wanted a program to help him to calibrate a dipstick
+to be used with a cylindrical tank.  He didn't specify but I presumed he was
+referring to a cylindrical tank lying horizontally, i.e., with its axis of
+symmetry parallel to the horizontal.  (The case where it's vertical is too
+trivial a calculation to merit a program.)
+
+	The program asks for the diameter of the tank.  No input units are
+specified but it's important that whatever units are assumed in answering this
+question are also the units assumed in answering the next question, the length
+of the dipstick that is "wetted" by whatever is stored in the tank.
+
+	(Note that if the diameter of the tank is not known a priori, one can
+enter it as unity and interpret the wetted lengths as fractions of what the
+fully wetted dipstick (from a full tank) length would be.)
+
+	From these two inputs the program computes how full the tank is as a
+percentage of its full volume.
+
+	After that, it requests a percent increment and then calculates the
+dipstick wetted length that corresponds to multiples of that percentage of the
+tank volume.
+
+	Note that it is not necessary to know the length of the tank to make
+any of these calculations.  Once calibrated, a dipstick can be used on any tank
+of the same diameter, regardless of its length.
+
+Over time other people asked for the same sort of calculation for other shapes
+of tanks.  A sphere is self-explanatory.  Tanks with elliptical cross sections
+are sometimes seen on tanker trucks.
+
+'Cartouche' requires some explanation.  A cartouche is the shape of a typical
+horse racing track.  Two semi-circular ends separated by straight sections. 
+Do not confuse this shape with an ellipse.  An ellipse is a mathematical curve
+that is curved at every point.  A cartouche has straight sections.  People
+often refer to the cartouche shape as 'elliptical' or 'oval'.  Neither term is
+correct.
+
+'Vertical cartouche tank' refers to a tank where the semi-circular portions
+are at the top and bottom of the tank and the straight sections are vertical. 
+This type is most common. In a 'horizontal cartouche' tank the semi-circular
+portions are at either side and the straight sections are horizontal.  I've
+only rarely seen examples of this type.
+
+Note that all tanks (except spherical) are assumed to have flat ends.  Tanks
+with 'belled' ends require special mathematical treatment.  Unfortunately, bell
+shaping varies widely so each must be dealt with on a one-by-one basis -
+generalization for the program is not possible.  Contact me if you have such a
+case.
+
+Update 7/25/04:  Added a bucket-shaped container.  Like any ordinary bucket,
+the program presumes that the big end of the bucket is up and the small end
+forms the base.
+
+A barrel-shaped tank poses something of a mathematical problem.  The 'barrel'
+is not a rigidly defined mathematical shape.  For an exact computation, one
+must know the mathematical equation defining the shape of the sides of the
+barrel.  Possibilities range from circular through elliptical to parabolic (and
+probably other weird ones I haven't thought of).  I chose to model the sides of
+the barrel as sections of an ellipse.  This is a reasonable approximation and
+probably adequate for all but the most exacting requirements.  If your
+requirements are that exacting, it's unlikely that you'll be using a dipstick
+to make measurements.  A horizontal barrel is a harder problem - I'll consider
+attacking that if someone has a pressing need.
+
+Update 9/22/05: Added an option for a horizontal cylindrical tank with 'dished'
+ends.  The height of the dished portion is calculated as half the overall
+length of the tank (input) minus the length of the tank that is purely
+cylindrical (input).
+
+
+

@@ -1,0 +1,49 @@
+Data for EXPAND.EXE
+
+You can add notes here without the need to preface each line with the
+comment character (";").
+
+Anything entered before the next line will be ignored by the program.
+STARTOFDATA
+
+;this is a comment within the data field - note the leading semicolon
+
+;Material coefficient of linear expansion ppm/degF (Maximum of 200 entries)
+
+Zinc,17.
+Lead,16.3
+Tin,14.96
+Magnesium,14.44
+Aluminum,12.44
+Silver,10.25
+Brass,10.
+Bronze,10.
+Steel-stainless,9.6
+Beryllium-copper,9.3
+Copper,9.
+Gold,7.78
+Nickel,7.
+Cobalt,6.83
+Iron-wrought,6.61
+Iron-cast,6.55
+Beryllium,6.4
+Steel-carbon,6.3
+Concrete,6.
+Glass,5.
+Platinum,4.96
+Titanium,4.9
+Vanadium,4.8
+Granite,4.4
+Iridium,3.61
+Brick,3.
+Pine,2.8
+Tungsten,2.39
+Silicon-carbide,2.3
+Carbon,1.4
+
+;Anything entered below the next line will be ignored by the program.
+ENDOFDATA
+
+You can add notes here without the need to preface each line with the
+comment character (";").
+

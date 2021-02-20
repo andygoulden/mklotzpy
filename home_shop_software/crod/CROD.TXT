@@ -1,0 +1,54 @@
+Tom Roach in South Africa needed a program to calculate the position of a
+piston gudgeon pin (that's wrist pin in American English) as a function of the
+other engine parameters - connecting rod length, crank radius, crank angle,
+etc.  When the program runs it requests these engine parameters and then
+produces an on-screen graph of the pin position.  Actually two graphs are
+produced.  The yellow one references pin position to the crank center - a
+relation that's of value to me.  Tom prefers to reference the pin position to
+its location when the piston is at top-dead-center (tdc) because this value is
+used directly in locating the cylinder ports in a two stroke engine.  The red
+curve provides this referencing.
+
+While the graph is on the screen, it is possible to use the mouse to click on
+any point on the curves to return the coordinates (crank angle, pin position)
+for that location.  When done with the graph, hit Escape or click on the Exit
+option in the onscreen menu and the program will then generate a data file of
+the plotted parameters (CROD.DAT) which you can print and carry to the shop for
+reference.
+
+If you make use of this program, you would be well advised to examine another
+of the programs on my page, CONROD, which can be used to calculate the
+allowable clearance between the connecting rod and the cylinder wall.
+
+E-mail: mklotz@alum.mit.edu
+Home Shop Freeware - Tools for People Who Build Things
+http://www.geocities.com/mklotz.geo
+
+---------------------------------------------------------------------------
+
+Tom supplied some words of his own regarding this program.
+
+---------------------------------------------------------------------------
+
+This program calculates the position of the gudgeon (wrist) pin in the
+cylinder in relation to the position of the engine's crankshaft as it rotates.
+For example, timing diagrams usually show the opening and closing of
+valves (4-stroke engines) or exhaust and inlet ports (2-stroke engines) in
+degrees before or after either TDC or Bottom Dead Centre (BDC).  These
+calculations enable you to convert a timing diagram written "degrees" into the
+position of the piston in the cylinder as measured from Top Dead Centre (TDC).
+Besides being useful to people building small engines, this program can be
+used by those adjusting (blueprinting) the valve timing on a full-sized
+motorbike or car engine.
+
+Of course, the gudgeon pin is not at the top of the cylinder, but this does
+not matter as usually the top of the piston corresponds with the top of the
+cylinder. If this is not the case, then the difference will have to be added
+or subtracted.
+
+Please note that it does not matter to the application if the measurements you
+enter are in inches or metric, just do not mix the two systems. For small
+engines, an interval of five degrees is recommended. For a larger engine, big
+enough to power a bike or a car, then a one- degree interval will probably be
+appropriate.
+

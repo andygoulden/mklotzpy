@@ -1,0 +1,3 @@
+One way to make tapered flutes (e.g., on an engine support column) is to tilt the workpiece and plunge cut with a ball mill.  As the cut progresses along the inclined workpiece, it becomes wider, thus forming the tapered flute.
+
+The attachend drawing identifies the variables involved and the program computes the required initial depth of cut and the inclination angle.

@@ -1,0 +1,93 @@
+Available Thread Data for DIFFTHRD program
+
+Enter all the thread pitches (in indicated units) which you have
+the ability to cut - either via lathe or tap and die.
+The default values shown here are what my lathe can cut.
+If you want to exclude either Imperial or metric threads from consideration
+in the calculation, simply remove the unwanted entries from this file.
+Values need not be entered in order.
+Program can handle up to 400 entries - if you need more contact me
+via email at: mklotz@alum.mit.edu
+
+Anything entered before the next line will be ignored by the program.
+STARTOFDATA
+
+;this is a comment within the data field - note the leading semicolon
+
+tpi			;units below are threads per inch (no leading ;)
+
+4
+4.5
+4.75
+5
+5.5
+6
+6.5
+7
+8
+9
+9.5
+10
+11
+12
+13
+14
+16
+18
+19
+20
+22
+24
+26
+28
+32
+36
+38
+40
+44
+48
+52
+56
+64
+72
+76
+80
+88
+96
+104
+112
+
+mm		;units below are mm/thread (no leading ;)
+
+0.25
+0.3
+0.45
+0.5
+0.6
+0.75
+0.9
+1
+1.2
+1.25
+1.5
+1.8
+2
+2.25
+2.4
+2.5
+3
+3.75
+4
+4.5
+4.8
+5
+6
+7.5
+
+
+;Anything entered below the next line will be ignored
+ENDOFDATA
+
+You can add notes here without the need to preface each line with the
+comment character (";").
+

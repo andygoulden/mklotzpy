@@ -1,0 +1,24 @@
+Most of us are familiar with the process of angling the compound slide so that
+a given movement of the slide produces a lesser movement of the tool towards
+the work.  For instance, if the compound is angled 30 degrees to the lathe
+centerline, a movement of x, measured on the slide graduated dial, will move
+the tool a distance of x/2 towards the work.  This, in turn, means that the
+slide graduated dial now reads directly in diameter reduction of the work. 
+Dialing in x will reduce the *diameter* of the work by x.
+
+Another popular trick is to set the compound at an angle such that the infeed
+movement to slide movement ratio is 0.1.  That way the graduated dial will read
+directly in 0.0001" of tool movement.
+
+This (terribly simple) program lets you enter the desired ratio:
+
+		infeed movement/slide movement
+
+and calculates the angle required to achieve that ratio.  Note that the ratio
+must be less than one - the program will ding you if you try to use something
+greater than one.
+
+Lathe manufacturers aren't consistent about how they calibrate the compound
+protractor so you may actually need to set the complement of the angle on the
+protractor.  For your convenience, the program prints out the complement.
+

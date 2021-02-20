@@ -1,0 +1,48 @@
+We all know that if one measures the thickness of the wall of a tube with a
+conventional micrometer, one will get an erroneous value.  The flat anvil of
+the micrometer 'bridges' the inside arc of the tube so the face of the anvil is
+held away from the inside surface.  The measurement so obtained is always
+larger than the actual thickness of the wall.  The measurement error is worse
+the smaller the id of the tube.
+
+The right way to do this is to use a micrometer with a hemispherical anvil. 
+The hemisphere will contact the inside wall at a point instead of 'bridging'
+and the measurement will be accurate.  In fact, suppliers sell precision balls
+that can be attached to the flat anvil with a rubber 'boot' for just this
+purpose.
+
+It occurred to me that, if you don't have such a specialty mike or precision
+ball, one should be able to calculate the wall thickness if the diameter of the
+mike anvil and the (outside) diameter of the tube were known, i.e., could be
+measured.  Such a calculation might be useful to people who lacked the proper
+equipment for whatever reason.
+
+This program is the result of that musing.
+
+I tried it on a piece of copper pipe, all measurements made at the same
+location on the pipe circumference.  The program defaults show the result:
+
+Micrometer anvil diameter [0.249] ?
+Tube outside diameter [0.879] ?
+Micrometer measurement [0.0625] ?
+ 
+Tube wall thickness = 0.0425
+
+Using a precision ball with the micrometer shows a thickness of 0.0422.  Using
+the knife edge tips of the electronic calipers gives a reading of 0.0415.  The
+"knife edges" aren't truly knife edges - they have a finite width so they
+suffer from a (much lesser) version of the error of the micrometer used
+without the ball.
+
+The accuracy of this method will depend on a number of things.
+	how nearly cylindrical the tube is
+	how uniform the wall thickness is
+	how accurately you make the measurements input to the program
+
+Judging from my case above, my *guess* is that I can trust this scheme to
+about 0.001 on a nicely tube-like object.  The fact that the calipers read
+lower than the mike simply tells me that the calipers aren't as accurate as
+the mike - something I already knew.  (That's why we're trying to use a mike to
+make the measurement in the first place.  If all we wanted was a rough
+measurement, the calipers are faster though demonstrably less accurate.)
+

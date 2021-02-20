@@ -1,0 +1,25 @@
+	Seems like whenever I want to measure or mix something, all the
+available containers are bucket shaped.  By bucket shaped I mean shaped like a
+frustrum of a cone - the figure that remains if you slice the pointy end of a
+cone off with a cut parallel to the base of the cone.
+
+	Cylindrical containers are better.  Since their cross-section is
+constant over their length, they can be divided into n parts easily just by
+marking off n divisions on their height.  You can't do that with buckets
+because the cross-section varies with height.
+
+	Moreover, all the mathematical formulas for a frustrum use the height
+measured vertically from the base, not the slant height measured along the
+sloping side of the container.
+
+	Wouldn't it be nice to know what slant heights to mark off to divide a
+bucket shaped container into n parts?  That's exactly what BUCKET calculates.
+
+	Note that no units are called out for the input dimensions.  The
+calculations are valid for any (consistent) set of length units and the volume
+will be in units of the cube of the length unit.
+
+	Note that, if the bucket has substantial wall thickness, the
+measurements should be made on the inside of the bucket for accuracy since the
+wall thickness is not accounted for in the calculations.
+

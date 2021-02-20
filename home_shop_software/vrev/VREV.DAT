@@ -1,0 +1,22 @@
+Data for VREV
+
+data consists of diameter of holes in the order in which they will be drilled
+around the bolt circle
+
+anything above the line below is ignored by the program
+STARTOFDATA
+
+0.265625
+0.265625
+0.328125
+0.328125
+0.40625
+0.40625
+0.40625
+0.484375
+
+
+;above the line below requires a semicolon
+ENDOFDATA
+this is below the line and has no semicolon
+

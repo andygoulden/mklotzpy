@@ -1,0 +1,237 @@
+Update 2/02:
+
+Mike Graham, up in Canada, pointed out a case for which the program will not
+produce the optimum solution.  Consider cutting:
+
+1,10
+2,7
+1,6
+2,4
+
+pieces from 20 unit long stock.  In fact, the answer one gets is:
+
+standard length = 20
+theoretical minimum waste possible = 2
+theoretical minimum standard lengths possible = 2
+ 
+        1       2       1       2
+        10.00   7.00    6.00    4.00
+ 
+1 x     1       1       0       0       3.00
+1 x     0       1       1       1       3.00
+1 x     0       0       0       1       16.00
+ 
+actual waste = 22
+actual standard lengths = 3
+
+when the better answer is:
+
+standard length = 20
+theoretical minimum waste possible = 2
+theoretical minimum standard lengths possible = 2
+ 
+        1       2       1       2
+        10.00   7.00    6.00    4.00
+ 
+1 x     1       0       1       1       0.00
+1 x     0       2       0       1       2.00
+ 
+actual waste = 2
+actual standard lengths = 2
+
+Mike pointed out that the program would get the second answer above if it first
+checked for zero waste solutions before trying to develop a greedy solution.
+
+That seemed reasonable so I added a question to the code:
+
+Search for zero waste solutions first (Y/[N]) ?
+
+that allows one to do this (answer question 'Y') or use the strictly greedy
+approach detailed below (answer question 'N', the default).
+
+This is by no means a cure-all for the program.  There are cases where the
+greedy solution without zero waste checking gives a better answer than that
+obtained with zero waste checking.  I suggest you run the program with the
+default 'N' answer to the question and, if the answer doesn't satisfy you, try
+it with the zero waste checking.
+
+There are also cases where neither of these options can achieve the theoretical
+optimum.  Cutting:
+
+4,5
+5,14
+
+from 20 unit lengths is one of them.
+
+But, fear not, there is a solution to this difficulty.
+
+Mike has come up with an alternative heuristic to solve the problem.  He
+graciously took the time to write CUTLIST, which implements his heuristic. 
+CUTLIST is attached.  It uses the same data file as CUTS so its easy to try
+your problem with either of the two programs.  Mike's program has fairly
+verbose output so the user is advised to make use of DOS's redirection
+capability to send the output to a data file for examination.
+
+I've looked carefully at Mike's approach and am now mentally kicking myself
+for not having thought of his method originally.  It's definitely superior to
+my effort, runs faster, and is just generally a better way to do the problem. 
+Mike is very gracious to have spent the time and made the product freely
+available to hobbyists.  Thanks, Mike.
+
+Chris Peters in New Zealand wanted a CUTS-like program to use with random
+length remnants of leftover stock.  I had tried to write one using my algorithm
+but it had some problems.  By using Mike's heuristic, it was possible to write
+a much better version which is here included as REMNANT.
+
+=============================================================================
+
+The Stock Cutting Problem:
+
+	Pipe comes in standard six-unit lengths.  You need the following pieces
+for your project:
+
+	7 (pieces)	2.55 (units long)
+	8		1.95
+	6		1.65
+	5		1.35
+	8		0.90
+	12		0.60
+	5		0.45
+
+	How many standard lengths should you buy and how should you cut them to
+get what you need, with minimum waste?  BTW, if you're worried about the finite
+width of the saw kerf when cutting the pieces, just assume that the kerf width
+is included in the lengths shown above.
+
+	We may well encounter this problem in other forms - indeed for any one
+dimensional medium - lumber, wire, machine shop stock, rebar, etc.  It
+certainly can matter monetarily, especially if the number of pieces needed
+grows large.
+
+	Suppose now that the 'bars' are long skinny containers (mailing tubes)
+and I need to know how to pack them to ship an order with a minimum number of
+tubes.  You've already got that problem solved.  If you think of bars as
+measures of truck-carrying weight and pieces as the weight of individual load
+items, you've got the truck loading problem solved.  Remember, one dimensional
+doesn't mean just long, skinny stuff.  Here it means anything that can be
+described by a single number - weight and capacity are just as one-dimensional
+as rebar.  Think wallpaper - that stuff is expensive.
+
+	If we sum the lengths of all the pieces needed and divide that
+sum by the standard length, rounding up to an integer (number of standard
+lengths), that tells us the theoretically smallest number of standard lengths
+(we'll call them bars for convience) needed.  The length of that number of
+bars minus the sum of the lengths needed is the smallest theoretically
+possible waste.  Understand, there's no guarantee that the theoretical minima
+are achievable for every combination of bar length and pieces needed, but at
+least we're able to set a limit on the problem and assess the quality of our
+answer easily.
+
+	One enters one's problem by creating a data file similar to the 
+CUTS.DAT supplied - CUTS.DAT shows how to set up the problem above.  With
+CUTS.DAT in the default directory so CUTS.EXE can find it, one runs the program
+and gets an output like that below.
+
+------------------------------------------------------------------------------
+
+standard length = 6
+theoretical minimum waste possible = 5.25
+theoretical minimum standard lengths possible = 12
+ 
+        7       8       6       5       8       12      5
+        2.55    1.95    1.65    1.35    0.90    0.60    0.45
+ 
+3 x     2       0       0       0       1       0       0       0.00
+1 x     1       1       0       1       0       0       0       0.15
+2 x     0       3       0       0       0       0       0       0.30
+1 x     0       1       2       0       0       1       0       0.15
+1 x     0       0       3       0       1       0       0       0.15
+1 x     0       0       1       3       0       0       0       0.30
+1 x     0       0       0       1       4       1       1       0.00
+1 x     0       0       0       0       0       10      0       0.00
+1 x     0       0       0       0       0       0       4       4.20
+ 
+actual waste = 5.25
+actual standard lengths = 12
+
+	The input data is repeated for convenience.  The solution says one
+should cut 2 pieces to length 2.55 and one piece of length 0.90 from each of
+three standard length bars.  Since 2*2.55 + 0.90 = 6.0, there is 0.00 waste
+(the right hand column) when this is done.  Three (the 3 x in the left column)
+standard length bars are cut this way.  Then one bar is cut to yield one each
+of lengths 2.55, 1.95, and 1.35 with waste of 0.15.  Continue as shown.
+When done you will have used 12 bars and wasted only 5.25, thus achieving the
+theoretical minimal waste calculated by the program.
+
+	Some other examples using different standard bar lengths are presented
+below.  One will note that, in the case of 4.0 unit long bars, the theoretical
+minimum cannot be achieved.  The algorithm I use tries to get as close as
+possible to the theoretical minimum in that case.
+
+	This technique is definitely a work-in-progress.  There is no way I
+know of to exhaustively check such an algorithm.  If you find a more clever
+way of solving the problem or discover a case where the program fails to
+produce the best answer, by all means alert me.  I can be reached via email at
+mklotz@alum.mit.edu
+
+------------------------------------------------------------------------------
+ 
+standard length = 5
+theoretical minimum waste possible = 3.25
+theoretical minimum standard lengths possible = 14
+ 
+        7       8       6       5       8       12      5
+        2.55    1.95    1.65    1.35    0.90    0.60    0.45
+ 
+5 x     1       1       0       0       0       0       1       0.25
+2 x     1       0       1       0       0       1       0       0.40
+1 x     0       2       0       0       1       0       0       0.20
+1 x     0       1       1       1       0       0       0       0.05
+1 x     0       0       3       0       0       0       0       0.05
+1 x     0       0       0       3       1       0       0       0.05
+1 x     0       0       0       1       4       0       0       0.05
+1 x     0       0       0       0       2       5       0       0.20
+1 x     0       0       0       0       0       5       0       2.00
+ 
+actual waste = 3.25
+actual standard lengths = 14
+
+------------------------------------------------------------------------------
+ 
+standard length = 4
+theoretical minimum waste possible = 1.25
+theoretical minimum standard lengths possible = 17
+ 
+        7       8       6       5       8       12      5
+        2.55    1.95    1.65    1.35    0.90    0.60    0.45
+ 
+5 x     1       0       0       1       0       0       0       0.50
+2 x     1       0       0       0       1       0       1       0.20
+4 x     0       2       0       0       0       0       0       0.40
+3 x     0       0       2       0       0       1       0       0.30
+2 x     0       0       0       0       3       2       0       0.20
+1 x     0       0       0       0       0       5       2       0.10
+1 x     0       0       0       0       0       0       1       3.55
+ 
+actual waste = 5.25
+actual standard lengths = 18
+
+------------------------------------------------------------------------------
+ 
+standard length = 3
+theoretical minimum waste possible = 2.25
+theoretical minimum standard lengths possible = 23
+ 
+        7       8       6       5       8       12      5
+        2.55    1.95    1.65    1.35    0.90    0.60    0.45
+ 
+5 x     1       0       0       0       0       0       1       0.00
+8 x     0       1       0       0       1       0       0       1.20
+5 x     0       0       1       1       0       0       0       0.00
+1 x     0       0       1       0       0       2       0       0.15
+2 x     0       0       0       0       0       5       0       0.00
+2 x     1       0       0       0       0       0       0       0.90
+ 
+actual waste = 2.25
+actual standard lengths = 23
+

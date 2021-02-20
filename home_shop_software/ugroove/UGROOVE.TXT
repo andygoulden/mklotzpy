@@ -1,0 +1,13 @@
+Adrian Hodgson in the UK wanted a program to allow him to make pipe dies on his
+lathe.  The job involves cutting a U-shaped groove in the workpiece to form a
+sort of giant O-ring groove.
+
+I wrote a simple program to compute the incremental cuts needed to do this
+using a round-nosed tool.  (Things go easier if the groove is first roughed out
+with a roughing tool.)  Small cusps are left behind and some file work is
+necessary to finish the die.
+
+When the program runs, it produces a table of values of 'X' and 'DOC'.  X is
+the spacing of the plunge cut from the center of the groove and DOC is the
+depth of cut to make at that offset.
+

@@ -1,0 +1,54 @@
+	Let's say I have a 3" x 2" x 1/4" piece of metal and I want to round
+off one of the 2" edges with a 1" radius.  I can't do the job on the lathe for
+obvious reasons.  There can't be any holes in the finished product so I can't
+conveniently pivot the workpiece against a cutter to form the radius.
+
+	One approach is to rough out the radius on the milling machine using a
+ball-ended mill.
+
+	Assume:
+
+		R = radius of desired profile (1" in the example)
+		d = diameter of ball mill
+		r = radius of ball mill = d/2
+		theta = an angle (see below)
+
+	Now assume the work is mounted in the vise with the 2" edge sticking up
+and aligned with the x axis.  Assume the end of the ball mill is just touching
+the (center of) the 2" edge.  Let theta be measured from the vertical about the
+center of the radius to be cut.  Thus theta = 0 corresponds to the starting
+position just described.  Now, it's easy to show that for some other value of
+theta, the ball mill will just be tangent to the desired radius if its
+position (i.e. the position of the center of the ball) is given by:
+
+		x = (R+r) * sin(theta)  [=0 when theta=0]
+		z = (R+r) * (1 - cos(theta))  [=0 when theta=0]
+
+where z is measured positive downward from the starting position and x is
+measured +\- along the x axis from the starting position.  So, if we step
+theta by small amounts and make cuts with the tool positioned at the x,z
+positions corresponding to each value of theta, we'll cut succesive "scallops"
+into the workpiece, each of which is tangent to the required radius profile at
+that angle.  If the increments in theta are small enough, the resulting
+scallops will often be small enough to ignore.  If they're not, ten minutes
+with a fine file will produce an acceptable finish.
+
+	ROUNDER allows you to specify R, d, and the theta increment and
+produces a file which contains a table of the values of:
+
+		(R+r) * sin(theta)  [x in the example]
+		(R+r) * cos(theta)
+		(R+r) * (1 - sin(theta))
+		(R+r) * (1 - cos(theta)) [z in the example]
+
+	The second and third values above may seem superfluous but not
+everyone may want to set up the cut as in my example.  As you try different
+approaches, you'll find that being able to generate the other values is an
+asset.  If you don't need them, just cross out their columns on the printed
+copy of the data file that you carry to the shop.
+
+	A good suggestion is to rough out the profile of the radius with
+hacksaw or whatever so the ball mill doesn't have to chew through a lot of
+material.  Just be sure to leave whatever starting reference point you're
+going to use intact so you can accurately locate for the reference.
+

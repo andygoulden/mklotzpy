@@ -1,0 +1,6 @@
+If you have a part with a radiused edge and you need to find the radius, there
+are many ways to do it.  This is one of the more accurate ways to do it.  You
+will need a surface plate, gage blocks and two rollers with well-known
+diameters.  The included .jpg file shows the setup and associated mathematics. 
+The simplistic program performs the calculation, given the measured quantities.
+

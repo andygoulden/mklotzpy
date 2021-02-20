@@ -1,0 +1,97 @@
+	For the HSM who doesn't necessarily have access to commercial
+equipment, cutting large holes in plate can be a trial.  Since drilling is the
+most efficient mechanical method for removing metal, chain drilling a circle of
+holes and cutting out the resulting "slug" is a very viable technique.
+
+	This program does the necessary calculations for that operation.  The
+sample output below, annotated with my comments, should make the procedure
+obvious.
+
+CHAIN DRILLING LARGE HOLES
+ 
+Diameter of final hole [3 in] ?
+
+	This is the *final* size of the hole we wish to form.  The diameter of
+the hole resulting from the chain drilling will be smaller than this by twice
+the value of the radial allowance input below.
+
+Radial allowance for finish machining [0.05 in] ?
+
+	Because of the scalloped edge resulting from the chain drilling, we
+will probably finish machine the hole in the lathe or on the milling machine
+with a boring head.  We want to leave some material for that final operation.
+
+Drill diameter [0.25 in] ?
+
+	Up to you.  The smaller the hole, the larger the usable material left
+in the slug, if that's an issue.  On the other hand, smaller drill sizes mean
+drilling more holes.  See below.
+
+Approximate web thickness [0.05 in] ?
+
+	We want to leave some material between adjacent holes else the drill
+will want to wander into the adjacent hole when drilling.  Ultimately, we'll
+have to saw (or chisel) through this web to free the slug, so we don't want it
+too thick.  The number input is only approximate - the ultimate web thickness
+will be calculated (below) and, since we can only drill an integer number of
+holes, its final value is at the mercy of the mathematics.  As you'll see
+below, the final value is generally pretty close to the approximate value
+input.  Since the web thickness isn't critical, this variation is unimportant.
+	
+
+Program output:
+ 
+Number of holes = 27
+
+	Well, that's a lot of holes to drill.  Maybe we want to use a larger
+drill.  That's the advantage of the program.  We can try a number of options
+quickly on the computer before doing any "real" work.
+
+Diameter of drilling circle = 2.650 in
+
+	The holes will be drilled on a circle of this diameter.
+
+Final web thickness = 0.058 in
+
+	Pretty close to the desired 0.050.
+
+Angle between adjacent holes = 13.333 deg
+
+	Just for reference.
+
+Chordal distance between adjacent holes = 0.308 in
+
+	Laying out the holes can be done in a variety of ways.  If you want to
+use xy coordinates on the milling machine, you can use the BOLTCIRC program on
+my page to do an xy layout of 27 holes on a 2.650" circle.  OTOH, since this
+isn't super critical, you can scribe a circle of that diameter and step off
+chords of 0.308" to locate the holes.
+
+	If the idea of drilling 27 holes doesn't appeal to you, run the program
+again with a larger drill diameter, as below:
+
+
+CHAIN DRILLING LARGE HOLES
+ 
+Diameter of final hole [3 in] ?
+Radial allowance for finish machining [0.05 in] ?
+Drill diameter [0.25 in] ? .375			(3/8 drill instead of 1/4)
+Approximate web thickness [0.05 in] ?
+ 
+Number of holes = 18
+Diameter of drilling circle = 2.525 in
+Final web thickness = 0.064 in
+Angle between adjacent holes = 20.000 deg
+Chordal distance between adjacent holes = 0.438 in
+
+	Only 18 holes and note that the web thickness is still pretty close to
+the desired value.  In general, the smaller the drill used, the closer the
+desired web thickness can be approximated.
+
+A very similar technique can be used to cut circular plates from sheet stock.
+Here it's the size of the slug resulting from the operation that we wish to
+control.  The mathematics are only slightly different.  The included program,
+PLATE, addresses this problem.
+
+mklotz@alum.mit.edu
+

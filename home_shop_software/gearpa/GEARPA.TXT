@@ -1,0 +1,60 @@
+For two gears to mesh properly, the pressure angles of the two gears must be
+the same.  On older equipment, the pressure angle was *usually* 14.5 deg.  On
+more modern equipment it is *usually* 20 deg. [25 deg is used also but is less
+common.]
+
+Measuring pressure angle in a home shop environment is problematic.  One needs
+either gear racks of known pa, gear gages, or an involute measuring machine. 
+None of these devices are likely to be found in the typical hobbyist's shop
+unless he does a lot of gear work.
+
+This program is an experiment to see if I could provide some mechanism for the
+HSM, devoid of a gear gaging equipment arsenal, to distinguish between 14.5
+and 20 deg pa gears, the most common types.
+
+Machinery's Handbook, under 'Checking Gear Sizes', lists a formula for the
+chordal span, measured across several teeth. [In my 23rd edition, this is on
+pg. 1977].  Even for gears of the same number of teeth and diametral pitch,
+this measurement differs as a function of the pressure angle.
+
+Given this difference, I think it would be possible to use it to differentiate
+between the two common pressure angles.  [This is a SWAG on my part and
+remains to be proved by those of you who use this program].
+
+When run, the program requests the number of teeth and diametral pitch of the
+gear, then produces an output that looks like:
+
+-------------------------------- 
+GEAR PRESSURE ANGLE BY MEASUREMENT OF CHORDAL SPAN
+ 
+Number of teeth on gear [30] ?
+Diametral pitch of gear [6] ?
+ 
+Pressure angle = 14.50 deg...Chordal span over 3 teeth = 1.2941 in
+Pressure angle = 20.00 deg...Chordal span over 4 teeth = 1.7921 in
+-------------------------------- 
+ 
+Use your calipers to measure across THREE teeth on the gear.  If the
+measurement is close to 1.2941 in, you probably have a 14.5 deg pa gear.
+OTOH, if you measure across FOUR teeth and get 1.7921 in, it's probably a 20
+deg pa.
+
+The difference in the two measurements can be quite small, e.g.:
+
+-------------------------------- 
+GEAR PRESSURE ANGLE BY MEASUREMENT OF CHORDAL SPAN
+ 
+Number of teeth on gear [30] ? 18
+Diametral pitch of gear [6] ?
+ 
+Pressure angle = 14.50 deg...Chordal span over 2 teeth = 0.7765 in
+Pressure angle = 20.00 deg...Chordal span over 2 teeth = 0.7800 in
+-------------------------------- 
+
+so the measurements must be made carefully.
+
+If you are able to successfully use this program to distinguish pressure
+angles, please drop me an email (mklotz@alum.mit.edu) to include in this text
+file.  If it doesn't work, I'll be glad to include your complaints.  If you
+have any suggestions for a better way to solve this problem, send them along.
+

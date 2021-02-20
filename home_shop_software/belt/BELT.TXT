@@ -1,0 +1,30 @@
+	I was designing a flat belt power transmission system that used several
+pulleys and needed to calculate the required belt length as well as the
+required sizes for some cone pulleys that used an existing belt to obtain a
+selection of operating speeds.
+
+	BELT allows one to enter (via the ASCII data file) the x,y locations
+of the pulleys (as many as 200) and their diameters and then attempts to
+calculate the belt length needed.  If any pulleys overlap (presumably due to
+user input error!) it will note that fact and exit.  If any of the pulleys are
+"slack" (i.e., not contacted by the belt), it will note that error as well. 
+Instructions for how to enter the data are given in the sample data file.
+
+	If you have only two pulleys, it may be simpler and faster to use
+QBELT, although two pulley problems can be solved using BELT.  QBELT doesn't
+require a data file - all input is done directly on the screen.
+
+	PULLEY is used to calculate the size of the second pulley in a two
+pulley system when the belt length and pulley separation is already known.
+PULLEY searchs for the unknown pulley diameter in the range between a tenth
+and ten times the diameter of the known pulley with an accuracy controlled by
+user input.  It's rare for pulley diameters to exceed a factor of ten in
+relative size but, if that's required, contact me.
+
+	Note that all the programs assume a flat belt system so no allowance
+is made for the pitch diameter of the pulley, as would be necessary in the
+case of V-belt pulleys.  Also, remember to use consistent units when
+specifying dimensions (location, diameter, length, etc.).  The programs don't
+presume the units used so they will work with any measurement system so long
+as the units input are consistent.
+

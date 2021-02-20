@@ -1,0 +1,242 @@
+	John Rothen wrote me and asked:
+
+Do you know of a program that will give the number of turns plus the number of
+holes to count on a standard number plate for a dividing head with a non-
+standard ratio, ie 90:1 or 100:1?
+
+	I didn't know of any extant software.  In addition I use a rotary table
+with a calibrated vernier handwheel rather than the hole plate style dividing
+head so I wasn't familiar with the device in question.
+
+	I decided the best solution was to write a program that would
+(hopefully) work for any style dividing head using hole plate verniers.  I hope
+I've gotten it right - if you find any errors I've made, alert me at my email
+address - mklotz@alum.mit.edu.
+
+	Dividing head calculations are logically straightforward.
+
+	Define two INTEGERS:
+
+	R = worm gear ratio (relative to 1)
+	N = number of divisions of workpiece
+
+	Then the number of turns of the crank (defined as T, and, in general,
+not an integer) is given by R/N.  For example assume a typical 40:1 gear ratio
+and a workpiece that needs to be divided into 14 segments.  With R=40 and
+N=14, we get:
+
+	T = R/N = 40/14 = 2.85714.....
+
+	The program reduces 40/14 to 20/7 = 2 & 6/7.  Thus 2 full turns of the
+crank are required plus 6/7 of a turn accomplished via one of the hole plates.
+
+-----------------------------------------------------------------------------
+DIVIDING HEAD CALCULATIONS
+ 
+Number of workpiece divisions [14] ?
+ 
+DH Worm Gear Ratio = 40:1
+Holes in rapid indexing plate on spindle = 24
+Divisions of Workpiece = 14
+Ratio/Divisions = 40/14 = 2.857142857
+Turns required = 20/7 = 2 & 6/7
+ 
+2 full turns of crank
+and 18 holes on 21 hole plate
+or  42 holes on 49 hole plate
+-----------------------------------------------------------------------------
+
+	First, DIVHEAD reads a data file that describes the properties of the
+dividing head in use - more on that file below.  It asks for the number of
+divisions (14). It then calculates T (40/14) and reduces this to 2 & 6/7. The
+'2' means that to step off 1/14 of a revolution you must first turn the crank
+two full turns.  Then you need to turn the crank 6/7 of a turn using the hole
+plates.  To do this you obviously need plates that have a number of holes that
+is a multiple of seven.  From the data in DIVHEAD.DAT, the program knows that
+this DH has a 21 hole plate and a 49 hole plate so either of those can be used
+and it reports the number of holes to step on those plates in order to produce
+6/7 of a crank turn.
+
+	DIVHEAD.DAT looks like:
+-----------------------------------------------------------------------------
+Data for DIVHEAD
+
+data need not be in numerical order - program sorts before use
+
+anything above the line below is ignored
+STARTOFDATA
+
+;note: ratio must be first entry in data area
+40			; DH worm gear ratio : 1 (e.g. 40:1)
+
+; holes in rapid indexing plate on main spindle must be second entry
+; if dh has no rapid indexing plate, enter -1
+24			; rapid indexing plate on main spindle
+
+15			; holes on plate A
+16
+17
+18
+19
+20
+
+21			; holes on plate B
+23
+27
+29
+31
+33
+
+37			; holes on plate C
+39
+41
+43
+47
+49
+
+;above the line below requires a semicolon
+ENDOFDATA
+this is below the line and has no semicolon
+-----------------------------------------------------------------------------
+
+	You will need to edit this file to reflect the parameters that
+describe the dividing head in question.  Note that, if your DH has a rapid
+indexing plate on the spindle (used to simplify the dividing of small, oft
+used number of divisions) you can specify it and the program will report in
+terms of that plate when possible.  As an example, consider making six
+divisions on a DH with a 24 hole rapid indexing plate:
+
+-----------------------------------------------------------------------------
+DIVIDING HEAD CALCULATIONS
+ 
+Number of workpiece divisions [14] ? 6
+ 
+DH Worm Gear Ratio = 40:1
+Holes in rapid indexing plate on spindle = 24
+Divisions of Workpiece = 6
+Ratio/Divisions = 40/6 = 6.666666667
+Turns required = 20/3 = 6 & 2/3
+ 
+Step 4 holes on rapid indexing plate
+-----------------------------------------------------------------------------
+	
+	For a 40:1 gear ratio, 6 & 2/3 turns of the crank is the same as
+moving 4 holes on the rapid indexing plate.
+
+	If a rapid indexing plate is not available, the same problem (6
+divisions) would be reported as:
+
+-----------------------------------------------------------------------------
+DIVIDING HEAD CALCULATIONS
+ 
+Number of workpiece divisions [14] ? 6
+ 
+DH Worm Gear Ratio = 40:1
+No rapid indexing plate available
+Divisions of Workpiece = 6
+Ratio/Divisions = 40/6 = 6.666666667
+Turns required = 20/3 = 6 & 2/3
+ 
+6 full turns of crank
+and 10 holes on 15 hole plate
+or  12 holes on 18 hole plate
+or  14 holes on 21 hole plate
+or  18 holes on 27 hole plate
+or  22 holes on 33 hole plate
+or  26 holes on 39 hole plate
+-----------------------------------------------------------------------------
+
+	If DIVHEAD can't find a solution using the available hole plates, it
+will tell you what hole plate you need to manufacture:
+
+-----------------------------------------------------------------------------
+DIVIDING HEAD CALCULATIONS
+ 
+Number of workpiece divisions [14] ? 51
+ 
+DH Worm Gear Ratio = 40:1
+Holes in rapid indexing plate on spindle = 24
+Divisions of Workpiece = 51
+Ratio/Divisions = 40/51 = 0.784313725
+Turns required = 40/51 = 0 & 40/51
+ 
+NO SOLUTION USING AVAILABLE HOLE PLATES WAS FOUND
+a plate with an integer multiple of 51 holes is required
+-----------------------------------------------------------------------------
+
+	Obviously, DIVHEAD is set up to handle only simple indexing.  Compound
+indexing (where both the crank and the hole plate are moved) mechanizations
+seem to differ from one manufacturer to another and so generalizing the
+mathematics doesn't seem possible.  If someone can prove me wrong on that
+statement, I'll be glad to take a shot at a compound indexing program.
+
+==============================================================================
+
+	The problem of just which hole plates one NEEDS piqued my curiosity
+and so I wrote a short program (DPLATES) to calculate what is needed as a
+function of the gear ratio and the largest number of divisions one might
+anticipate needing (no rapid indexing plate assumed).  It's offered here as a
+'bonus' for those of you who might consider building a dividing head. Let me
+know if I got something wrong.
+
+	Below are some sample outputs with my annotations.
+
+-----------------------------------------------------------------------------
+REQUIRED DIVIDING HEAD HOLE PLATES
+ 
+DH worm gear ratio [40] ?
+Maximum number of divisions needed [50] ?
+ 
+Hole plates required for all divisions up to 50
+4,5,6,17,19,21,23,27,29,31,33,37,39,41,43,47,49,
+
+	It would appear that the 15 and 16 hole circles normally supplied with
+commonly available devices aren't really needed to get the advertised "all
+possible divisions up to 50".  Maybe it's done to make the low number plate
+look better.  (You need the 20 hole plate for 4 and 5 and the 18 hole plate
+supplies the 6.)
+ 
+REQUIRED DIVIDING HEAD HOLE PLATES
+ 
+DH worm gear ratio [40] ? 90
+Maximum number of divisions needed [50] ?
+ 
+Hole plates required for all divisions up to 50
+3,5,13,14,16,17,19,22,23,29,31,37,41,43,47,49,
+
+	One less plate with a 90:1 ratio to get everything up to 50.
+ 
+REQUIRED DIVIDING HEAD HOLE PLATES
+ 
+DH worm gear ratio [40] ? 100
+Maximum number of divisions needed [50] ?
+ 
+Hole plates required for all divisions up to 50
+8,12,17,19,21,23,27,29,31,33,37,39,41,43,47,49,
+
+	A 100:1 ratio doesn't save a lot of drilling effort.
+
+REQUIRED DIVIDING HEAD HOLE PLATES
+ 
+DH worm gear ratio [40] ? 60
+Maximum number of divisions needed [50] ?
+ 
+Hole plates required for all divisions up to 50
+5,8,9,11,13,17,19,23,29,31,37,41,43,47,49,
+
+	A 60:1 ratio is good because 60 is evenly divisible by a lot of
+integers.
+ 
+-----------------------------------------------------------------------------
+
+Update: 3/05
+
+A number of folks have asked for a version of DIVHEAD which will generate a
+complete table of 'turns and holes' for some input range of divisions.  The
+idea is that they can then print this file and keep it in the shop with the
+dividing head rather than having to run DIVHEAD each time.
+
+DIVHEADT (the 'T' stands for Table) uses the same DIVHEAD.DAT file which the
+user creates for DIVHEAD and asks for a maximum number of divisions.  It then
+prints the table to a file (DIVHEADT.OUT) which the user can print.
+

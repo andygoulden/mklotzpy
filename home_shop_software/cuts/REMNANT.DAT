@@ -1,0 +1,34 @@
+; data for REMNANT program
+
+; Specify your stock cutting problem by editing this file with any ascii
+; text editor.
+; Units are arbitrary but must be consistent.
+
+0.03		;saw kerf width
+
+; Available remnant data
+
+6,4.0		;6 pieces of length 4
+3,5.0		;3 pieces of length 5
+1,7.0		;1 piece of length 7
+1,10.0		;1 piece of length 10
+
+
+0,0		;data separator needed between remnant data and piece data
+
+; Pieces needed data
+
+5,2.55		;need 5 pieces of length 2.55
+3,1.95		;need 3 pieces of length 1.95
+6,1.65		;etc...
+5,1.35
+8,0.90
+5,0.45		;these two entries are not
+10,0.60		;ordered by size
+
+;Anything entered below the next line will be ignored
+ENDOFDATA
+
+You can add notes here without the need to preface each line with the
+comment character (";").
+

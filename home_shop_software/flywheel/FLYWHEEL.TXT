@@ -1,0 +1,46 @@
+	I like to make tapered spoke flywheels for my engines because I think
+they look rather elegant.  Since most of my engine models are small, I machine
+the flywheels from solid stock rather than fabricating them from separate
+pieces.
+
+	Starting with a cylindrical blank on the lathe, I machine a reduced
+thickness web that separates the central hub from the rim.  Then I mount this
+blank on the rotary table and define the corners of the cutouts with holes
+drilled through the web.  After these holes are drilled, I use a milling cutter
+to machine away the material defined by the holes in the web - what remains are
+the tapered spokes.
+
+	The included .jpg image should make clear how this process works and
+what the associated calculations are.
+
+	The calculations are tricky and error-prone - especially those for
+offsetting the rotary table to cut along the spoke edge.  I wrote a program to
+do all the calculations and produce an output file to print and take to the
+shop.  Note that the important angle, phi, is found by solving a
+transcendental equation by iteration - something to try one's patience if done
+by hand but a piece of cake for a computer.
+
+	For an arbitrary choice of spoke dimensions, the angles for drilling
+the outer holes in the web can get to be messy as the first part of the
+solution obtained with the defaults will show.  Since the exact spoke
+dimensions are seldom critical, the program also generates a solution in which
+the angles for the outer holes are integer values and adjusts the other
+dimensions to suit this choice.  Just ignore this solution and live with the
+messy angles if you're finicky about the spoke proportions.
+
+	The spoke tapering can be defined in two ways.  Either the offset of
+the outer hole from the spoke centerline (d2 in the diagram) or the angle of
+the outer hole relative to the spoke centerline (theta2 in the diagram) can be
+specified.  The program allows you to use either method.
+
+	Although the diagram shows the inner and outer holes as different
+diameters, this is not required.  The defaults are set up for the case where
+the inner and outer holes are the same diameter and the tapering is
+accomplished by angling the outer holes seven degrees away from the spoke
+centerline.
+
+	As with most of my programs, no attempt is made to check for
+unreasonable inputs.  Your construction sketch should be examined for problems
+such as overlapping holes, etc.  If you find real errors in the program,
+contact me at mklotz@alum.mit.edu.
+

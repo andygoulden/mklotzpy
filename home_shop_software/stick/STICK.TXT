@@ -1,0 +1,74 @@
+In the 6/01 issue of "Machinist's Workshop", Peter F. Lott described an
+interesting technique he uses when chasing metric threads on his Imperial
+leadscrew lathe.
+
+We all know that the thread dial on the lathe can't be used for this operation.
+Conventional wisdom says that, to maintain registration, we need to leave the
+half-nuts engaged and run the lathe in reverse to move the carriage to the
+right prior to making the next cut on the lathe.  Especially for long threads,
+this can become quite tedious.
+
+Peter quite correctly points out that, if we disengage the half-nuts and move
+the carriage a distance to the right that is an integer multiple of the thread
+pitch *and* is also an integral multiple of the leadscrew pitch, we can
+reengage the half-nuts without losing registration on the thread we're cutting.
+He goes on to supply a table of distances to move for various combinations of
+metric threads and Imperial leadscrews.
+
+I wanted to explore techniques for computing the information in the tables so I
+wrote STICK.  The name refers to the technique described in the article of
+cutting a stick to the appropriate length and using it to accurately reposition
+the carriage at the end of a pass.
+
+While writing the program, I realized that Pete's process can be easily
+extended to cutting Imperial threads on an Imperial leadscrew lathe and, for
+the benefit of our metric friends, cutting Imperial threads on a metric
+leadscrew lathe.  While I was at it, I covered the last possibility, metric
+threads on a metric leadscrew lathe.  Metric on metric and Imperial on Imperial
+aren't really needed but obtaining them was trivial after the metric on
+Imperial code was written so what the heck - maybe someone would like to have
+them.
+
+Update 5 December 2002
+
+Jeff Sauer sent me a note describing an alternate approach where the threading
+dial is calibrated and used as a measuring tool in lieu of the calibrated
+stick.  I've included his idea here for those of you who might like to try it.
+
+-------------------------
+Hi Marv:
+
+I've found your software utilites very very useful.... Thanks
+for coding these gems. I'm most grateful for CHANGE.EXE,
+and lately have been trying STICK.EXE, although sometimes
+the stick movement is more bothersome than reversing direction.
+
+One possible improvement to STICK would be to translate the
+required carrage motion into rotations of the threading dial.
+
+For example, on my little change gear lathe with a 16 TPI
+leadscrew, the threading dial has a 32 tooth gear that meshes
+against the leadscrew (thus marking two inches of leadscrew
+travel for each revolution of the threading dial). The threading
+dial has four scribe marks on it so the feed nut can be engaged
+at 2 inch, 1 inch, or 1/2 inch intervals. But if a paper "dial" is
+attached on top of the threading dial (this new dial having as many
+index lines as gear teeth below) then any integer leadscrew groove
+could (with care)  be engaged.
+
+Perhaps STICK could print the paper dial, with as many index marks
+as required for the selected cutting job, and print a table showing
+a complete sequence of which index marks are used for each
+successive pass?
+
+For example... Suppose STICK says my modulo interval is 60 teeth
+on my 16 pitch leadscrew. That's two complete revolutions of the
+dial minus 1/8 turn (still using my 32 tooth thread dial gear). In this
+example, a paper dial with 8 index lines labeled backwards from
+0 to 7 would simplify the carrage movement. Each time I reposition
+the carrage, I'd go a complete revolution, and then stop on the next
+higher number on the dial.
+
+Let me know what you think..... thanks.... Jeff Sauer
+-------------------------
+

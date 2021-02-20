@@ -1,0 +1,239 @@
+	I have a TINY shop.  Basically, it consists of the space left over in
+a two car garage after both cars are parked therein.  Thankfully, the garage
+is a bit oversize so there exists about six feet on the left of one and in
+front of both of the cars.  Still, for a metalworking shop, it's pretty
+confined.  I've had to be very ingenious about how I use the space in such a
+way that I can still get useful work done.  I'm sure there are other people
+that are making do with limited shop space so maybe some of my ideas,
+techniques and hints may be useful.
+
+	The shop contains a 10' workbench, mill/drill, 11x30 lathe, drill
+press, metal and wood cutting bandsaws, two grinders, two rolling tool
+cabinets, a cart with three machinist's tool chests, an "outdoor" cart and an
+assortment of other metalworking tools as well as the normal complement of
+homeowner, woodworking and gardening tools.  There's a generous supply of
+metals, fasteners and other materials as well. In a word, it's CROWDED.
+
+	The first thing one learns in a tiny shop is that things get stored
+WHERE THERE IS SPACE, rather than in "logical" locations.  I'd love to have a
+metal storage rack with everything nicely separated by size and material but
+that simply isn't possible.  While I'm not illogical about how I store things,
+space dictates that at least some things get stored in "available", rather
+than "optimal" locations.  I quickly learned that, if I store things in the
+first location that occurs to me, when I go to retrieve it, I'm likely to LOOK
+in the first location that occurs to me thus speeding the discovery.  While
+this often works for me, it doesn't always and, moreover, may be a quirk of my
+mind that doesn't work for others.
+
+	I partially solved this problem with the computer.  I keep a file
+(WOIST.TXT - German for "Where is it?") where I note the location of
+infrequently used items whose location I EXPECT TO FORGET.  Don't make an
+attempt to document the location of everything in your shop - you won't forget
+where your micrometer is - just include what will escape your mind - if you're
+over thirty years of age, you'll have a good idea of what that might be.  It
+takes some discipline to keep this file updated but it's a small price to pay
+for your lack of shop acreage.  It's a lot easier to load the file into an
+editor and use the embedded search function to hunt for an item than it is to
+turn the whole shop upside down looking for that unique fastener.  Try to make
+the descriptions in the file include something easily searched for.  Entries
+like "screws" aren't terribly useful - include at least something specific -
+"socket head cap screws, brass wood screws, etc." so you can find it easily
+with the search function.  If you're the least bit clever about how you
+describe things in the file, you'll be able to find things you forgot you had.
+With the advent of digital cameras, one could also store pictures of
+tool/supply "caches" and search the shop visually for some item of interest.
+
+	BTW, I have another version of this file where I note the location of
+things secreted away in my overburdened den.  It's saved my ... several times.
+
+	Things will get stored on top of other things in a small shop.  It's
+unavoidable.  When you have to use whatever's on the bottom, moving all the
+junk on top of it can be a pain.  Buy some large containers - I use 1' x 3' x
+6" plastic bins I found at a liquidator.  Store the items in the bins and
+stack the bins. When you need to move things you only have to move bins
+instead of many small items.  I realize that's pretty obvious but, sometimes
+we overlook the most obvious timesavers.
+
+	The second thing to remember in a tiny shop is to think VERTICALLY. 
+If you can't expand horizontally, the only direction left to go is up.  One of
+my more inspired ideas was to build a workbench that spanned the hood of one
+of the cars.  Its two "legs" are cross-braced box frames made of 2 x 4's that
+support 2 x 4 stringers that span the hood of the car when it is parked.  The
+stringers support a 4 x 8' sheet of 3/4" plywood.  On the back (car windshield
+side) of this work surface is a 1 x 8' shelf mounted 2' above the surface and
+supported by end plates that bolt solidly to the work surface.  Originally
+designed (and used) as an electronic workbench (hence the shelf for test
+instruments and power supplies), it's since become a place for my belt sander,
+sharpeners, buffers and some smaller tools.  It's no substitute for a REAL
+workbench, but more than adequate for fine handwork and such and the warmth
+from the engine compartment of the car keeps you toasty in winter - not that
+that is a major issue in Southern California.  You might want to throw a drop
+cloth over the hood of the car if you're doing anything dirty.
+
+	Many places sell metal shelving units that reach 6' high or higher. 
+Another easy way to utilize vertical space.  I have one next to the tailstock
+end of my lathe.  The shelf at lathe height is a handy place for lathe tools,
+centerdrills, collets, etc. while the less conveniently placed shelves hold
+things I use only occasionally.
+
+	Shelving "suspended" from overhead rafters works well too.  Just
+remember to use heavy gauge steel for the "suspenders" - don't ask why I know
+that.  Make sure the bottom edge of the suspended shelves are higher than head
+height for anyone who frequents your shop.  If over heavy machinery (not a
+good idea), allow space for rigger equipment used to move same.  My shelves
+are overkill - 1 x 12"'s on 2 x 4" framing - allowing me to store even
+moderately heavy woodworking power tools overhead.  I live in earthquake
+country so edge lips to prevent "walk-offs" are essential.
+
+	Another utilization of vertical space involves my IV stand (IV.JPG)
+
+	Every shop should have an IV stand - and not just for transfusions
+when you cut off your fingers on the table saw.  My daughter had a cheap desk
+chair that broke.  I threw the broken parts out but just couldn't part with
+the nice, five-caster base that looked so useful.  I got a length of closet
+pole and mounted it to the base.  On the top of the pole (cut off in picture),
+I mounted a sturdy crossbar - voila, an IV stand.  Originally I wanted it to
+mount the two outdoor flood lamps in adjustable reflectors.  That required a
+junction box and electrical fittings so now I had an "electrical" IV stand. 
+When working under the hood of the car, I wheel it next to me, plug it in and,
+at last, have adequate light to see what I'm doing.  The lamps are also
+impromptu photo floods when photographing small objects in the garage.
+
+	I had a circle of plywood from a cable spool.  Made a clamp that
+attaches to the pole and supports the circular shelf.  Holds the junction box
+and attachments for the Dremels as well as the odd tool when I use the lights
+outside while working in a dark corner.
+
+	In such a cramped shop, a place to hang freshly painted items while
+they dry is always hard to find.  I hung some chains from the crossbar and
+fashioned some hooks from which to hang things.  Easily wheeled into position
+when in use or outside in the sun for faster drying, it's now an essential item
+in most painting projects.
+
+	Since it has electricity and can be wheeled close to where I'm working,
+I hung two of my three Dremel tools from it.  Out of my way when not in use,
+they're hanging within easy reach when it's wheeled next to the workbench and
+the lamps provide plenty of extra light for those miniscule jobs.  Moreover,
+since the Dremel flexible shaft tool is hanging (as in a dentist's office), the
+shaft doesn't get kinked or "lash around" knocking things off the workbench.
+
+	The next hint is a fairly obvious one - put everything you can on
+wheels.  Even if your shop doesn't have to share its space with two parked
+cars, having things on wheels makes it a lot easier to rearrange things to
+your convenience when working on something that requires a bit of elbow room. 
+Rolling tool cabinets with drawers (I have two) are the optimal if you can
+afford them.  New they're expensive but look about for commercial liquidators
+or "clearance sales" at local industries.  Garage sales may yield rolling
+1950's vintage metal kitchen carts which, though not fit for heavy stuff, are
+still useful.  Build your own, too.  The rolling legs on my import horizontal
+metal-cutting bandsaw were a complete joke.  I got a discarded pallet (free)
+and chain-sawed it into halves.  Mounted (locking) casters from the junk box
+to one half.  Now the bandsaw is securely bolted to a rigid base that can be
+rolled into a comfortable position when used in the vertical mode.  For
+horizontal work, a purpose left 3" wide slot in the "stuff" next to the saw
+allows me to cut anything up to 3" diameter without moving it.  The gap
+between top and bottom of the pallet is used to store lengths of stock
+(catalogued in the computer file) and spare bandsaw blades.  A plastic waste
+basket "lashed" to the pallet catches saw swarf for easy disposal.  BTW, the
+extra height afforded by the pallet and casters eases my back strain when
+using it - I'm a 6+ footer.
+
+	Another fairly obvious hint is: Don't store things in their original
+containers when that approach makes sense.  While you probably want to keep
+your gage blocks in their original beautiful wooden chest just to protect them,
+all those unneeded "blister packs" are just taking up shop space.  Let's face
+it, if you have a small shop, probably you are NEVER going to make an
+arrangement that saves you HUGE amounts of space.  You have to go at it one
+cubic inch at a time.  You'll be surprised at how those small savings add up to
+the ability to house more "junk" usefully.  The metal cabinets with a plethora
+of those awful little plastic drawers (available at any homeowner's store) do
+a great job of consolidating all those odd bits and pieces.  Number the
+drawers and document the contents on the computer - printing the contents on a
+drawer label just means a lot of messing about when you reorganize to save
+space.  Print out the "drawer index" and keep it in the notebook in the shop.
+
+	You do have a shop notebook, don't you?  I consider mine the second
+most useful tool after my calculator.  Metalworking is a complex hobby -
+notebooks are essential.  In fact, I xerox everything twice and keep a rough
+duplicate of the shop notebook in the den just so I don't have to run to the
+garage to check on a noted item.
+
+	A related idea is to store things in other "things'" containers.  My
+height gauge has a nice wooden case but most of the volume inside it is empty
+because of the somewhat odd shape of the tool.  I filled up the unused space
+with light (so as to not damage the height gauge), seldom used items.  Now, I
+just KNOW I'm going to forget where I secreted those items because the location
+is so counter-intuitive.  This is where the computer file really pays off.
+
+	By now you're probably thinking I'm pretty anal.  Well, I suppose I
+am.  OTOH, if you want to get any useful work done in a tiny shop, you had
+better learn to be anal, else you'll be overwhelmed in no time.  What on earth
+is so wrong about being organized, anyway?  We profess to admire it in other
+people, yet eschew it as some sort of Freudian flaw when we see ourselves
+doing it.  Personally I think the offensive characterization is just people's
+way of dealing with their envy at an ability they can't muster.  Kind of like
+making fun of the foibles of intelligent people to excuse your own
+incompetence.
+
+	A good way to (re)organize a tiny shop is to keep a list of every tool
+you used in the last three months.  Now arrange your shop to make those tools
+easily accesible.  My bet is that, if you do this, you'll find that you soon
+converge on a utilitarian arrangement that accomodates 80% of your needs.
+
+	Make everything do double, or better, triple duty.  I have a bench
+"anvil" made of a heavy block of steel with holes of various sizes drilled
+into it.  Great for removing spring pins, bending stock, etc.  Two orthogonal
+sides are fitted with homemade toolmaker's clamps.  Clamping parts at 90
+degrees for soldering is easy.  On edge, the block and its clamp become a
+handy micrometer stand.  Since I'm unlikely to be using the micrometer while
+soldering or pin pounding, the three uses for the block are satisfactorily
+self-exclusive and don't get in each other's "way".  There are endless
+variants of this sort of synergism - limited only by your ingenuity.  Even if
+the uses mutually "interfere" (e.g., hammers with interchangeable heads),
+remember that you're in a hobby, not a "time-is-money", commercial shop. 
+Learn to enjoy preparing for the task as much as doing it.
+
+	If you make tools, jigs, etc. for yourself, try to arrange for them to
+store their own accessories.  Many items that have a "handle" of some sort
+don't need a solid handle.  Drill it out, make a threaded cap and use the
+space to store small accessories that would require a larger container if
+stored separately.  Not only does this save the odd cubic inch but it makes it
+easier to find the bits and pieces when needed.  On several occasions I've
+soldered the right size allen wrench for adjustments into the "inside" of the
+threaded cap.  Often the accessory can be integrated into a "decorative"
+element.  That lovely knurled brass finial on the height gauge rod can pull
+out to reveal a tiny adjustment screwdriver on its end.
+
+	Even the garage DOOR can be used.  In Southern California we have one
+piece doors that swing up and, given the weather, I generally have the door up
+when working.  I needed a vertical frame for holding large blueprints for easy
+reading.  No space for such an awkward object.  I made a light frame of wooden
+strips and hinged it to the inside of the garage door.  A hook keeps it from
+swinging down and hitting the cars when the door opens.  The blueprints are
+pinned to the frame.  Now, with the car out of the garage (normal working
+mode), I can swing the frame down if the door is up and have the prints
+vertical.  If it's cool and the door is closed, the prints are vertical on the
+inside of the door and easily read.
+
+	My workbench top is cluttered with many of the small tools that I use
+on a regular basis.  Used to be, when I needed a large free space to work on
+the odd bigger project, I would move everything "somewhere else" to make
+space.  Too time consuming and frustrating.  I built a 2 x 4' table top that
+has hinged legs (a la a card table) on one end.  The other end attaches
+securely to a piece of 2 x 4 bolted to the workbench front lip.  It folds up
+into a flat package that stores nicely against the side of the over-the-car
+bench.  I can instantly get a large temporary work area without disturbing the
+regular workbench arrangement.  The best thing about it is that when it's in
+use, the car CAN'T be parked in the garage.  That means it MUST be put away
+after each use and I'm guaranteed that it will not become another clutter
+magnet but rather will be available for instant use the next time it's needed.
+
+=============================================================================
+
+	Send me your own personal small-shop hints to add to this file.
+
+
+E-mail: mklotz@alum.mit.edu
+Home Shop Freeware - Tools for People Who Build Things
+Home Page: http://www.geocities.com/CapeCanaveral/Hall/4425
+

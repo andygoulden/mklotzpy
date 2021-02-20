@@ -1,0 +1,19 @@
+Data for OGIVE.C
+
+Any measurement system is ok, but be consistent.
+
+anything above the line below is ignored
+STARTOFDATA
+
+
+ds=0.5			;stock diameter
+toolt=1			;tool type (1 = square tipped, 0 = round tipped)
+wt=0.125		;tool tip width (ttype=1) or diameter (ttype=0)
+dxd=0.050		;axial stock cutting increment
+ogdiam=0.5		;ogive diameter
+oglength=1.5		;ogive length
+
+;above the line below a comment requires a leading semicolon
+ENDOFDATA
+this comment is below the line and has no semicolon
+

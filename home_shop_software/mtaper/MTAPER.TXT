@@ -1,0 +1,12 @@
+	Machinery's Handbook outlines a procedure for accurately measuring the
+included angle of a tapered cylindrical part.  In the 23rd edition it's on page
+685.
+
+	Basically, the tapered part is placed on a precision V-block whose V
+angle (D) is known.  The V-block is placed on a sine bar and the sine bar
+stack adjusted until an indicator swept across the top of the part shows no
+deviation.  Knowing the V block angle (D) and the sine bar angle (B), the
+included angle of the tapered part (A) can be found from a moderately complex
+formula (which the program implements).  Also found is the angle (C) between
+the part centerline and the surface of the sine bar.
+

@@ -1,0 +1,20 @@
+People keep asking me questions about the geometry of 'polycone' shapes.  The
+name is my own invention since I don't know of any generic mathematical name
+for such shapes.  I'm referring to three dimensional figures whose
+base is a regular polygon and whose sides are equilateral triangles all of
+which meet at a point.  A tetrahedron is a three-sided polycone.  A pyramid is
+a four-sided polycone.  Frequently stained glass lampshades are frustrums of
+polycones.
+
+This program will calculate most of the relevant lengths and angles associated
+with such figures if given:
+
+		the number of sides
+		the length of one side of the polygonal base
+		the perpendicular height of the polycone, i.e., the height
+		  measured from the center of the base to the cone tip
+
+If I've left out some dimension you need to know, contact me and I'll add it.
+
+mklotz@alum.mit.edu
+

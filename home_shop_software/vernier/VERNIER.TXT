@@ -1,0 +1,54 @@
+	For less than super-critical applications, one of the easiest way to
+divide a circle into N parts is to make a two plate vernier.  Suppose you need
+N=12 divisions.  Imagine two circular plates, one with three equally spaced
+holes and the other with four equally spaced holes.  Now if one of these
+plates is held fixed and the other is rotated so that various combinations of
+the holes in the two plates come into alignment, each of the twelve divisions
+(30 degrees) of the workpiece attached to the movable plate can be achieved. 
+In this simple case, we would need to drill only seven holes whereas a single
+plate would need twelve holes - not a major saving but consider that we can
+get 360 divisions by drilling only 76 holes.
+
+	The advantages of two-plate verniers:
+
+		FEWER HOLES TO DRILL
+
+		Since there are fewer holes to drill, the required plates
+		can be smaller - making for a more compact structure.
+
+		Once you have a collection of same sized plates, you may get
+		lucky and already have one of the plates you need for some
+		dividing project.
+
+	The disadvantages:
+
+		Deciding which combination of plates to use can be
+		mathematically tedious.
+
+		Deciding which holes to align to achieve a given angular
+		placement can be confusing - mistakes are VERY easy.
+
+		For good accuracy, you may still need some dividing equipment
+		to space out the holes in the plates.  In an emergency however,
+		you can mark out the plates by hand.  To divide a circle of
+		diameter D into N divisions, set your dividers to a length of
+		D*SIN(180/N) and mark off the circumference.
+
+	This program computes the best two plate vernier combination for the
+input number of subdivisions of a circle. When a two plate combination is
+possible, the combination that requires drilling the minimum number of holes
+consistent with obtaining the required number of subdivisions is found.  It
+may happen that the best combination involves drilling *more* holes than would
+be required for a single plate.  This is detected and the user is alerted to
+make the simpler single plate.
+
+	When found, the hole pairs needed to obtain each subdivision are
+printed in sequential order and written to a data file that you can print for
+reference. The lettered holes are labeled first with the upper case alphabet
+and then with the lower case alphabet.  If more than 52 holes are required in
+the lettered plate, primes (') are used as indicators.
+
+The limit on the number of subdivisions is 4,294,967,295 but, unless you have
+an unnatural affection for your drill press, you'll never get anywhere near
+that number.
+

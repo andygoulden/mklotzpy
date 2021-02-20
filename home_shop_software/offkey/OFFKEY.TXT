@@ -1,0 +1,134 @@
+Ronnie Shultz, a professional machinist in the West Virginia panhandle, posed
+a fascinating problem that involved a technique that I had never considered.
+
+Suppose you have a cam keyed to a shaft.  For whatever reason, you need to
+change the phasing of the cam relative to the shaft by a few degrees.  Rather
+than machining a new cam, it's far easier to make an 'offset key' that locks
+the cam into a new attitude relative to the shaft.
+
+Ronnie wished to know if it was possible to build a program to make the
+calculations he needed to machine such a key.
+
+The first diagram included with this archive, OFFKEY1.JPG, shows the situation.
+On the left is the keyway prior to the rotation.  On the right is how the key
+would look if the cam were rotated by an angle, theta, relative to the shaft.
+
+A number of points on the key are picked out (see the numbers, 0-7).  The
+program computes the location of these points prior to rotation using an x-y
+coordinate system with its origin at the center of the shaft.  In the drawing,
+x is positive to the right (of the shaft center) and y is positive above the
+shaft center.
+
+These points are then mathematically rotated by the angle, theta, to their new
+locations shown in the right hand drawing.
+
+For instance, using the program defaults, it computes:
+
+x,y locations of points (b)efore => (a)fter rotation
+
+b[0] = 0.0000, 0.1830 => a[0] = 0.0000, 0.1830
+b[1] = 0.2500, 0.1830 => a[1] = 0.2500, 0.1830
+b[2] = 0.2500, 0.4330 => a[2] = 0.2868, 0.4096
+b[3] = 0.2500, 0.6830 => a[3] = 0.3086, 0.6586
+b[4] = 0.0000, 0.6830 => a[4] = 0.0595, 0.6804
+b[5] = -0.2500, 0.6830 => a[5] = -0.1895, 0.7022
+b[6] = -0.2500, 0.4330 => a[6] = -0.2113, 0.4532
+b[7] = -0.2500, 0.1830 => a[7] = -0.2500, 0.1830
+a[8] = -0.2131, 0.4330
+a[9] = 0.2888, 0.4330
+
+Points 0,1 and 7, fixed in the shaft, do not move during the rotation.  Their
+coordinates before and after rotation are the same.  Point 5, the upper left
+corner of the key moves through an arc from x=-0.25, y=0.683 to x=-0.1895,
+y=0.7022.  (More on points 8 and 9 below.)
+
+Now, by computing the separation of the points before and after the rotation,
+we can compute the dimensions needed to construct the offset key.
+
+[A note on notation here.  Below, I've adopted the mathematicians' notation of
+referring to point x *before* rotation and point x' (x prime) *after*
+rotation.]
+
+It's obvious that point 6 moves through an arc to 6'.  Same for 2 and 2'.
+Machining these arcs on the offset key would be a real trial.  Fortunately,
+they're not really required.  Refer to the second diagram, OFFKEY2.JPG.  Here
+we've defined two new points, 8 and 9 (or actually 8' and 9' since they exist
+only after the rotation), such that the curved surfaces are replaced by flat
+surfaces (6-8' and 2-9').  These make machining the key a lot simpler and the
+slight loss of material doesn't substantially affect the strength of the key.
+
+The program then computes:
+
+a[6] wrt b[6]:  x sep = 0.0387, y sep = 0.0201, sep = 0.0436
+a[2] wrt b[2]:  x sep = 0.0368, y sep = -0.0234, sep = 0.0436
+a[3] wrt b[7]:  x sep = 0.5586, y sep = 0.4756, sep = 0.7336
+a[5] wrt b[7]:  x sep = 0.0605, y sep = 0.5192, sep = 0.5227
+a[8] wrt b[6]:  x sep = 0.0369, y sep = 0.0000, sep = 0.0369
+a[9] wrt b[2]:  x sep = 0.0388, y sep = 0.0000, sep = 0.0388
+a[5] wrt a[8]:  x sep = 0.0236, y sep = 0.2692, sep = 0.2702
+
+In addition to the separations in x and y, the total separation (sep = ...) is
+given.  This is nothing more than:
+
+	sep = sqrt ((x sep)^2 +(y sep)^2)
+
+As an example, the y sep of 5' and 7 tells us the height of the stock
+we need to make the key.  The x sep of 3' and 7 tells us the starting
+width of stock needed.  The x seps of 8' and 6 and 9' and 2 tell us the
+width of the flat surfaces that replace the arced portions of the offset key. 
+Note that separations not explicitly computed by the program can be computed
+by hand from the coordinates before and after rotation.
+
+The program doesn't explicitly calculate the lengths of the various faces of
+the key.  However, if the user needs these values for some reason, they're
+easily calculated from the data.  For instance, if one wants to know the
+length of the 9'-3' face:
+
+From the data:
+
+b[3] = 0.2500, 0.6830 => a[3] = 0.3086, 0.6586
+a[9] = 0.2888, 0.4330
+
+Then:
+
+dx = a[9].x - a[3].x = 0.2888 - 0.3086 = -0.0198
+dy = a[9].y - a[3].y = 0.4330 - 0.6586 = -0.2256
+
+And the desired length is:
+
+sep = sqrt (dx*dx + dy*dy) = sqrt (0.051287) = 0.226
+
+To make its calculations, the program needs to know the depth of the
+original keyway (marked 'Q' in OFFKEY1.JPG).  I have a program on my page
+(KEYWAY) used for designing proper keyways.  I included those calculations in
+OFFKEY so that the program would automatically calculate 'Q' from the key
+dimensions ('H' and 'K') and shaft diameter ('D') input by the user.  This
+desired value is the default when the program requests the value for 'Q'.  If
+you have an existing keyway, you can override the default and use the value
+measured from your part. The easiest way to measure Q is to measure the
+distance from the bottom of the keyway to the side of the shaft opposite the
+keyway.  Subtract this value from the shaft diameter and the resulting number
+is Q.
+
+There are two reasons for including the KEYWAY calculations.  First, it serves
+as a 'sanity check' so the novice can assure himself that he hasn't gotten
+something wrong.  Second, a user may wish to use this program in an iterative
+mode.  "I want to design a keyway such that, if I need to offset it by a
+maximum of X degrees in the future, I can make the required offset key."  If
+the KEYWAY calculations were not included in OFFKEY, solving this problem
+would require going back and forth between the two programs.  It's easier to
+have it all in one place, even if it makes the output a tad verbose.
+
+Note that the program does not specify any units for the inputs requested of
+the user.  Users in metric countries should enter all measurements in
+millimeters and the answers will be in millimeters.  For those still using the
+Imperial system, use inches and the results will be in inches.
+
+The program assumes a clockwise rotation and the diagrams show a
+'right-handed' key.  It should be obvious that, if you need a 'left-handed'
+key, make a right-handed key and install it the other way round.  (Duh, I
+know, but you wouldn't believe some of the questions I get.)
+
+If you have suggestions for changes or improvements to this program, contact me
+at:  mklotz@alum.mit.edu
+

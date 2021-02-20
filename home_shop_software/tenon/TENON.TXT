@@ -1,0 +1,26 @@
+	A common metal work operation involves cutting a regular polygonal
+tenon on the end of a shaft.  Most frequently, the tenon is square or
+hexagonal.
+
+	I generally do this by mounting the cylindrical stock in a Spindex on
+the milling machine.  Zero the cutter against the stock surface, then lower it
+by the required depth-of-cut (doc).  Take a cut, rotate the Spindex by the
+required angle, cut and repeat these operations until the tenon is formed.
+
+	Calculating the required doc when the tenon has an even number of
+sides is relatively straight-forward but recently I wanted to make a
+pentagonal tenon to serve as an "Allen key" to remove some tamper-proof bolts.
+Tenons with an even number of sides are easily specified by the "across flats"
+measurment but, with an odd number of sides that's not easily done with
+accuracy.  A better procedure is to specify the diameter of the circle that
+just circumscribes the required tenon polygon.  Formulas that relate diameter
+of inscribed and circumscribed circles to other properties of regular polygons
+are available in most mathematics handbooks.
+
+	The program will calculate the required doc (and Spindex rotation
+angle) given the size of the stock, number of sides on the polygon, and either
+the distance across flats (for even sides) or diameter of circumscribing
+circle (for odd sides).  It does no checking for idiocy.  If you want to cut a
+1" across flats hexagon on a piece of 0.25" diameter stock, you need more help
+than any program can ever supply.
+

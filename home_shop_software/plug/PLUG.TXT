@@ -1,0 +1,128 @@
+Les Saunders has a clever scheme for measuring the diameter of holes larger
+than the largest plug gage in his set.  He uses three pins.  Two pins are of
+course possible, but very difficult to hold in position.  Three pins provide a
+more stable measuring configuration.
+
+Of course, to do this, one needs to know *which* three pins should be used. 
+Put another way, the problem is to calculate the diameter of the circle just
+tangent to three circles (of differing diameters), each of which is tangent to
+the others.  2000 years ago Appolonius addressed this problem.  Much later
+(1936), a mathematician named Soddy derived a formula for this circle, known
+now as the 'outer Soddy circle' (yes, there is an inner Soddy circle, but we
+don't need to go into that - it's the solution to the well-known four coins
+problem).
+
+Basically, you tell the program the size of the hole to be measured and it
+searches the set of plugs you've defined to find a set of three such that the
+Soddy circle of those three matches the hole diameter to within a tolerance
+that you input.
+
+The more subtle aspects of the program are best dealt with by annotating the
+default case built into the program.
+
+Smallest plug gage available [0.0608 in] ?
+Largest plug gage available [0.9998 in] ?
+Plug-to-plug increment [0.001 in] ?
+
+[Define the plug gage set that you have available.  The program assumes that
+individual plugs are separated by a constant size increment.  Most commercial
+sets are so graduated.  If yours isn't, the program *can* be modified to handle
+that, but it will require putting all the available plug sizes into a data
+file.  If you *really* need this capability, contact me at
+mklotz@alum.mit.edu.]
+
+Largest hole that can be measured = 2.1521 in
+
+[The Soddy circle of the three largest plugs in the set defines the largest
+hole that can be measured.  Values larger than this will be rejected by the
+program. Of course, holes smaller than the largest available plug gage would
+be measured directly with one plug.]
+
+Nominal hole diameter to measure [0.5366 in] ?
+
+[The size of the hole you want to measure.]
+
+Allowable tolerance in matching hole diameter [0.000001 in] ?
+
+[Only plug combinations that come within this tolerance of the nominal hole
+diameter will be reported.  In the default I have this set to a very small
+value to limit the amount of output the program produces.  With a large
+selection of plugs (the case here) and a generous tolerance (say 0.0001"), the
+amount of output generated can become immense.]
+
+Single pin size = 0.2490 in
+
+[Les prefers that the three pins all be about the same size.  Here the program
+computes the size of the pin such that three of them would have a Soddy circle
+exactly equal to the nominal hole size.]
+
+Allowable difference in pin sizes [0.05 in] ?
+
+[The program will limit its search to plugs that are within this range (+/-)
+of the single pin size.  If, like Les, you want three pins that are about the
+same size, keep this value relatively small.  On the other hand, if you want
+to know *all* the combinations that will work (you probably don't), make this
+value large.  Making this value something like '1' here will examine all the
+pin combinations.  But, if you do that, be forewarned.  Unless the allowable
+tolerance (above) is set small, you'll get a huge output.  In practice, one
+needs to 'twiddle' this number in concert with the allowable tolerance to
+tailor the volume of one's answer.]
+
+Have patience ... PRESS SPACEBAR IF YOU WANT TO BAIL OUT
+
+[Depending on how you've set the allowable tolerance and difference, it will
+take a while to search all the combinations.  If you're getting immense output
+or no output at all, abort the run by pressing the spacebar (actually, *any*
+key will do) and try again.  While running, the output may scroll off the
+screen.  Never fear - it's also being written to a file.  The screen output is
+there mainly to let you know what, if anything, is being written to the file.]
+
+0.1988, 0.2488, 0.2838 => 0.5365909 (error = -0.0000091)
+0.1998, 0.2578, 0.2748 => 0.5366082 (error = +0.0000082)
+0.2008, 0.2338, 0.2968 => 0.5365989 (error = -0.0000011)
+0.2008, 0.2448, 0.2868 => 0.5365919 (error = -0.0000081)
+0.2018, 0.2378, 0.2928 => 0.5366009 (error = +0.0000009)
+0.2038, 0.2368, 0.2928 => 0.5366070 (error = +0.0000070)
+0.2068, 0.2328, 0.2948 => 0.5365955 (error = -0.0000045)
+0.2078, 0.2298, 0.2968 => 0.5365904 (error = -0.0000096)
+0.2088, 0.2548, 0.2738 => 0.5365913 (error = -0.0000087)
+0.2108, 0.2338, 0.2918 => 0.5366095 (error = +0.0000095)
+0.2108, 0.2548, 0.2728 => 0.5366096 (error = +0.0000096)
+0.2118, 0.2378, 0.2878 => 0.5366054 (error = +0.0000054)
+0.2128, 0.2348, 0.2898 => 0.5366047 (error = +0.0000047)
+0.2128, 0.2568, 0.2698 => 0.5366093 (error = +0.0000093)
+0.2138, 0.2488, 0.2768 => 0.5365997 (error = -0.0000003)
+0.2158, 0.2238, 0.2968 => 0.5366013 (error = +0.0000013)
+0.2188, 0.2238, 0.2948 => 0.5366099 (error = +0.0000099)
+0.2188, 0.2488, 0.2738 => 0.5365973 (error = -0.0000027)
+0.2198, 0.2448, 0.2768 => 0.5365981 (error = -0.0000019)
+0.2208, 0.2298, 0.2888 => 0.5365928 (error = -0.0000072)
+0.2208, 0.2418, 0.2788 => 0.5365935 (error = -0.0000065)
+0.2238, 0.2538, 0.2658 => 0.5365970 (error = -0.0000030)
+0.2248, 0.2398, 0.2778 => 0.5365928 (error = -0.0000072)
+0.2248, 0.2488, 0.2698 => 0.5365981 (error = -0.0000019)
+0.2258, 0.2278, 0.2868 => 0.5365980 (error = -0.0000020)
+0.2258, 0.2378, 0.2788 => 0.5366049 (error = +0.0000049)
+0.2308, 0.2428, 0.2708 => 0.5366077 (error = +0.0000077)
+0.2318, 0.2528, 0.2608 => 0.5365935 (error = -0.0000065)
+0.2328, 0.2338, 0.2768 => 0.5366071 (error = +0.0000071)
+0.2328, 0.2488, 0.2638 => 0.5365974 (error = -0.0000026)
+0.2378, 0.2518, 0.2568 => 0.5366022 (error = +0.0000022)
+0.2388, 0.2488, 0.2588 => 0.5365921 (error = -0.0000079)
+0.2418, 0.2438, 0.2608 => 0.5365974 (error = -0.0000026)
+
+[Using the default tolerance and difference, the program produces acceptable
+solutions.]
+ 
+Your data is on: PLUG.OUT
+
+[The same data that's being written to the screen is also written to an ASCII
+file in the default directory.  This file can be examined/edited with any
+word processor or code editor and then printed, if desired.  This file is
+re-initalized every time the program runs so be careful to save it under
+another name if you have results you want to preserve.]
+
+Also included in this package is SODDY which, as the name suggests, computes
+the diameter of the outer Soddy circle given the diameters of the three circles
+(plugs) contained therein.
+

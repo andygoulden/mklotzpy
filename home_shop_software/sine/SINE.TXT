@@ -1,0 +1,73 @@
+	 Every time I need to machine a precise angle, I'm put off by the
+tedium of setting up the sinebar.  Besides, sinebars and angle blocks are
+expensive given their infrequent use in the home shop.
+
+	I've hit on a nice way to construct a simple, accurate sinebar for
+ANY angle in almost less time than it takes to set up a commercial one.  The
+idea depends on the fact that most home machinists have a lathe and can
+make cylinders with very accurate diameters.
+
+	If two cylinders of unequal diameter (d1 < d2) are held such that their
+center-to-center distance is R, anything laid across the top of the two
+cylinders will lie at an angle of:
+
+		theta = 2*arcsin(0.5*(d2-d1)/R)
+
+	Make two identical links of 1/8" thick steel about 1/4" wide and drill
+and ream for 1/8" pins spaced R inches apart.  I chose R to be 3" (about 3/4 of
+the width of my milling machine vise jaws).  It's best to gang drill and ream
+the holes so both links have identically spaced holes.
+
+	Now, let's say we need a sinebar for angle theta = 10 deg.  Choose a
+convenient size for d1, say 3/8".  Make a 3/8" diameter cylinder long enough
+to hold the workpiece and drill and ream it for a 1/8" pin.  Calculate the
+diameter of the second cylinder according to the formula:
+
+		d2 = 2*R*sin(0.5*theta) + d1
+
+	For our example, d2 turns out to be 0.898".  Make a cylinder of this
+diameter and drill/ream for a 1/8" pin.
+
+	Connect the two cylinders with the links and pins and there you
+are - a custom sinebar, preset, ready for use.  Just lay it down, clamp the
+work on top and start making chips.
+
+	In order to fit on the links, d1+d2 must be less that 2*R.  You may
+have to fiddle with d1 and R a bit to find a combination that will work for
+your application.  Once you've acquired a collection of various d1 cylinders,
+you'll have little more to do than selecting an available one and making the
+d2 cylinder needed for the desired angle.
+
+	How accurate is this method?  The math is a bit messy for the general
+case, but, for the example given, a one thou error in the diameter of either
+cylinder will cause an angle error of 0.01 deg.  A one thou error in R will
+cause an angle error of 0.002 deg.  More than accurate enough for most
+applications.
+
+--------------------------------------------------------------------------
+
+Update 5/16/01
+
+I was out in the shop today to machine a cylinder (according to the plan
+above) for a 1.5 deg sinebar I wanted for a clearance angle I needed to cut
+when it hit me (sharp slap to forehead), "we don't need no steenkin' links". 
+If I take two cylinders of diameters d1 (smaller) and d2 (larger) and lay them
+in contact with each other on a horizontal plate, a flat plate placed across
+them will form an angle, theta, with the horizontal given by:
+
+		d1/d2 = (1-sin(theta/2))/(1+sin(theta/2))
+
+The link isn't needed - the cylinders provide their own spacing if you adhere
+to the formula above.
+
+So I came back to the computer and wrote SINENL (SINE-No-Link) to implement
+this calculation.  Using it, I decided that cylinders of 0.75" (what I had to
+hand) and 0.7306" (ok, call it 0.731") would do the trick.  Turned a piece of
+my 0.75" bar down to 0.731", parted it off along with an equal length chunk of
+the original stock and stuffed both chunks up against a stop in the milling
+machine vise with a bit of modeling clay pusher to hold them in contact.  Put
+the part on top of the cylinders, clamped the vise shut, applied cutter, and
+voila, a nice 1.5 deg champher.
+
+
+

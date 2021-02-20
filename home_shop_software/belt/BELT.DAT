@@ -1,0 +1,51 @@
+Data for BELT
+
+Enter pulley data counter-clockwise order around the belt path.
+Enter one line of data for each pulley.  Each line consists of:
+		x,y,diam,flag
+where:
+
+x = x axis location of pulley center
+y = y axis location of pulley center
+diam = diameter of pulley
+flag = +1 if pulley center inside of belt loop, -1 if outside (e.g., an idler)
+
+Note: x,y and diam must be in compatible measurement units
+
+anything above the line below is ignored
+STARTOFDATA
+
+;Example with a slack pulley
+-2.36,0.465,0.25,1
+0.325,-0.62,0.25,1
+0.0,0.0,1.0,-1
+0.69,0.22,0.25,1
+0.54,1.33,0.75,1
+-1.1,1.23,0.25,-1	;this pulley should be slack
+
+;above the line below requires a semicolon
+ENDOFDATA
+this is below the line and has no semicolon
+
+Example with a slack pulley
+-2.36,0.465,0.25,1
+0.325,-0.62,0.25,1
+0.0,0.0,1.0,-1
+0.69,0.22,0.25,1
+0.54,1.33,0.75,1
+-1.1,1.23,0.25,-1
+
+Some two pulley examples for a conical pulley arrangement where the belt length
+is fixed.
+0,0,1.4,1
+2.5,0,0.603,1
+
+0,0,1.5,1
+2.5,0,0.477,1
+
+0,0,1.6,1
+2.5,0,0.343,1
+
+0,0,1.7,1
+2.5,0,0.200,1
+

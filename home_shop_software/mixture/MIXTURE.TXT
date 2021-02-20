@@ -1,0 +1,26 @@
+	MIXTURE allows one to calculate mixture variables and dilutions. 
+Dilutions are treated as mixing a solution with another solution that has a 0%
+concentration of the active ingredient.
+
+	Several comments are in order.
+
+	First, concentrations should be specified in consistent percentages. 
+If you specify the first concentration as Ca % (by volume) then it's only
+logical to specify the concentration of the second solution by volume.  If
+specifying concentrations by weight the same constraint of consistency
+applies.
+
+	Second the 'amounts' should have consistent units - with each other
+and with the concentrations specified.  If specifying concentration by volume
+then use a consistent set of volume units.  If by weight then use weight
+units.  The program indicates no 'amount' units in its answers - the
+appropriate unit is assumed to be the one you used in inputting data.
+
+	Third, the program makes no attempt to check for all the forms of
+idiocy possible with such a calculator - if you try to mix up a 50% solution by
+diluting a 10% reagent and get a stupid answer or the program hangs up, that's
+your problem, not mine.
+
+	On the other hand, if you find any legitimate errors, contact me at:
+mklotz@alum.mit.edu.
+

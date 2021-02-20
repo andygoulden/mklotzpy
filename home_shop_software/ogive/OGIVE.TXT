@@ -1,0 +1,20 @@
+An ogive is the shape formed by the pointed Gothic style arches.  It is formed
+by the intersection of two circular arcs such that a sharp point is formed at
+the point of intersection.  Of more application to metalworkers, 'ogive' is
+also used to describe the three dimensional shape typical of a rocket nose
+cone.  It's cross-section has the same mathematical description as the Gothic
+arch.
+
+I wanted to turn such a shape on a nose cone for a (non-functioning) "rocket"
+for a neighborhood child, so I wrote this program.  In the same manner as
+PROFILE, it allows the user to develop an incremental cutting schedule for
+roughing out the ogive shape, which is then finished by filing, sanding, etc..
+
+In the data file specify the diameter and length of the ogive as well as the
+details of tool, stock and step size.  The program will take it from there.
+
+For the mathematically inclined, a nice treatment of the mathematics of the
+ogive can be found at:
+
+	http://www.geocities.com/rocketguy_101/ogive/OgiveNoseCones.htm
+

@@ -1,0 +1,44 @@
+	Rather than setting up the four-jaw chuck, a quick way to turn an
+eccentric on the lathe is to place a piece of packing material between one of
+the jaws of the three-jaw chuck and the work.  This will shift the geometric
+axis of the workpiece away from the spin axis of the lathe and allow one to
+turn what is normally termed an eccentric (as opposed to a cam, which is
+typically not cylindrical in form).
+
+	Calculating the thickness of the packing to use for a given eccentric
+offset is non-trivial so I wrote a tiny program to perform the calculation.
+One of the inputs it requires from the user is the "width of the chuck jaws".
+Be careful here.  The width referred to is the width of that part of the jaw
+that actually contacts the work, not the width of the (generally wider) part
+of the jaw that rides in the chuck slot.  For instance, on my chuck, the jaw
+body is about 5/8" wide but tapers to a 3/8" width where it contacts the
+work.  The correct measurement to use in this case is 3/8".
+
+	Measuring the jaw width can be tricky and the packing idea doesn't make
+for the most stable of supports.  Fortunately there is a better way to turn
+eccentrics in a three-jaw.
+
+	Imagine a tube bored to be a sliding fit on the parent stock.  A slot
+of sufficient width to pass one of the three-jaw chuck jaws is milled in this
+tube.  The parent stock is inserted in the bore and the whole thing clamped in
+the three-jaw chuck such that one jaw passes through the slot to seat on the
+parent stock while the other two jaws seat on the circumference of the tube. 
+Obviously the centerline of the parent stock is offset from the lathe spindle
+axis and turning will produce an eccentric.  If we know the OD of the parent
+stock and the amount of the offset required, it's possible to calculate the OD
+of the tube needed to produce just that offset when clamped as described
+above.  That's exactly what ECCENTUB does.
+
+Update 9/01:
+
+David Hoskins of Australia pointed out an error in my coding of the pertinent
+equation - thanks, Dave.  Furthermore, he pointed out some subtle points that I
+had missed - points that affect the calculation when the required packing is
+very small or very large.  I have incorportated his corrections in the current
+version.
+
+David has written a Windows program to implement his calculations.  Users
+interested in that program should contact David directly at:
+
+			davhos@magna.com.au
+

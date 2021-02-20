@@ -1,0 +1,31 @@
+	It seems a lot of people have difficulty calculating the weight of an
+object by calculating the volume and multiplying by the density of the
+material of which it is made.
+
+	WEIGHT takes the pain out of doing just that.  The data file
+(WEIGHT.DAT) contains approximate densities for some common materials.  You can
+add/subtract to that file using an ASCII editor.
+
+	After selecting the material of choice or inputting a known density
+value, you can select one of the available shapes, specify the relevant
+dimensions, and WEIGHT will calculate the volume and the resulting weight for
+the selected material.  Alternately, if you know the volume a priori, that can
+be entered directly.
+
+	If I've left out your favorite shape, send me the formula for the
+volume and I'll add it.  Note that many complex shapes can be "subdivided" into
+simpler shapes, the weights calculated separately and then summed for the final
+weight.  To this end, WEIGHT maintains a running total of the volumes and
+weights calculated in a particular session.  After the weight/volume of the
+current shape is calculated the user is prompted to enter a factor indicating
+how many of the currently calculated weights/volumes should be added to the
+running total.
+
+For example, suppose you want to calculate the weight of a cylindrical tank
+with flat ends.  Use shape number '3' (cylindrical pipe) to calculate the
+weight of the tank body.  When prompted, add one (the default) of these shapes
+to the running total.  Now use shape number '2' (cylindrical solid) to
+calculate the weight of one of the ends.  When prompted, add two of these
+shapes to the running total.  At this point the running total is the total
+weight of the tank.
+

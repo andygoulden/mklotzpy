@@ -1,0 +1,49 @@
+Update: 2/13/2003
+
+Ron McCabe asked about the constant I used in the formula for calculating the
+correct tap drill diameter.  
+
+tap drill diameter = basic major diamter - K * %depth-of-thread / tpi
+
+For K, I had been using 1.299..., but Ron indicated that his copy of
+Machinery's Handbook suggested 1.082...
+
+My copy of MH recommends 1.299... for the "American National Thread Form" and
+1.082... for the "American Unified Thread Form".  Although it's all a bit
+fuzzy, apparently the smaller number accounts for the truncated thread crest
+that's part of the Unified specification.
+
+The Unified thread form was introduced ca WWII to provide interchangeability
+among parts manufactured by the Allies.
+
+First, a couple of remarks.  Most taps and dies cut sharp crested threads.  A
+thread cut on a lathe will have a sharp crest unless the operator purposely
+truncates it.  Use of the 1.299... constant in the program produces tap drill
+sizes that agree perfectly with published charts available from many reputable
+sources (including tap suppliers).  The 1.082... constant produces somewhat
+larger tap drill recommendations, although the differences aren't large enough
+to make or break the average home machinist's project.  There is the
+possibility that some professional machinist might use the program, however.
+
+So, I copped out.  I altered the program to request from the user the Thread
+Form standard he desired.  This way, the professional can pick his nit if he
+wishes to.  The default answer to this question is the National Thread Form
+(the 1.299... constant) so the amateur cutting sharp crested threads can use
+the default (just hit Enter when the program asks the question) and get results
+that agree with the published tables.
+
+I did something similar for metric threads.  MH recommends 1.082... for ISO
+Metric Thread Form but using this value produces tap drill sizes a bit larger
+than what is in the published tables.  Using the 1.299... number, as with
+Imperial threads, produces values that agree with the tables.  Again I left
+the choice up to the program user.  Again, if you're cutting sharp crested
+threads, use the default (1.299...) if you want values that agree with
+published table values.
+
+The whole issue strikes me as a tempest in a teapot.  The 'right' percentage
+depth of thread is hardly something that can be determined to three or four
+digits of precision.  The drill he's going to use is only approximately what
+the theoretical value derived from the equation says.  Maybe if you're making
+parts for the next Mars explorer the difference between 74% and 76% depth of
+thread matters but, for the home machinist, it's irrelevant.
+

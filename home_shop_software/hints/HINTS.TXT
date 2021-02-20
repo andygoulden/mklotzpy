@@ -1,0 +1,618 @@
+	This is a file of various hints and mini-projects that are too small
+to merit a diagram, lengthy explanation or a full blown article in a magazine.
+Most of the ideas would require tailoring to your own situation so a detailed
+diagram would be a waste - although, in many cases, I've suggested the
+dimensions I used to give you an idea.
+
+	Items are arranged in no particular order - I simply add to the file as
+ideas occur to me.
+
+	I welcome suggestions for additions to this file.  Email me at
+mklotz@alum.mit.edu.  If I add your hint, I'll be sure to give you credit.
+
+==============================================================================
+
+A REALLY POSITIVE DEPTH STOP NUT FOR THE MILLING MACHINE
+
+       The two nuts that came on the threaded depth stop rod on the milling
+machine were not only hard to adjust but they tended to slip.  When I use the
+depth stop it's generally to prevent drilling through something into which I
+put a lot of time.  I want to be able to trust it.  I made about four
+different designs that weren't very satisfactory before I hit on one that
+works for me.
+
+       Knurl a slug of brass and thread it to fit on the depth stop rod. 
+Split it into two separate nuts.  On one of them drill six holes (3/32"
+diameter), equally spaced and parallel to the threaded hole.  On the other
+drill a 3/32" hole on the same radius and loctite in a short length of drill
+rod.  Now bore out the one with the pin so it's a smooth slip fit over the
+depth stop rod.  Make sure that with both nuts mounted on the rod the pin can
+engage any of the six holes in the periphery of the other.  Cross drill the
+one with the pin and thread for a small, knurled, finger-operated locking
+screw.
+
+       In use the threaded nut is threaded on the rod first.  The second
+follows with the pin pointing down.  Now, it's a lot easier to spin one nut
+than two in order to make the adjustment.  Once the threaded nut is adjusted
+the one with the pin drops down and engages one of the holes.  Tightening the
+locking screw against the flat on the depth stop rod absolutely guarantees
+that the bottom nut will not go anywhere.  Six holes gives me a fine enough
+adjustment for the less than precise use I make of the depth stop rod.  (I
+have a dial indicator mounted for really precise measurements.)  One could use
+more holes if desired.  By considering the thread on the rod, one can pick a
+number of holes that gives a convenient size nut advance for one angular hole
+increment.  With a 20 tpi depth stop rod five holes would yield an advance of
+ten thousandths per hole.
+
+==============================================================================
+
+LATHE CHUCK WRENCH SPINNER
+
+       Take a 3-1/2" length of 1" diameter aluminum rod and form a hemisphere
+on one end (see BALLCUT.ZIP).  About 1/2" from the end opposite the hemisphere
+cross drill a hole to match the diameter of the arms on your 3-jaw chuck
+wrench.  Center drill and tap the flat end for a suitable setscrew.  Mount
+this on one of the chuck wrench arms so it touches the central rod with the
+square tenon that goes in the chuck hole.  A flat filed on the bottom of the
+wrench arm where the setscrew seats helps to keep the hemispheric end pointing
+vertically away from the square bit.  Now put the wrench in the chuck and put
+the palm of your hand on the hemisphere.  By rotating your hand in a small
+circle you can crank the wrench rapidly to move the jaws in or out.  The
+beauty of this design (versus a crank used separately from the chuck wrench)
+is that the device is always there where you need it and the chuck wrench arms
+are available for extra torque when you need to dog the jaws down.
+
+==============================================================================
+
+LATHE CHUCK CRANK
+
+       Even though a lathe chuck crank isn't the greatest idea for adjusting
+the jaws when the chuck is on the lathe, it's very useful when the chuck is
+sitting on your workbench.  I generally remove my chuck to change the jaws
+because it's more convenient and reminds me to clean the scroll and chuck
+jaws.  Mill a short piece of HRS to a square tenon that's a close, smooth fit
+in the chuck holes.  Turn the opposite end to 3/8" diameter for about a 1/2"
+and mill a flat on it.  Make the bar of the crank of 1/2" x 1/2" steel. It's
+length should be such that the crank can be conveniently turned with no
+knuckle banging when the chuck is sitting face up on a bench (protect the
+register with a cork pad).  Mount the square key in a 3/8" cross-drilled hole
+in the arm with a setscrew coming from the end to hold it in place.  Although
+it could be soldered/brazed in place the setscrew arrangement gives you the
+option of making another square key to fit the holes in your 4-jaw (or other
+chucks). The spinner is a one inch length of 3/8" diameter brass - nicely
+polished. Drill 1/4" to take a 3/4", 10-32 shoulder bolt.  Carefully
+counterbore for the head of the bolt so that, when the bolt seats in a tapped
+hole in the crank bar, the spinner is just free to turn smoothly.
+
+       A hint.  After you've removed the jaws from the chuck, insert a
+toothbrush in one of the jaw channels with its bristles in the scroll threads.
+Turn the crank so that the toothbrush is moved toward the chuck periphery.  It
+will sweep all the swarf out of the scroll and drop it over the edge of the
+chuck and onto the bench.
+
+==============================================================================
+
+CORNER CENTER PUNCH
+
+       I don't like marking out and I'm not very good at it.  One of the many
+things I don't do well is get the prick punch on the point where the two mark
+out lines cross.  Even a magnifying glass on the punch doesn't give me
+consistent results.  Try this.  Take a 1" length of 1" diameter brass and 
+drill/ream a 1/8" hole as close to center as your facilities permit.  Put a 60
+degree (included angle) point on a 1-1/4" length of 1/8" drill rod.  Harden
+and temper the point as you would for a prick punch.  (It only took me three
+tries to get this right.)   Mount the brass slug in the milling vise and, as
+precisely as possible, carve away one-quarter of it so that the resulting
+shape looks like a one-quarter eaten wheel cheese.
+
+       Push the drill rod prick punch into the hole.  In use one sets the
+device on the work and aligns the two edges of the cut away portion with the
+(usually perpendicular) layout lines.  This automatically places the prick
+punch over the intersection of the lines.  Tap lightly with small hammer and
+then apply the center punch.  Works for me!  I've made some of these for
+friends as gifts and they've been well received.
+
+==============================================================================
+
+PLASTIC TUBE OVER MAGNET
+
+       Mount an aluminum (or any non-magnetic material) handle to a small,
+high-strength pot magnet.  Pick a magnet diameter that's a nice fit in a piece
+of PVC tubing (or machine a piece of plastic to fit the magnet).  Close one
+end of the PVC with a thin (important - magnetic field strength decreases as
+1/r^2) plastic cap or a thin piece of plastic cemented in place.  Use this to
+remove ferrous chips from whatever.  Once the chips are caught, hold the unit
+over the waste bin and withdraw the magnet from the PVC.  Chips will fall
+cleanly away and the magnet will require no cleaning.
+
+==============================================================================
+
+HENCH
+
+       The drawbar on my mill-drill requires a LIGHT tap with a hammer to
+loosen it after it's been used to draw in a tool.  Make a (H)ammer-Wr(ench).
+Mill a 3/8" square tenon on one end of a 2" length of 3/4"(AF) hex steel. 
+Mount a (commercial) 3/8" socket that fits your drawbar on this tenon with a
+screw-washer combination threaded into a hole in the center of the tenon. 
+Attach (solder/thread/interference fit) a 1/2" thick slug of hard brass (so
+you won't damage the drawbar nut) to the other end.  Cross drill and tap the
+hench body for a length of 3/8" steel rod.  Mount to a file handle.  Now after
+loosening the draw-bar nut with the socket you need only flip the tool in your
+hand to have a safe way of tapping the drawbar loose.
+
+==============================================================================
+
+THE BINARY SYSTEM IN THE SHOP
+
+       I would like to make a set of spacer blocks.  I want them primarily for
+their convenience - not their accuracy.  A one thousandth tolerance will be
+good enough for the purposes I envision.  The question is what sizes to make. 
+With blocks of 1,2,3,5 units I can construct all the integer unit lengths up to
+1+2+3+5=11.  A better solution is to make the blocks according to the binary
+system, i.e. each one has a length which is an increasing integer power of 2. 
+In this case it would yield 1 (=2^0), 2 (=2^1), 4 (=2^2), and 8 (=2^3).  This
+combination of four blocks will produce all the integer unit lengths up to
+1+2+4+8=15.  I don't want to bore you with a mathematical proof, but, for a
+fixed number of blocks, you will always get a broader COMPLETE range of unit
+combinations if the blocks are made in lengths that agree with the binary
+numbering system.  It's not a general proof but you might try (as a puzzle)
+finding a four integer combination (other than 1,2,4,8) that can be combined
+to yield all the unit sums up to 15.
+
+       Anytime you want to make up measuring sets make them according to the
+binary system and you'll get maximum range for minimum fabrication effort.
+Obviously this applies to making weights for a scale as well.  I did this with
+a small beam scale I made and it worked out very well. It seems simple to me
+because I'm intimately familiar with the binary number system via my computer
+work.  Others may have a short period of adjustment but, what the heck, a
+little adjustment for the sake of elegance is always well advised.
+
+	An added benefit is that, once you've made them, you can decide which
+ones to use for a given size by expressing that size as a binary number and
+choosing the ones corresponding to a 'one' in the binary number.  Suppose you
+need a 10 unit item.  Many scientific calculators (an essential shop tool)
+will tell you that:
+
+	10 (decimal) = 1010 (binary) = 1*8 + 0*4 + 1*2 + 0*1
+                       ^^^^
+		       3210
+
+So, you need the 2^3 (=8) item plus the 2^1 (=2) item to make a 10 unit item.
+(I know, you could have done that in your head, but once you make a set with
+fifteen blocks, you may find this approach a time-saver.)
+
+==============================================================================
+
+SET-DOWN TURN-OFF BASES FOR ELECTRICAL DEVICES
+
+	Battery powered devices that are used intermittently tend to get left
+on either via laziness or forgetfulness.  There's a way to save yourself the
+effort and expense of constantly replacing batteries.  Mount the device to a
+sturdy, weighty base.   Depending on the application, the weight of the base
+can be achieved with the batteries that power the unit in question.  Screw a
+small micro switch to the base in such a way that when the base is set on
+something the switch is depressed.  Wire the power circuit of the device
+in question through the switch.  Now when you pick it up it will turn on
+automatically and when you set it down it will turn off automatically.  I've
+done this with pulse detectors, modulation detectors and such and it's worked
+well.
+
+==============================================================================
+
+CARBURETOR CLEANER AS A DEGREASER
+
+       There must be a company somewhere manufacturing high-intensity oily
+dirt which is sold in large quantities to every metal supply house. 
+Commercial (STP is only one brand) carburetor cleaner in aerosol cans is the
+only thing I've found that will cut this and virtually any other kind of
+persistent oily dirt INSTANTLY and with no rubbing effort.  The stuff is
+flammable as hell and not fun to breathe so use it outdoors if possible.  In
+the shop don't spray it on the surface to be cleaned.  Spray it onto a rag
+held against the spray tip.  Discard rag safely and immediately in a sealed
+container.
+
+	This is a great way to clean parts before using loctite.  Most loctite
+products won't hold worth a damn on oily parts.  Make sure the part is dry
+before applying the loctite.
+
+==============================================================================
+
+PRECISION DEPTH GAUGE FOR TAILSTOCK DRILLING
+
+       I made an aluminum collar that clamps onto the tube on my tailstock.  A
+setscrew on the bottom fits into the tube slot that prevents the tube from
+rotating when it is advanced.  On the top is a small block that holds an
+adjustable sliding rod parallel to the tube and about 1/2" above the (flat in
+the case of my tailstock) top of the tailstock.  In use a dial indicator is
+attached to a low profile magnetic clamp and placed on the top of the
+tailstock.  The sliding rod is used to communicate the motion of the tube to
+the dial indicator.  [The neat thing about dial indicators (I have them
+mounted on everything!) is that they are virtually backlash free.] I don't use
+this attachment very often but it's sure nice to have when I do need it.
+
+==============================================================================
+
+TWO SMALL VISES ON A BAR - AND AN ANGLE
+
+       One of the handiest devices I have is two small IDENTICAL (that's
+important) vises that mount on a length of 3/8" square steel rod.  I made the
+main bodies of the two vises as one piece (V-grooves as well) and then split
+the parts.  A milled 3/8" square groove in the main pieces serves to align and
+secure them on the mounting rod.  The movable jaws are blocks of aluminum
+mounted with 1/8" guide rods and stock 1/4-20 machine screws fitted with small
+knurled knobs for tightening.  I originally made this unit to hold awkwardly
+shaped model ship hulls on a Panavise base.  Then I discovered that it was
+ideal for holding long slender rods on both sides while sawing them.  Other
+uses will immediately suggest themselves.  Butt soldering parts is easy.  The
+3/8" rod is easy to clamp in the bench vise.  The extension that connects to
+the Panavise base can be made hexagonal in shape so that it may be grasped at
+different angles in the bench vise.
+
+       This device came into its own when I added a second 3/8" square rod
+perpendicular to the first rod.  They are joined with a half-lap joint
+secured by a recessed machine screw.  This joining ensures that the vises are
+in alignment when mounted on each of the two arms.  Now soldering and gluing
+at a right angle is easy.  I used the 90 degree arrangement as a test jig
+while building an "elbow" engine.  It was secure enough to let me test the
+device under power.  Try one - you'll like it.  BTW, it makes a really keen
+fly-tying vise.  You can add all sorts of attachments to hold thread, small
+tools, etc.
+
+	If you're into fishing you might appreciate another variation.  Making
+leaders, tying knots, etc. in the field can be trying at best.  I took a 6"
+length of 1" diameter aluminum and turned five 'U' shaped grooves (3/8" wide
+and 1/4" deep into it.  I wind various test leaders in these grooves and
+secure the free ends with finger operated lock screws.  I bored most of the
+body out to form a cylindrical cavity 1/2" in diameter and made a knurled
+brass plug that screws into the end of the cavity to (O-ring to prevent
+corrosion) seal it.  The cavity holds the needles, tweezers, and knot formers
+I use to form fishing knots.  I made a tiny brass (won't rust) machinist's
+clamp (roughly 1 x 3/8 x 3/8) with a threaded stud that holds the vise in the
+end opposite the cavity plug.  In use in the field, the body of the unit can
+be easily held between the knees with the hook secured in the mini-vise.  The
+correct test line can easily be unwound, attached to the hook, forming knots
+with the tools available from the cavity.  When done, throw the whole thing
+back in the tackle box where it will await the next big catch without
+everything coming unraveled or lost.  Screw a piece (or several) of spring
+steel to the mini-vise and they'll operate as friction "catches" to secure
+ends of line while you reach for a tool or a beer.
+
+==============================================================================
+
+TACHOMETER
+
+       The speed vs pulley setting chart on my Taiwanese milling machine
+seemed to be inconsistent - a given belt change led to different speed ratios
+according to the chart.  This seemed a physical impossibility so I set out to
+measure the speeds for myself.  (I was vindicated - the chart was indeed
+wrong.)
+
+       Now this idea isn't for everyone.  One of my other hobbies is
+electronics so I have an oscilloscope and counter - the latter essential to
+the process. I made a 1/2" thick by 3" diameter aluminum disk and in the
+center of the circumference cut a 3/32" inch rib that projects out 1/4" from
+the body.  Imagine an oversized hamburger sticking out of its bun on all
+sides.  Into the hamburger I drilled sixty (important number) 1/16" holes.  I
+mounted this on a shaft in the milling machine vise with my trusty Brinkman
+flashlight shining down through the holes.  Beneath the holes I mounted a
+small phototransistor connected to the scope and counter.
+
+       The rotating device chops the light and the output is a square wave.
+The scope is used as an aid to adjust everything so that the square wave is
+clean and achieves its maximum amplitude.  The counter counts the pulses. 
+With sixty holes the frequency displayed on the counter is one-for-one
+identical to the mill speed measured in revolutions per minute - no
+mathematical conversions are required.
+
+       The phototransistor type is not critical - any Radio shack generic type
+is probably OK.  The circuitry is trivial - two resistors and a battery are
+all that are needed.  Hobbyists who lack the counter (the oscilloscope is
+nice for making adjustments but not essential) might be able to locate a
+friend who has one.
+
+	If you're electronically clueless, email me and I'll send you the
+circuit diagram.
+
+==============================================================================
+
+DO IT WITH MIRRORS
+
+	It's difficult to check the progress of the work when using a pinch
+type knurling tool because the tool obscures the workpiece.  I mounted a
+mirror behind the tool at an angle so that I can see the backside of the work
+while setting the initial knurl pressure and watching the progress of the
+knurl.  Long ago I made a mount for the back of the carriage to hold a dial
+indicator and so could adapt this to hold the mirror.  Lacking this, a simple
+triangular frame bent from sheet metal (looks like a book holder) sitting on
+the cross slide might be used.
+
+	Speaking of mirrors, one mounted on a finger dial indicator makes
+centering work in the milling machine much easier.  I happened to have a small
+gimbal mounted microscope mirror lying around.  A light aluminum arm about two
+inches long was cobbled up with a clamp fitting that holds it on the indicator
+with the mirror at the end of the arm facing the dial indicator face.  Now when
+the indicator is turned with its face away from you the mirror can be easily
+adjusted so that the dial is visible.  When the dial indicator is facing you
+the two inch arm length offsets the mirror enough so that it's easy to "look
+around it" and view the indicator directly.  Since indicator motion is reversed
+when viewing through the mirror, I put a small piece of adhesive label on the
+dial face to serve as a positive indicator of which way the pointer is moving.
+
+==============================================================================
+
+THE LATHE IS NOT MEANT TO SUPPORT THE OPERATOR
+
+	I had an intermittent problem with recurring "rings" on workpieces
+when using the automatic carriage traverse on long turnings.  I was standing
+there in front of the lathe watching this happen one day when I straightened
+up, stopped leaning on the tailstock and started pondering the problem. 
+Magically the rings stopped occurring.  So I leaned forward to observe more
+closely, bracing myself against the tailstock gently, and they started
+happening again.  It only took me five or ten minutes to come to the
+astounding conclusion that maybe, just maybe, leaning on the tailstock might
+have something to do with the problem.  Somehow it never occurred to me that
+even the gentle pressure of my hand could affect the cutting action on such a
+massive tool.  I also found that leaning on the handle of the backgear cover
+(conveniently placed just where your hand wants to be when inspecting the work
+closely) could affect the cut. I know this makes me sound an awful dummy but I
+wanted to pass it along so that if you encounter the "ring" problem you'll be
+sure to get a cane to lean on when taking long cuts.
+
+==============================================================================
+
+BOOK HOLDER-OPENER
+
+	Working from an open book is generally a pain because, unless spiral
+bound, the book wants to keep closing.  A commercially available bookweight
+gave me the idea for something that solves the problem nicely for me.  I took
+a 1"x14" length of 1/8" thick clear plexiglas and cemented to each end a flat
+plastic petri dish (the disposable kind).  I filled each of these with bird
+shot and then cemented the covers on so spills were impossible.  This lies
+easily across the open book, you can read through the plexiglas, and the
+weights are outboard enough so that they don't obscure anything on all but the
+largest books.  If I build another one I will mount a hinge in the middle of
+the plexiglas bar so that the unit can "bend" more closely to the profile of
+the open book.  This will make it less likely to tip off very small books and
+will also allow it to be folded for storage.  Obviously the petri dishes
+aren't critical - any small flat container that can be filled with a weight of
+some kind will work.  One could get exotic and turn some fanciful low-profile
+shapes out of brass to serve as weights.
+
+	Whether or not you hand-load shotgun shells, a bag of bird shot is a
+great shop asset.  Get your wife or girlfriend to sew you a leather bag about
+4 x 4" - heavy canvas will probably work.  Fill it about 7/8 full with
+birdshot and you have the ideal "third-hand" for holding odd-shaped work to
+the bench.  "Nestle" odd-shaped pieces into the 'self shape conforming" bag
+(as metal engravers do) while you do precise filing or marking.
+
+	Bird shot is also very consistent in weight.  Borrow an accurate scale
+and weigh a (counted) hundred shot and compute the average weight.  Now throw
+a random number on the scale and calculate how many using the average weight.
+I'll bet, after counting, the error is +/- only one shot pellet.  I don't
+think I need to explain how this fact can be exploited in many weighing
+applications.
+
+==============================================================================
+
+JEWELERS HAVE WORKED THIS PROBLEM
+
+	Speaking of leather.  Jeweler's know that when working on tiny
+assemblies, a minute part, if dropped onto a resilient surface, can achieve
+incredible velocities and launch itself into impenetrable recesses in the shop
+environment.  They use a leather sheet, slung loosely below the working
+surface to catch dropped parts.  The loosely slung leather is very 'soft and
+lossy' and the part will not bounce when it is dropped onto it.  You can
+achieve the same effect by placing small mechanisms on a thrice folded, soft
+cotton flannel baby blanket while you work on them.  I've dropped damn near
+microscopic watch screws onto such a surface and they seldom get more than a
+half-inch from where they fall. Choose an unpatterned baby blanket - white
+(for maximum visual contrast) is the best color.  Avoid anything with a deep
+pile or the part will lose itself in the pile.
+
+==============================================================================
+
+YOUR HOME SHOP NEEDS AN IV STAND
+
+	When my daughter's cheap desk chair broke, the five-arm base with
+rollers was still in fine shape and, hating to throw anything away, I thought
+about how I might use it in the shop.
+
+	I bought a 6' closet rod (one of those ~1 & 1/2" diameter wooden rods
+one uses to hang clothes in a closet), turned the end down (get an outboard
+support) to fit the chair base and mounted a crossbar to the top.  The result
+looked for all the world like the sort of IV stand one sees in a hospital. I
+happened to have a circular piece of plywood left over from a cable spool.  I
+cobbled up a clamp to grip the closet rod and support the plywood as a shelf
+at about 8 inches above waist height.
+
+	Ok, so now what do I do with this monstrosity?  First I mounted two
+photo flood light lights in aluminum reflectors to the crossbar with the
+junction box and switch that controls them bolted to the shelf.  Now, when I
+want to work under the hood of the car I roll the IV stand close to the
+radiator and can 'really' see what I'm doing.  On the far outboard ends of the
+crossbar I mounted some hooks on chains so I can easily alter the hook height
+by slipping it into different chain links.  I hang both my Dremel tools (one
+with flexible shaft, one not) from these hooks.  When I need to use the
+Dremels, I wheel the IV stand next to my workbench and everything is close to
+hand.
+
+	Anyone with an ounce of ingenuity can probably think of other ways this
+idea can be adapted to their needs.
+
+==============================================================================
+
+A CRENELLATED DEPTH GAUGE
+
+	I wanted a depth gauge for setting the bit depth on my router.  I
+didn't want to have to mess with a scale to measure the most common values -
+namely multiples of 1/16" - I wanted a tool that had all the most common
+measurements "built-in".
+
+	Take a piece of 1-1/2" diameter aluminum rod stock and machine it so
+it's 2-1/8" long.  Bore it out to 1" ID.  Now, on the mill, machine into the
+wall a series of eight, equi-angularly spaced flat-bottomed slots 3/8" wide
+and at depths of 1/8", 1/4", 3/8", ..., 1". The result will look like a
+crennelated castle tower built by a bunch of drunken masons - each
+crennelation is a different depth.  Machine a slug of aluminum or whatever to
+1" length and 1" OD - a nice sliding fit in the ID of the drunken castle
+tower.  To one end of this slug, bolt a piece of 3/8 x 1/2 x 2-1/2" brass so
+that when the slug is dropped into the central hole of the tower, the brass
+arm can drop into each of the crenellations (slight trimming of the 3/8"
+dimension may be required to get a smooth fit).  Now, it should be obvious
+that, with the base of the crenallated tower sitting on a flat surface (e.g.,
+the router base), and the arm dropped into the 3/8" deep crenellation, the
+bottom of the arm will be 2-1/8" - 3/8" = 1-3/4" above the flat surface.  A
+router bit run out to just touch the bottom of the arm will be projecting
+1-3/4" beyond the bottom of the router base.
+
+	In the very tip of the bottom of the arm, cut an accurate 1/16" deep
+step.  By measuring to this step you'll be able to get all the 1/16" steps
+between 1" and 2" of router bit projection.
+
+	Ok, you're as scared as I am at the idea of having the bit project
+over one inch (unless you're incrementally making a very deep cut).  Drill the
+bottom of the brass arm to accept a (1/4" dia.) rod that's accurately machined
+to be 1" long.  Now you've got all the 1/8" increments between zero and 2". 
+Machine a 1/16" step into (half) the end of this auxiliary rod and you've got
+all the 1/16" steps from zero to 2".
+
+	A further refinement is to drill and tap the end of the arm so you can
+mount a threaded rod that's infinitely adjustable with a locknut (I used a
+1/4-28 piece of brass rod).  That allows you to "remember" an oft-used depth
+setting for future use.
+
+	Obviously, the tool will only be as accurate as your care in
+manufacturing it.  Strive for perfection since, I think, once built, you'll
+find yourself using this more often than this description might suggest.  You
+can engrave the body of the tower to suggest the measurements capable at that
+crenallation.  I like mystifying my friends by using it with no visible
+markings.
+
+	Also, makes a great xmas gift for any woodworking friends.  I haven't
+given this to anybody who hasn't come back with two friends in tow waving
+money in my face to build them one.
+
+==============================================================================
+
+LASERS IN THE SHOP
+
+	I had an odd-shaped workpiece that I wanted to bore on the lathe.  It
+had to be clamped to the faceplate - wouldn't fit in the four jaw. I normally
+do a rough alignment by bringing the tailstock close to the work and use the
+tailstock center as a guide to roughly locate the work center on the spin axis
+of the lathe before switching over to a proper center-finder used with a DI. 
+In this case, the tailstock was really in my way as I tried to juggle the
+workpiece and its four clamps against the pull of gravity.
+
+	So I tried something I'd thought of a while ago.  I have a small laser
+pointer - the kind used to give the impression of importance in content-free
+management meetings.  I moved the tailstock out of my way near the end of the
+ways and stuck the pointer (which fortunately has a cylindrical body) in the
+tailstock chuck.  It's beam made a nice, obstruction-free reference point for
+the rough alignment - the reference mark is on the work, rather than 1/2" or so
+away and I don't risk scratching my hands on the sharp tailstock center.
+
+	It wasn't perfect, of course.  I quickly discovered that the laser beam
+wasn't accurately aligned with the body of the pointer - not surprising since
+it's hardly marketed as a precision tool.  The solution would be to machine a
+small "chuck" to hold the pointer, equipped with two triplets of alignment
+screws that would allow small adjustments of the laser beam angle relative to
+the reference surfaces of the chuck.  A lot of these pointers have
+a normally-off push-button - adding a screw to the chuck to hold the button
+down when in use would be a good idea.  The dimensions of the chuck should be
+such that the device can be gripped in the milling machine chuck, as well.
+
+	Commercial laser levels exist.  They're ideal for projecting a height
+across some distance - a task once reserved for water hose levels.  If the
+chuck had a flat that allowed it to be placed on the level or the surface on
+which the level sits, that would be nice too.
+
+	There are probably lots of other ways to exploit this idea.  A laser
+pointer height gauge for work with recesses that can't be reached with the
+marker arm might be nice.
+
+	Doing a very accurate alignment of the beam to some reference on the
+chuck seems to be a tricky proposition.  Offhand, I can't think of a good
+method that doesn't involve a lot of optics not likely to be found in the home
+shop.  Maybe someone out there can think of a clever way and let me know.
+
+Update 08/19/99:  A recent article in Model Engineer suggested making a necked
+down fitting for the hole in the business end of the laser.  Since the "spot"
+on mine was more of a "short line", I tried this.  Made a short brass rod to
+fit under the (interchangeable) screw-on head, aligned by a shoulder that fits
+into the back of the head.  Drilled most of the (0.3" long) rod out to 3/32"
+and then drilled the very tip with a #75 drill (surplus carbide circuit board
+drill - get some!).  Now the spot is truly a "spot" of tiny dimensions.  The
+rod is held in place by the screw-on head so it's removable, should I want to
+go back to the "as purchased" configuration.  It's so much better than before,
+I'm motivated to make the alignment jig I mentioned above!
+
+Update 03/12/00:  Some folks on the Usenet news group rec.crafts.metalworking
+have toyed with the idea of using a laser pointer as an optical "lever" to
+maintain the alignment of the head on a mill-drill that doesn't have a knee. 
+Attached to the head, the laser beam is bounced off a (first surface) mirror
+on the other side of the shop and back to the mill head.  Note the spot
+location, raise/lower the head and then rotate it until the spot lines up
+again.  I haven't tried it so can't speak to its utility but it's something to
+think about.
+
+==============================================================================
+
+REVOLVER CYLINDER TOOL HOLDER
+
+	I needed a benchtop holder for my jeweler's screwdrivers.  My first
+crude attempt involved drilling some holes in a block of wood.  Trouble is, all
+the handles are identical and it wasn't easy to determine the size of the blade
+(or type - Phillips or slot) when they were all hidden in the holes.
+
+	I made a wooden revolver cylinder with (through) holes sized to accept
+the handles of the screwdrivers.  I mounted this on a 1/8" steel rod threaded
+into a piece of scrap steel the same diameter as the revolver cylinder.  The
+mounting is a loose fit so the cylinder can rotate.  With the screwdrivers
+stuck into the holes in the cylinders the blade tips are exposed in the gap
+between the bottom of the cylinder and the base.  Makes it real easy to select
+the one you want.  I expect the same idea can be adapted to other small tools
+with similar handles.
+
+==============================================================================
+
+FISHING FOR TOOLS
+
+	I needed a lead hammer to seat stuff in the milling vise after
+tightening raises the part against the movable jaw.  Since I make tiny parts, I
+often have the mill head lowered pretty far so there isn't much clearance under
+the chuck - a low-profile hammer was in order.  I considered cannibalizing my
+lead brick (part of a radiation experiment in grad school - don't ask) but
+decided that the risks of melting lead were beyond my threshold of tolerance.
+At the local fishing supply store, I found what they referred to as a "rock
+cod" weight.  About 1.5" long, it has a square cross section and one end is
+formed into a hemisphere perfect for a hammer head.  I drilled it for a 0.375"
+steel rod, held in place by cross-drilling and pounding in a 0.125" steel roll
+pin.  Put a file handle on the end of the steel rod and now I have the perfect
+"low-profile" lead hammer for seating stuff in the milling vise.
+
+	Another fishing related item.  Outfits like Cabelas sell cheap,
+imported fly tying vises.  Buy two of them.  Clamp them to the edge of your
+workbench (you DID allow overhang for clamping things, didn't you?).  They're
+perfect for holding really tiny parts for all sorts of operations.  Just as a
+test, I secured two paperclips and butt-joint soldered them without a
+problem.  The "collets" that came with mine are cheap enough to justify filing
+them to shape for one-off jobs.  With a lathe, making special purpose collets
+from 0.5" diameter steel is a piece of cake.
+
+==============================================================================
+
+BALL BEARING EDGE FINDER
+
+	I use an edge finder regularly on my full-size mill/drill for accurate
+locating.  When I use my Unimat for fine work, I'm out of luck - the 1/4" chuck
+won't accept conventional 3/8" or 1/2" edge finders.  It annoyed me until I
+read about using a ball bearing as an edge finder.  I found a tiny one - 0.25"
+OD, 0.125" ID.  Mounted it on a piece of scrap 0.125" drill rod.  Stick it in
+the chuck and bring it up to the work slowly.  When the outer race stops
+spinning, you're half the diameter of the outer race from the edge.  It helps
+to put some layout dye on part of the outer race - makes it easier to detect
+when it stops spinning.
+
+==============================================================================
+

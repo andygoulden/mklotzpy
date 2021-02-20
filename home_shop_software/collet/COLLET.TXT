@@ -1,0 +1,25 @@
+In Machinist's Workshop magazine, June/July 2004, Vol. 17, Number 3, John Way
+suggests a technique for making collets to accept square or hexagonal stock.
+Lacking the suitable broaches, he bores a cylindrical hole in the collet, then
+makes a number of saw cuts equal to the number of sides on the stock - four
+slots for square stock, six slots for hex stock.
+
+In use, the corners of the stock fit into the slots and the curved surfaces of
+the cylindrical bore clamp down on the faces of the stock.  Not as secure as a
+proper square or hex collet but adequate for light work.
+
+John supplies an equation for calculating the size of the required bore as a
+function of the number of polygon sides, the across flats dimension of the
+stock and the slot width.  
+
+I wrote a short program to implement this equation so I could try some test
+cases in my own shop.  HSMs who are dumbfounded by equations may find this
+progrm useful so I'm putting it on my site.
+
+Note that the program allows one to specify any number of sides for the
+polygon.  This despite the fact that John only addressed four and six sided
+stock.  The equation is only valid for stock with an even number of sides. 
+Octagonal stock is a possibility although cutting eight slots is probably the
+practical upper limit of what's possible.  IOW, your answer to the first
+question the program asks should be either 4,6 or 8.
+

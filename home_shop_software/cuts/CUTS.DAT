@@ -1,0 +1,24 @@
+; data for CUTS program
+
+; Specify your stock cutting problem by editing this file with any ascii
+; text editor.
+; Units are arbitrary but must be consistent.
+; Data need not be ordered by size (as here) - program will sort.
+; The first (non-comment) entry in the file should be the standard length
+
+6.0		;length of standard bar available (must be supplied)
+
+7,2.55		;need 7 pieces of length 2.55
+8,1.95		;need 8 pieces of length 1.95
+6,1.65		;etc...
+5,1.35
+8,0.90
+5,0.45		;these two entries are not
+12,0.60		;ordered by size
+
+;Anything entered below the next line will be ignored
+ENDOFDATA
+
+You can add notes here without the need to preface each line with the
+comment character (";").
+

@@ -1,0 +1,65 @@
+I wanted to make a cylindrical holder for my pin punches.  Picture a revolver
+cylinder where the punches fit into the holes where the cartridges would
+ordinarily go.  If all my punches were the same diameter, laying out the holes
+would be an easy job using my REVOLVER program.  But the punches have varying
+diameters.  So, how do I go about laying out the coordinates of the holes if I
+want a uniform spacing between adjacent holes?
+
+[Many folks make tap guides consisting of holes of various diameters drilled on
+a circle in a steel cylinder.  The (varying size) holes are sized to the
+different tap diameters.  It's the same problem as my punch holder problem.]
+
+In the data file, enter the diameters of your holes in the order in which you
+intend to drill them. (The example data file lists them in ascending order by
+diameter but that's not a requirement - any ordering is acceptable.)
+
+When the program runs, it first asks for the spacing you'd like between
+adjacent holes.  The program default is the 0.1 I wanted but you can supply
+your own value.  (Units don't matter in this program.  This is a geometry
+problem...as long as you are consistent about the units you use, the answers
+will be in whatever units you select.)
+
+The program then calculates the smallest bolt circle diameter (bcd) which will
+accommodate all your holes with the selected hole-to-hole spacing.  You can
+select to use this default value or input a larger value.  After the bcd is
+selected, the program writes a file that looks like:
+
+Bolt circle diameter = 1.2500
+Hole-to-hole spacing = 0.1236
+
+N, hole diameter, x, y, angle(deg))
+
+ 0, 0.2656, +0.6250, +0.0000, 0.0000
+ 1, 0.2656, +0.5065, +0.3662, 35.8702
+ 2, 0.3281, +0.1650, +0.6028, 74.6899
+ 3, 0.3281, -0.2785, +0.5595, 116.4592
+ 4, 0.4063, -0.5943, +0.1934, 161.9756
+ 5, 0.4063, -0.5344, -0.3241, 211.2392
+ 6, 0.4063, -0.1031, -0.6164, 260.5027
+ 7, 0.4844, +0.4310, -0.4526, 313.5997
+
+Theoretical minimum stock diameter = 1.7344
+Recommended stock diameter = 1.9816
+
+The program calculated the minimum bcd as 1.1915, but, desiring a more
+convenient measurement, I rounded it up to 1.25.  This means that the actual
+hole-to-hole spacing will increase, as shown, to 0.1236.  Since this spacing is
+seldom a critical measurement in my applications, that is acceptable.
+
+For each hole, the diameter of the hole is shown along with the (x,y) location
+(relative to the bcd center) at which that hole is drilled.  Also shown is the
+angle at which the hole is drilled for those who intend to do this on a rotary
+table.
+
+The minimum stock diameter is the theoretically smallest size of stock that
+could be used.  Assuming that the stock size is not dictated by other
+considerations, choose stock slightly larger than this since this theoretical
+value would have the largest hole(s) tangent to the outside of the stock. A
+good rule of thumb is to add twice the hole-to-hole spacing to the theoretical
+diameter,
+
+		1.7344 + 2*0.1236 = 1.9816
+
+and use this value or round it up to the next convenient size (2 in this case).
+
+

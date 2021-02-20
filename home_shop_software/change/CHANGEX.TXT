@@ -1,0 +1,56 @@
+	Lots of people seem to have difficulty with change gears.  I wrote this
+simple program to help deal with the problem.
+
+	Be forewarned, I use a lathe with a quick change gear box so, if I've
+overlooked something important, let me know.
+
+	Enter the effective lead screw pitch and your available change gears
+into the data file, "CHANGEX.DAT".  Note that "effective lead screw pitch" is
+the pitch of the thread that would be cut if the spindle rotation were the same
+as the lead screw rotation (1:1 gearing).  For most lathes this is simply the
+lead screw pitch but there may be some oddballs out there.
+
+	The program asks for the thread pitch you wish to cut.  Fractional
+values (e.g. 11.5 tpi) are allowable inputs.  If you're using the gears to
+obtain a desired feed rate (e.g., 1/16" feed per spindle revolution), simply
+convert the feed rate to the equivalent thread pitch (16 tpi in this case) and
+input that.
+
+	The program asks for an allowable error (expressed in percent) in the
+final gear ratio.
+
+	The program will first attempt to find a single gear pair that matches
+the required ratio within the allowed error.  If it fails to find one it will
+then attempt to find two pairs.  Failing that three pairs are examined.  Most
+banjos don't have space for more than three gear pairs so the program doesn't
+search beyond three pairs.
+
+	Whenever a ratio with suitably small error is found it is printed out
+along with the actual ratio and the percentage error in the pitch if that
+pairing is used.  All satisfactory ratios are printed so the user can pick
+the one that best fits the banjo without fouling.  Note that once an acceptable
+solution is found, larger numbers of gear pairs will not be tried.
+
+-----------------------------------------------------------------------------
+
+Update 5/9/01
+
+John Midgley of the UK is using change gears *in conjunction* with a
+quick-change gear box on his Myford - don't ask - it makes sense in his
+application.  He wanted to know if I could make the effective lead screw pitch
+mentioned above a variable in the computation.  I did.  The data file now
+allows one to enter a list of (up to 100) "effective lead screw pitches" that
+the program will use in trying to find a solution.
+
+For those of you using this program for its more mundane purpose of selecting
+change gears in the absence of a quick change box, no worry.  Just enter the
+single "effective lead screw pitch" mentioned above.  The program will
+dutifully "loop" through that single value and produce the output you need.
+
+John also wanted the program to send its output to a data file for easier post
+processing - most notably to find those gear combinations that would not
+interfere in the geometry of his machine.  That idea seemed like a good plan
+for most users so I implemented it.
+
+
+

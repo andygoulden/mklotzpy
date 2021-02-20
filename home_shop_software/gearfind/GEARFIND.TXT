@@ -1,0 +1,67 @@
+Evan Williams, in Canada, is planning on building an orrery.  To do this he
+needs a gear train which will yield a ratio of 1.9945 with 0.01% accuracy.
+If he had a selection of gears he might use, he could attack this problem with
+my GEARATIO program.
+
+But he's willing to fabricate whatever gears are needed so the "selection"
+consists of *any* gears between some minimum and maximum tooth count (dictated
+by geometry and available gear fabrication tooling).  GEARATIO just isn't the
+right tool to deal with this variant of the problem.
+
+If one is mathematically adept, one can solve this problem by judicious use of
+my RFRAC and FACTOR programs.  However, that procedure depends on a bit of
+mathematical insight and so is difficult to generalize for the naive user.
+
+So I wrote this program, GEARFIND.  Given the desired ratio, the allowable
+tolerance on that ratio, and the minimum and maximum tooth count for the gears,
+GEARFIND will laboriously search through all possible combinations of 1,2,...
+gear pairs (up to a user-specified maximum) finding all the arrangements that
+yield the desired ratio within the tolerance (assuming any exist).
+
+GEARFIND is an exhaustive search program.  Very inelegant but very thorough. 
+With fast, modern computers, we can get away with such a brute force approach.
+Plus, the user will only run the program once or twice to get a solution (if
+one exists for his chosen input) so it's reasonable to make him wait a bit for
+a solution that he might be unable to find on his own.
+
+Since it's brute force, some care should be exercised in setting the inputs.
+Start off with a large tolerance and a relatively small difference between the
+minimum and maximum gear tooth counts.  Once you have a tooth count span that
+seems to yield solutions, work your way up to the desired tolerance.  Execution
+time will increase dramatically if you choose to select a maximum of three gear
+pairs.  Exhaust your possibilities with two pairs before trying this
+alternative.  (More than three pairs are possible but the run time will make
+that impractical.)
+
+The program writes any solutions it finds to a file (GEARFIND.OUT).  To alert
+the user that something is indeed happening, it writes the cardinal number of
+the solution to the screen whenever one is found.  If the user loses patience
+during this process, hitting any key will abort the run.
+
+10/03 Update:
+
+I've had several comments on how slow GEARFIND is.  Well, it can be slow but
+it's infinitely faster than anyone could do this problem by hand.  Since you're
+unlikely to use this program very often, waiting a bit for a solution shouldn't
+be that terrible.  Nevertheless, I decided to see what could be done to speed
+things up a bit.
+
+For more than one pair of gears, the problem becomes one of trying to obtain
+two or more unknowns (the individual gear pair ratios) from a single known (the
+desired ratio).  There is no analytic way to solve that problem.  At least one
+of the gear pair ratios must be chosen arbitrarily.
+
+For two gear pairs, once the ratio of the first pair is arbitrarily chosen, the
+ratio of the second pair can be solved for analytically - the product of the
+two pair ratios must equal the desired ratio.  We can then use the continued
+fraction technique of RFRAC to find the (integer tooth count) gears needed for
+the second ratio.
+
+The program GEARF2 does what I described above.  Its advantage is that it is
+much faster than GEARFIND.  Its disadvantage is that it only considers two
+gear pairs.
+
+9/04 Update:
+
+I added GEARF1 which is similar to GEARF2 but addresses only one pair of gears.
+

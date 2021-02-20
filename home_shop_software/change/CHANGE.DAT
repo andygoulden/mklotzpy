@@ -1,0 +1,119 @@
+Data for CHANGE
+
+data need not be in numerical order - program sorts before use
+
+anything above the line below is ignored by the program
+STARTOFDATA
+
+;NOTE: DATA MUST BE ENTERED IN ORDER SHOWN
+
+;Maximum number of change gear pairs to examine in search.  Must be at least
+;one and less than ten.  Large values will lead to excessive execution times. 
+;Start with a value of two and, if you don't get a solution, increase
+;in increments of one.
+
+2
+
+;Effective leadscrew pitch is the pitch of the thread that would be cut if
+;the spindle and leadscrew were connected with 1:1 gearing.  For most lathes
+;this is nothing more than the pitch of the leadscrew but oddball arrangements
+;may exist.  If one is using a quick-change box in conjunction with a change
+;gear banjo, then many "effective lead screw pitches" may be available.  Using
+;a different "elsp" may allow one to get a required ratio with fewer change
+;gear pairs as the default example shows.
+
+;If your leadscrew is metric, enter its pitch as the equivalent threads/inch
+;(tpi).  For example, a leadscrew of x mm/thread has a pitch of 25.4/x tpi.
+
+; effective leadscrew pitch(es) (threads/inch)
+; at least one must be entered
+8
+;10
+;12
+
+-1		; data separator - do not remove this line
+
+;available change gears
+20
+25
+30
+35
+40
+45
+50
+55
+60
+65
+70
+75
+80
+85
+90
+95
+100
+
+;above the line below requires a semicolon
+ENDOFDATA
+this is below the line and has no semicolon
+
+Change gear data for other lathes or configurations can be stored here and
+swapped into the data area when required.  No need to retype data once entered
+into this file.
+
+20
+20
+21
+21
+25
+30
+35
+38
+40
+45
+50
+55
+60
+65
+70
+75
+
+20
+25
+30
+35
+40
+45
+50
+55
+60
+65
+70
+75
+80
+85
+90
+95
+100
+
+20
+24
+28
+32
+36
+40
+44
+48
+52
+56
+60
+64
+68
+72
+76
+80
+84
+88
+92
+96
+100
+

@@ -1,0 +1,9 @@
+Kevin Van de Velde wanted to mill a flat surface with a ball mill as a CNC
+exercise.  He was interested in knowing how far he could move the cutter
+between successive passes without raising too much of a 'cusp' between
+successive cuts.
+
+The geometry of the situation is shown in the .jpg included in the zip file.
+I wrote a short program to calculate, given the ball mill size and desired cusp
+height, the distance the mill should be moved between passes.
+

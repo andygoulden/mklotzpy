@@ -1,0 +1,55 @@
+Data for PROFILE.C
+
+Miniature tool handle
+
+
+Any measurement system is ok, but be consistent.
+
+anything above the line below is ignored
+STARTOFDATA
+
+
+ds=0.125		;stock diameter
+toolt=1			;tool type (1 = square tipped, 0 = round tipped)
+wt=0.036		;tool tip width (ttype=1) or diameter (ttype=0)
+dxd=0.005		;axial stock cutting increment
+scalex = 0.015625	;x axis scale factor
+scaler = 0.015625	;radius scale factor
+
+;x is measured positive from end of stock (which is defined as x=0)
+;r is RADIUS (not diameter) of stock at point x
+;if using diameter values is easier for you, divide the value used for scaler
+;by two.
+
+;x,r values
+
+0,0		;right hand end of stock
+1,2
+2,2.75		;2*scalex from end of stock the radius is 2.75*scaler
+3,3.2		;3*scalex from end of stock the radius is 3.2*scaler
+4,3.5
+5,3.9
+6,4
+8,4
+9,3.95
+10,3.8
+11,3.1
+12,2.3
+13,2
+14,2
+15,2
+16,2
+17,2.1
+18,2.3
+19,2.9
+20,4
+24,4
+
+;if spline fit not specified, linear interpolation is used
+sseg=0,6	;spline fit interpolation between 0th and 5th data points
+sseg=8,19	;spline fit interpolation between 8th and 19th data points
+
+;above the line below a comment requires a leading semicolon
+ENDOFDATA
+this comment is below the line and has no semicolon
+

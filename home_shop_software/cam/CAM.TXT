@@ -1,0 +1,24 @@
+	Default inputs shown in []'s produce an example for a cycloidal cam
+with 1.625 base circle, 1.25 stroke (cam rise) occuring over 120 deg. of cam
+rotation.  Your inputs will override the default inputs.  The data needed to
+cut the cam is output to the file CAM.DAT in the default directory.  Note that
+the program assumes that the cam follower axis of motion passes through the
+center of rotation of the cam. When the cam shape is plotted, the green curve
+shows the follower displacement and the blue curve shows the follower
+velocity.  The magenta curve represents the follower acceleration.  The red
+circle is the base circle and the yellow curve describes the shape of the cam
+where it departs from the base circle.  It is assumed that the cam rotates
+about the center of the base circle.
+
+	If the velocity curve has a sharp corner (e.g., straight-line and
+parabolic), that means that the acceleration (derivative of the velocity) of
+the riser at that point in the cam motion is infinite and that can cause
+chatter and/or vibration.  Ideally, the velocity curve should be smooth with
+no abrupt changes in slope.  That is why cycloidal cams are recommended. 
+However, for less critical applications, the other forms of cams may be easier
+to construct.
+
+	Note that the program specifies no units (except for angles, which
+must be in degrees) for the data input.  Use any consistent units you desire. 
+You can design metric cams just as easily as English.
+

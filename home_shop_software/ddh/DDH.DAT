@@ -1,0 +1,57 @@
+Data for DDH
+
+data need not be in numerical order - program sorts before use
+
+anything above the line below is ignored
+
+STARTOFDATA
+
+;note: ratio must be first entry in data area
+40			; DH worm gear ratio : 1 (e.g. 40:1)
+
+; holes in rapid indexing plate on main spindle must be second entry
+; if dh has no rapid indexing plate, enter -1
+24			; rapid indexing plate on main spindle
+
+15			; holes on plate A
+16
+17
+18
+19
+20
+
+21			; holes on plate B
+23
+27
+29
+31
+33
+
+37			; holes on plate C
+39
+41
+43
+47
+49
+
+-1		; data separator between holes and gears - do not remove
+
+;available gears
+
+24
+24
+28
+32
+40
+44
+48
+56
+64
+72
+86
+100
+
+;above the line below requires a semicolon
+ENDOFDATA
+this is below the line and has no semicolon
+

@@ -1,0 +1,26 @@
+	In his book, "Home Machinist's Bedside Reader #1 (pg. 11)", Guy
+Lautard describes a technique for measuring a large bore when you don't have a
+set of calipers large enough to span the diameter.
+
+	Basically, you cut a "stick" to a length slightly less than the
+diameter of the bore and provide it with rounded or pointed ends.  Inserted in
+the bore, this stick will "rattle" back and forth a (hopefully small) amount. 
+You measure the peak-to-peak rattle and then use a formula to calculate the
+actual diameter.  Lautard gives a formula but it looks like an approximation
+to me - although I haven't examined it closely.
+
+	If the rattle distance is small compared to the diameter of the bore,
+the stick length itself is a very accurate approximation of the bore diameter.
+
+	I wrote RATTLE.EXE to accurately compute the diameter given the stick
+and rattle lengths in order to evaluate this procedure.  You can use it to
+calculate the diameter if you need to use this procedure.
+
+	BTW, this is the way I was taught to use internal calipers.  If you
+try to set the calipers to the actual diameter, you're very likely to spring
+them slightly.  When withdrawn from the bore to be measured, they will
+unspring slightly thus affecting the reading.  Better to set them so they
+"rattle" slightly in the hole and then measure them.  RATTLE will prove to you
+that, if you make the rattle very small, the difference between the measured
+caliper distance and the actual diameter will be very small indeed.
+

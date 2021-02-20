@@ -1,0 +1,48 @@
+A sinebar is the preferred way to accurately set or measure an angle.  On the
+other hand, a protractor is a very handy tool in a number of applications - not
+only metalworking but woodworking as well.  Wouldn't it be nice if we could
+combine the accuracy of the sinebar approach with the convenience of the
+protractor?
+
+As an experiment, I tried doing this and it worked out well for my purposes. 
+Some of you may want to explore the idea further and the included program will
+be helpful if you do.
+
+I hinged two bars together with an offset, half-lap hinge such that when fully
+"closed" the edges of the two bars were parallel and in contact along their
+length.  With this sort of hinge, the measuring surfaces of the two bars are
+always in the same plane - unlike the case where two bars are hinged together
+by simply drilling a hole through both and dropping in a hinge pin.
+
+ _   _		 _         _
+| | | |		| |      / /
+ .   .		 .      .
+| | | |		| |   /	/
+| | | |		| |  / / 
+|    o|		|    o		o =  half-lap hinge pivot
+ -----		 -----
+closed		partially opened
+
+I made a high quality hinge consisting of reamed holes in the bars with a close
+fitting pin that had a protruding threaded section.  A lock nut on the threaded
+part clamps the two (half-lapped) bars together when tightened.  The hinge pin
+is also centerdrilled so that locating the hinge axis with a center finder is
+done easily.
+
+At a fixed radius from the hinge axis, I drilled the bars and mounted two
+precision pins - denoted by the '.'s in the crude ascii diagram above.
+Although it's not clear from this crude diagram the distance from the hinge
+axis to the center of *each* pin is the *same* (known) radius.  The included
+protrac.jpg diagram will make this clearer.
+
+Now, the idea is that, by measuring the distance between the two pins (say
+with a vernier caliper) we can set or calculate the angle formed between the
+two bars.  The process is analogous to hinging a sinebar in the middle and
+setting the included angle by adjusting the distance between the two sinebar
+rolls.
+
+On my experimental model the pin diameter was small enough (i.e., less than
+the bar width) that the pins did not touch when the protractor is fully
+closed.  At a zero angle, there is a finite gap between the two pins.  This
+gap must be accounted for in the calculations.
+

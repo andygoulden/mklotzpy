@@ -1,0 +1,59 @@
+When designing an engine it's important to ensure that the connecting rod
+doesn't foul the bottom of the cylinder when it's at its maximum lateral
+extension.  Tom Roach, in South Africa, had this problem and, between us we
+arrived at a rational way to define the problem and make the requisite
+calculations.
+
+The worst case condition, corresponding to maximum lateral extension of the
+con rod, occurs when the angle between the crank radius and the con rod is 90
+degrees.  At this position we'd like to know the distance between the con rod
+centerline and the bottom edge of the cylinder wall measured along a line
+perpendicular to the con rod centerline.  This distance defines the maximum
+possible half-width of the con rod at that point consistent with no fouling. 
+The engine designer should ensure that his con rod thickness is less than that
+value.  In the accompanying jpg diagram (CONROD.JPG), this distance is
+measured between the points labeled '2' and '3' when the angle beta is equal
+to 90 degrees.
+
+For the convenience of designers (and me), the length A-C, the angle phi and
+some of the related lengths are also printed out.
+
+For a complete time history of the position of A, the gudgeon pin location, as
+a function of the crank rotation angle, theta, see the program CROD available
+on my page.
+
+E-mail: mklotz@alum.mit.edu
+Home Shop Freeware - Tools for People Who Build Things
+http://www.geocities.com/mklotz.geo
+
+----------------------------------------------------------------------------
+
+Tom sent me his own words about this program.  
+
+----------------------------------------------------------------------------
+
+This program calculates the minimum distance between the centre-line of an
+engine's connecting rod and the bottom of the cylinder wall. For example:as an
+engine rotates and the  connecting-rod moves up and down the cylinder, the
+connecting rod risks fouling the bottom of the cylinder. This will happen if
+the rod is too short for the designed width of the cylinder. Under these
+circumstances, the distance between the engine's crankshaft and the bottom of
+the cylinder will have to be increased and the connecting rod lengthened so
+its side-to-side motion is reduced. Alternatively, part of the cylinder wall
+can be cut-away so as to produce the required clearance.
+
+This program calculates the minimum distance that is available when the
+connecting rod and the crank, to which it is attached, are at right angles to
+one and another. If the calculated distance is greater than half the width of
+the connecting rod, then there is no danger of the rod fouling the side of the
+cylinder.
+
+If you are designing an engine, you will be able to use this program to ensure
+your parameters do not result in a catastrophe! You can run the program as
+often as you like with a suitable selection of parameters until you find one
+set that "fits". This program will save you the effort of drawing a mess of
+scale diagrams!
+
+Please note that it does not matter to the application if the measurements you
+enter are in inches or metric, just do not mix the two systems.
+

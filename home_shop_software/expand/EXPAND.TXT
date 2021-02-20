@@ -1,0 +1,20 @@
+For linear expansion, the relevant equation is:
+
+	dlength = rho * length * deltat
+
+where:
+
+	length = nominal length of object (in)
+	dlength = change in nominal length (in)
+	rho = coefficient of linear thermal expansion (ppm/degF)
+	deltat = change in temperature (degF)
+
+The values reported for rho in the literature vary all over the map.  I've
+tried to average values from a number of sources to get representative numbers.
+However, for precise work, the user is encouraged to obtain an accurate value
+for his particular material and enter that via the user option supplied. 
+Alternatively, the number can be entered into the data file as a new entry and
+used that way.
+
+
+

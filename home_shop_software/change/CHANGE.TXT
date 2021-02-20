@@ -1,0 +1,78 @@
+Some time ago I wrote a change gear program.  I don't use change gears and, as
+a result, a number of users were able to suggest changes and improvements that
+would make the program more useful.  Incorporating these changes led me to
+reconsider the program logic and completely rewrite the program to take
+advantage of their suggestions.
+
+(For those of you who wish to see or use the old version, it's included in
+this archive with the name CHANGEX, not to be confused with CHANGE, the newly
+rewritten version.  Even if you don't intend to do anything with CHANGEX, you
+probably should read CHANGEX.TXT to understand the program logic.  Please note
+that CHANGEX.DAT and CHANGE.DAT are *not* interchangeable - the data file
+format has changed with the newer version.)
+
+Let's say that we have four change gears set up to produce a required ratio of
+leadscrew motion to spindle motion.  In the notation of the program, such a
+ratio would be represented as:
+
+			A:B - C:D
+
+which denotes:
+
+	spindle drives gear A
+	A drives B
+	B is keyed to C
+	C drives D
+	D drives the leadscrew
+
+Thus the effective drive ratio:
+
+	R = leadscrew rotations/spindle rotations = (A/B)*(C/D) = AC/BD
+
+
+Note that only the driver-driven association is important.  The configuration:
+
+			A:D - C:B
+
+leads to the same R = AC/BD.  Placement of the pairs on the banjo doesn't
+affect the ratio (although it may help to solve interference problems
+determined by the lathe/banjo geometry).
+
+			C:D - A:B		R = AC/BD
+			C:B - A:D		R = AC/BD
+
+The old program, CHANGEX, was reporting each of these geometric variants as a
+separate solution.  This produced a lot of redundant output.  I thought of
+another way of arranging the logic that automatically eliminates these
+redundant cases.
+
+The old version kept increasing the number of gear pairs in the chain until it
+found a satisfactory solution, then quit without examining any higher number
+of pairs.  Users expressed a wish to be able to determine how many pairs to
+examine so they might see if, with a greater number of pairs, they might get a
+more accurate ratio.  With the new logic, this was easy to implement and the
+user can now set (in CHANGE.DAT) the maximum number of pairs to explore.
+
+Of course, setting this value to a large number will increase execution time
+exponentially - be prepared to demonstrate some patience if you want to
+explore this feature.  For conventional users, the recommendation is to start
+out with a maximum of two pairs and see if you get a satisfactory solution. 
+If not, increase to three and rerun, then four, etc..  (Chances are, you can't
+fit more than four pairs on your banjo, anyway).  Because of the possibly long
+run times with larger values, the program checks for a keypress on each
+iteration. If your patience is exhausted, bang on the keyboard and the program
+will abort, leaving a message indicating your action in the output file so
+that you'll know that the data there is not complete.
+
+The program has checks to ensure that no gear in the input list is used twice
+in a given gear train.  That only makes sense.  If you have two (or more) gears
+with the same number of teeth, enter them *all* in the data list, so the
+program will recognize them as separate gears and use multiples in a train if
+that provides a solution.
+
+I had hoped to implement a scheme that would sort the output with all the zero
+error solutions first, then the non-zero error solutions.  That turns out to be
+a task better accomplished with a post-processor, which hasn't yet been
+written.  To get a list of zero error solutions (if any exist for your data),
+simply set the "Allowable thread pitch accuracy" input to zero.
+

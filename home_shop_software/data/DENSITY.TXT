@@ -1,0 +1,49 @@
+oz/in3 = (2.54 cm/in)^3 * (2.20462E-3 lb/gm) * (16 oz/lb) * gm/cc
+oz/in3 = 0.578035985 * gm/cc
+
+oz/in3 = 0.578036 * gm/cc		1 oz = 28.35 gm
+gm/in3 = 16.38706 * gm/cc
+oz/cc  = 0.035274 * gm/cc		Hg = 13.5462 gm/cc @ 20 degC
+lb/in3 = 0.036127 * gm/cc
+
+Water = 62.428 lb/ft3
+
+------------------------------------------------------------------------------
+
+Material		gm/cc	oz/in3	lb/in3	Linear Expansion (uin/in/degF)
+
+Gold			19.296	11.154	0.697		 7.9
+Mercury			13.547	 7.830	0.4894
+Lead			11.299	 6.531	0.4082		16.2
+Silver			10.5	 6.069	0.379		10.6
+Bronze			 8.844	 5.112	0.3195		 9.86
+Copper			 8.813	 5.094	0.3184		 9.4
+Brass
+80% Cu - 20% Zn		 8.595	 4.968	0.3105		 9.57
+70% Cu - 30% Zn		 8.393	 4.851	0.3032		 9.57
+60% Cu - 40% Zn		 8.354	 4.829	0.3018		 9.57
+50% Cu - 50% Zn		 8.193	 4.736	0.2960		 9.57
+Steel			 7.795	 4.506	0.2816		 6.36
+Cast Iron		 7.197	 4.16	0.26		 5.56
+Aluminum		 2.558	 1.478	0.0924		12.34
+Gunmetal		 8.84	 5.11	0.3194		10.1
+White Metal		 7.31	 4.23	0.2641
+Zinc			 7.06	 4.081	0.2551		16.2
+Oak (transverse)					 3.0
+Oak (longitudinal)					 2.7
+German Silver						10.2
+Glass							 4.8
+Stainless Steel						 5.9
+Nickel							 7.1
+Phospher Bronze						 9.3
+Sea Water		 1.025	 0.592	0.037
+Water			 1.000	 0.578	0.0361
+Ice			 0.9195
+Gasoline		 0.675	 0.390	0.024
+Brick			 1.8	 1.040	0.065
+Concrete		 2.1	 0.079	0.076
+Earth			 1.6	 0.925	0.058
+Granite			 2.7	 1.561	0.098
+Dry Sand		 1.65	 0.954	0.060
+Ivory			 1.874	 1.083	0.068
+

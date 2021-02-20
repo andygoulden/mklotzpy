@@ -1,0 +1,70 @@
+	The perfect gas law is one of the handiest tools in the physicist's
+arsenal.  It says that the product of pressure and volume for a perfect gas is
+proportional to the temperature.
+
+			PV = nRT
+where:
+
+		P = pressure; V = volume; T = temperature
+		n = number of moles of (assumed perfect) gas
+		R = gas constant = 8.20545E-2 liter-atm/(øK-mole)
+
+	Casual users of the law often have difficulty with the units involved
+and the interpretation of 'moles'.  I wrote GAS.C to handle the most common
+types of units and make calculations a little more straightforward.
+
+	A mole of gas is an amount of gas that contains Avogadro's number of
+molecules.
+
+	Avogadro's number = 6.02308 E23 = number of molecules in a mole of gas
+
+	Thus a mole of gas always contains the same NUMBER of molecules, but,
+since those molecules weigh a different amount for each gas, the WEIGHT of a
+mole of gas DIFFERS from one gas to another.  The weight of a mole of gas is
+equal to the atomic weight of the gas molecule expressed in grams.  Oxygen has
+an atomic weight of 16 but oxygen gas exists as O2 molecules (two oxygen atoms
+bonded together in a molecule) so a mole of oxygen weighs 32 grams. Nitrogen
+has an atomic weight of 14 so a mole of N2 weighs 28 grams.  Air is 80%
+nitrogen (N2) and 20% oxygen (O2) so a mole of air weighs:
+
+		0.8 * 28 + 0.2 * 32 = 28.8 or about 29 gm
+
+	Basically, GAS allows you to enter three of the four variable
+quantities in the gas equation and it will find the unknown quantity.  For
+instance, if you know temperature, volume and amount of gas (moles), it can find
+the volume.
+
+	When data is requested, a choice of units is offered.  For example:
+
+		Pressure [atm]osphere, (psi), (kpa)scal ?
+
+	The brackets on 'atm' indicate that it is the default unit.  If you
+enter '1' in answer to the question, it's the same as entering '1atm' and the
+program will assume you mean a pressure of one atmosphere.  On the other hand,
+if you enter '14.7psi' in response, it will assume you mean 14.7 pounds per
+square inch (about one atmosphere) and automatically convert that to the units
+of atmospheres used internally by the program.  The common metric unit of
+pressure is kilopascals and (lucky) people in metric countries can enter
+'100kpa' (about one atmosphere).
+
+	When temperature is requested, the question is:
+
+		Temperature [K], (C), (F) ?
+
+	'F' refers, of course, to the Fahrenheit temperature scale. 'C' refers
+to the Celsius scale.  'K' refers to the Kelvin scale, the absolute form of
+Celsius temperature measurement used in most scientific calculation and used
+internally by the program.  In the Kelvin scale there is an 'absolute zero'
+located at -273.16 degrees celsius.  Thus, in the Kelvin scale, room
+temperature (about 20 degC) is 293.16 degK.
+
+	This is no place to go into all the possible uses for the gas law but I
+will point out that, for isothermal reactions (in which the temperature does
+not change), the gas law degenerates into Boyle's Law, which states:
+
+		P1 * V1 = P2 * V2
+
+	That is, the pressure-volume product before the reaction is equal to
+the pressure-volume product after the reaction, assuming the amount of gas
+involved remains constant.
+

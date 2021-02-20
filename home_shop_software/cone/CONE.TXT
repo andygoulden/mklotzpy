@@ -1,0 +1,48 @@
+	I wanted to make a conical flue for one of my Stirling engines. 
+Technically, the flue was a frustrum of a cone - that's the shape you get when
+you slice off the pointy end of a cone along a plane parallel to the base of
+the cone.
+
+	I needed to make a flat pattern which I would cut out of light sheet
+metal and then roll to produce the required shape.  I wanted the edges to
+overlap by a 1/4" so I'd have some material for silver soldering the frustrum
+once rolled.
+
+	The mathematics weren't obvious and I knew I'd never remember what I'd
+done if I had to do it again - hence the program.
+
+------------------------------------------------------------------------------
+
+FLAT PATTERNS FOR CONICAL PARTS
+ 
+small diameter of cone [3] ?
+large diameter of cone [5] ?
+height of cone [10] ?
+overlap allowance for joining [0.25] ?
+ 
+small diameter = 3.0000
+small circumference = 9.4248
+large diameter = 5.0000
+large circumference = 15.7080
+cone height = 10.0000
+overlap allowance = 0.2500
+ 
+included angle of pattern = 36.3915 deg
+smaller radius of pattern = 15.0748
+  chord of smaller radius = 9.5096
+  arc length for smaller radius = 9.5748
+larger radius of pattern = 25.1247
+  chord of larger radius = 15.6911
+  arc length for larger radius = 15.9580
+length of edge = 10.0499
+cone included angle = 5.7106 deg
+
+------------------------------------------------------------------------------
+
+	Mark a point on a piece of paper.  From that point swing an arc with
+radius 15.0748.  Then swing another arc with radius 25.1247.  Draw a line from
+that point to the left edge of the arcs.  Measure 36.3915 deg from the point
+and draw another line.  Cut a piece of metal to match the area between the two
+arcs and the two straight lines, roll it and you'll have the required frustrum
+with the 1/4" overlap for soldering.
+

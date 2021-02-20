@@ -1,0 +1,40 @@
+Data for PROFILE.C
+
+Simpler example:
+	no spline fits - all linear interpolation
+	diameter specified rather than radius and compensated by setting
+	scaler=0.5
+
+anything above the line below is ignored
+STARTOFDATA
+
+
+ds=1.000			;stock diameter
+toolt=1			;tool type (1 = square tipped, 0 = round tipped)
+wt=0.05			;tool tip width (ttype=1) or diameter (ttype=0)
+dxd=0.05			;axial stock cutting increment
+scalex = 0.25			;x axis scale factor
+scaler = 0.5			;radius scale factor
+
+;x is measured positive from end of stock (which is defined as x=0)
+;r is RADIUS (not diameter) of stock at point x
+;if using diameter values is easier for you, divide the value used for scaler
+;by two.
+
+;x,r values
+
+0,0		;right hand end of stock
+1,.5
+2,.5
+3,1.0
+4,.5
+4.9,.5
+5,.25
+5.9,.25
+6,1.0
+7,1.0
+
+;above the line below a comment requires a leading semicolon
+ENDOFDATA
+this comment is below the line and has no semicolon
+

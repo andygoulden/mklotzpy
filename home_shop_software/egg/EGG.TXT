@@ -1,0 +1,50 @@
+Nevil Shute's last book "Trustee from the Toolroom" is a must-read for every
+HSM.  Shute, an aeronautical engineer, is a superb writer and, because of his
+occupation, gets the metalworking details in the book right.
+
+In the book, the hero, Keith Stewart, a model engineer who writes for a
+metalworking magazine (surely modeled after the British icon, "Model
+Engineer") becomes the guardian (trustee) for his orphaned niece.  He buys her
+a toy duck and offers to make her some eggs for the duck to sit upon.  Being
+an HSM, he intends to make the eggs from various types of metal.  The book
+provides a detailed description of him making the eggs at the lathe.  Being
+very skilled, he makes them 'by eye' using little more than a scraper and some
+emory paper.
+
+Now, I know from my woodcarving days, that the subtle shape of an egg is one
+of the most difficult 3D shapes to achieve freehand.  Intrigued by the book, I
+wondered, "Is it possible to mathematically model the shape of an egg and use
+that model to create a program that will allow incremental shaping of the form
+on the lathe?".
+
+This program is the result of that effort.
+
+The equation I finally used for the egg shape is:
+
+	x^2/a^2 + (1-k*x) * y^2/b^2 = 1
+
+which produces an asymmetrical ellipse.  The diameter of the egg at its
+thickest part is 2*b and its length is controlled by the parameter 'a'.  The
+value of 'k' controls the asymmetry of the egg.
+
+In practice, it takes a bit of simultaneous fiddling with all three parameters
+to produce a satisfying egg shape.  For this demonstration program, I used:
+
+	stock diameter = 1"
+		b = 0.5"
+		a = 0.75"
+		k = 0.6
+
+and got something that looks pretty good to me.
+
+Since it's questionable just how many people want to turn metal eggs, I
+hardwired these values into the program.  They can't be changed without
+recompiling the program.  The primary purposes of the program were to satisfy
+my curiosity, model egg shapes mathematically, and provide a tribute to Nevil
+Shute.  I think I've done that.  If anyone is seriously interested in making
+eggs on his lathe, contact me (mklotz@alum.mit.edu) and I can put together a
+version of the program that allows the user to manipulate the egg parameters
+without recompiling.
+
+
+

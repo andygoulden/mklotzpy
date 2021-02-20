@@ -1,0 +1,92 @@
+	We've all used vernier calipers.  Isn't it clever how a second scale
+sliding next to the primary scale can allow one to read a measurement to a
+precision (not the same as accuracy!) smaller than that of the primary scale?
+
+	I wanted to have this capability on a tool I built and so had to think
+out the process of designing verniers.  I don't do this often so I'd probably
+forget the process by the next time I needed to do it.  Not only does a program
+simplify the process of doing the calculations, it serves as a memory for what
+is needed and how the computations should be done.  Design it carefully once
+and you'll never have to rethink the problem.
+
+	An example is the best way to describe the operation of the program.
+We'll use the defaults that are wired into the program as our example.
+
+	Suppose you have a ruler marked off in inches.  Each inch is
+subdivided into eighths of an inch.  You'd like to build a sliding vernier
+that moves along this ruler and allows you to measure motion to the nearest
+thirty-second of an inch.  How long does the vernier scale need to be and
+how should it be subdivided to accomplish this?
+
+	Run the program and get the following output (my comments, indicated
+below with the brackets '/*  */' are not part of the program output).
+
+----------------------------------------------------------------------------
+
+VERNIER DESIGN
+ 
+default = 1.000000
+{[d].dd or [d-]d/d (e.g. 1.5 or 1-1/2)}
+distance spanned by one major division on main scale ?
+/* the main scale has major divisions every inch */
+number of subdivisions of one major division on main scale [8] ?
+/* and each inch is divided into eight subdivisions */
+ 
+default = 0.031250
+{[d].dd or [d-]d/d (e.g. 1.5 or 1-1/2)}
+distance measured by one division on vernier scale ?
+/* we'd like to measure thirty-seconds on the vernier */
+Nearest Rational Fraction = 1/32
+/* the program reports rational fractions for convenience.  you can ignore
+this output if it's not relevant to your problem */
+ 
+distance spanned by one division on main scale = 0.1250
+Nearest Rational Fraction = 1/8
+/* program echoes input data */
+number of subdivisions required on vernier scale = 4
+/* and tells you to divide the vernier scale into four (presumed equal)
+divisions */
+ 
+a typical vernier scale would span a distance of 0.8750
+/* the recommended total length of the vernier scale */
+distance spanned by vernier scale [0.875] ?
+/* but you can use any value that suits you - a longer scale may be easier
+to subdivide accurately or you may have space constraints in your project
+that prohibit using the 'typical' value */
+ 
+distance spanned by one division on vernier scale = 0.2188
+Nearest Rational Fraction = 7/32
+/* dividing a 7/8 long vernier scale into four divisions means that each
+division is 7/32 in length */
+
+----------------------------------------------------------------------------
+	Suppose our 1.0 major division were subdivided into tenths and we
+wanted to use the vernier to measure to the nearest 0.01.
+
+VERNIER DESIGN
+ 
+default = 1.000000
+{[d].dd or [d-]d/d (e.g. 1.5 or 1-1/2)}
+distance spanned by one major division on main scale ?
+number of subdivisions of one major division on main scale [8] ? 10
+ 
+default = 0.031250
+{[d].dd or [d-]d/d (e.g. 1.5 or 1-1/2)}
+distance measured by one division on vernier scale ? .01
+Nearest Rational Fraction = 1/100
+ 
+distance spanned by one division on main scale = 0.1000
+Nearest Rational Fraction = 1/10
+number of subdivisions required on vernier scale = 10
+ 
+a typical vernier scale would span a distance of 0.9000
+distance spanned by vernier scale [0.9] ?
+ 
+distance spanned by one division on vernier scale = 0.0900
+Nearest Rational Fraction = 9/100
+----------------------------------------------------------------------------
+
+	Note that the program makes no assumption about the units of the
+quantities input.  You can design verniers for metric scales just as easily as
+for English scales, so long as you're consistent about your inputs.
+

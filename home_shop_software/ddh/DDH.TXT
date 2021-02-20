@@ -1,0 +1,47 @@
+Richard in the UK bought a differential dividing head (DDH) and wondered
+if it would be possible to write a program to sort out the gearing to be used
+for various numbers of divisions.
+
+For those who don't know, a DDH, in addition to the hole plates of a typical
+DH, has the ability to add gearing between the spindle and the hole plate so,
+as the spindle is turned, the hole plate turns too - at a rate which is some
+fraction of the spindle rate determined by the gear ratio used.  This
+differential motion between the spindle and hole plate allows one to achieve
+divisions not possible using just the hole plates alone without the gearing.
+(Differential indexing is discussed at length in Machinery's Handbook.)
+
+The available hole plates and gears are entered in the data file.  When the
+program runs, it asks for the number of divisions required.  First it attempts
+to produce a conventional (i.e., non-differential) solution without employing
+the gears.  (See DIVHEAD for a more complete description of how that process
+works.)  If that process fails, it attempts to generate feasible
+differential solutions.  These are output to an ASCII data file.  It's quite
+possible that there may be many combinations of hole plate and gears that
+produce the required divisions.  It's left to the user to select which of
+these he wants to implement.
+
+Note that the direction of rotation of the hole plate wrt the crank rotation
+is important - it's specified for each solution in the output file.  It will
+be necessary for the user to fit whatever idler gears are required to achieve
+the proper direction of rotation.
+
+When the program begins to hunt for a differential solution, it requests two
+pieces of information - the number of gear pairs to examine and the allowable
+accuracy in matching the mathematically required ratio with the gear train.
+Start by having the program examine only one gear pair (the default).  If that
+doesn't produce an acceptable solution, try two pairs but expect to wait a few
+moments.  The possibilities that the program must examine increase
+geometrically with the number of pairs allowed.  While it's possible to
+specify more than two gear pairs, I doubt that the geometry of the tool would
+allow mounting that many gears.
+
+The allowable accuracy chosen depends on the user's requirements.  The default
+(0.01%) is a good place to start.  This input can be set to zero to obtain
+only gear solutions that perfectly duplicate the mathematical ratio required
+(assuming that the gears so required are part of the set specified in the data
+file.)
+
+I've never used a tool like this so, if I've gotten something wrong or left
+out some useful data, please contact me (mklotz@alum.mit.edu) and set me
+straight.
+

@@ -1,0 +1,29 @@
+;Data for SPEED program
+
+; Entries are: material id	low sfpm	high sfpm
+; SFPM = Surface Feet Per Minute
+; You can add your personal data to this file using any ascii text editor
+; Separate the entries by at least one tab
+; Program can handle up to 400 entries - if you need more contact me
+; via email at: mklotz@alum.mit.edu
+
+ALUMINUM AND ALLOYS	200	300
+BRASS AND SOFT BRONZE	100	300
+LOW CARBON STEEL	80	150
+MEDIUM CARBON STEEL	60	100
+HIGH CARBON STEEL	50	60
+TOOL AND DIE STEEL	40	80
+ALLOY STEEL		50	70
+MALLEABLE IRON		80	90
+SOFT CAST IRON		100	150
+MEDIUM CAST IRON	70	100
+HARD CAST IRON		40	60
+COPPER			60	80
+HIGH TENSILE BRONZE	70	90
+
+;Anything entered below the next line will be ignored
+ENDOFDATA
+
+You can add notes here without the need to preface each line with the
+comment character (";").
+

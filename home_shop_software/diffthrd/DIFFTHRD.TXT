@@ -1,0 +1,68 @@
+	For very precise motion or, alternatively, a very high torque
+advantage, very fine threads are required.  Cutting very fine threads is tricky
+at best and the resulting thread tends to be very fragile.  A better solution
+is to use a differential thread.
+
+	What's that?  Imagine a cylinder that has one half threaded with a
+coarse thread of pitch Pc (tpi - threads per inch).  The other half is threaded
+with a fine thread Pf (tpi).  The coarsely threaded portion of the cylinder is
+threaded through a matching nut that is fixed to some unmoving surface.  A
+"movable" nut is threaded onto the fine threaded portion of the cylinder.  This
+movable nut is free to move axially along the cylinder but is constrained from
+rotating relative to the cylinder.  In other words, it can translate but not
+rotate.  This movable nut is the "output end" of the device that serves to
+position or move whatever the differential thread is "driving".
+
+	Now, if we turn the cylinder through one revolution it will move
+forward (relative to the fixed nut) by a distance 1/Pc.  The movable nut will
+move in the opposite direction by an amount 1/Pf.  The net movement of the
+movable nut relative to the fixed nut is then (1/Pc)-(1/Pf).  In other words,
+the movable nut acts as if it were threaded on a shaft with an effective pitch
+of:
+
+		Pe = 1/((1/Pc)-(1/Pf))
+
+	For example, with the relatively coarse values of:
+
+		Pc = 20 tpi
+		Pf = 25 tpi
+
+we obtain a perfect micrometer thread:
+
+	Pe = 1/((1/20) - (1/25)) = 1/(.05-.04) = 1/0.01 = 100 tpi
+
+	An attractive application is a leveling screw for a precision level. 
+Here the fixed nut is a threaded hole in the level base.  The movable nut is a
+threaded "foot" that is prevented from rotating by friction with the surface
+on which the level sits.  Turning the threaded cylinder will tilt the base by
+minute amounts determined by the geometry of the base and the placement of the
+adjusting screw.  Obviously, the circumference of the threaded cylinder can be
+divided into suitable subdivisions to achieve accurate partial rotations for
+an even finer adjustment.
+
+	For a given desired range of motion of the movable nut, the computation
+of the various dimensions involved can be tricky.  DIFFTHRD does all the work
+for you.
+
+	Moreover, you may not have to hand the required screwcutting gear for
+just any thread.  (25 tpi isn't easily available on a lathe or via a tap and
+die.)  The ascii data file supplied (DIFFTHRD.DAT) allows you to specify what
+threads you CAN cut (either via a screwcutting lathe or with hand threading
+gear) and DIFFTHRD will decide what combination comes closest to producing the
+effective pitch you desire.
+
+	For a more compact geometry, the entire assembly can be "folded" into
+itself.  Consider a bolt of pitch Pc threaded into a fixed nut.  Bore this
+bolt out and thread the hole with a thread of pitch Pf.  A second bolt fitted
+into this hole and prevented from rotating (say by a spring wire inserted into
+a cross-drilled hole) will move with an effective pitch of Pe when the Pc bolt
+is rotated.
+
+Update 12/99:
+
+	Don't know why I didn't originally include metric threads, since mixes
+of Imperial and metric threads offer the possibility of coming closer to a
+desired effective pitch.  You can now specify metric threads in the data file.
+However, the program still operates in Imperial notation.  I'll change that
+when someone complains loudly enough.
+

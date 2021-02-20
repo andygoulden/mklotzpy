@@ -1,0 +1,18 @@
+	I like revolver cylinder holders for sets of small tools (e.g.,
+jeweler's screwdrivers).
+
+	What's that you ask?  Imagine taking a cylindrical piece of wood or
+metal and drilling some (off-axis) holes in it so it looks like a revolver
+cylinder.  Fit it with a thin central shaft and stick that shaft into a heavy
+base so the cylinder sits "up in the air" above the base with the cylinder
+holes oriented vertically.
+
+	Now, when you place your jeweler's screwdrivers in the holes, their
+tips will be visible in the space between the bottom of the cylinder and the
+top of the base.  You can select the one you need easily.  The tools stay
+together and it's easy to move them as a unit.
+
+	I've used this trick for enough of my tiny tools that I finally wrote
+a short program to sort out the calculations for making the (revolver)
+cylinder.
+

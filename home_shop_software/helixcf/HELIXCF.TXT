@@ -1,0 +1,7 @@
+Chuck Fellows, a gifted model maker in Texas, has devised a really clever way for model engineers to make helical gears in the home shop.
+
+A full description, including pictures, of his method can be found at:
+
+http://www.homemodelenginemachinist.com/index.php?topic=9916.0
+
+With Chuck's permission, I've incorporated his calculations into a program to make things easy for other model engineers who wish to use his method.

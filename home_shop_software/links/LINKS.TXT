@@ -1,0 +1,20 @@
+	Many of the engines and models I make require links - basically a flat
+piece of metal that holds two holes apart at a specified distance.  In most
+cases, each end of the strip of metal is radiused and the link is tapered such
+that the tapered sides blend nicely into the radii at each end.
+
+	I generally make these as follows.  Drill the two holes at the
+specified separation in a rectangular strip of metal.  Put close-fitting pins
+in each hole and place in milling machine vise so pins sit horizontally on the
+vise jaws and support the metal strip between the two vise jaws.  Put a shim
+under the small end pin so a horizontal pass with the mill will produce the
+required angle.  Repeat for other side of link so link is properly tapered.  I
+then use a radiusing tool of my own design to form the required radii on each
+end.
+
+	I got tired of rederiving the equations needed to make the calculations
+associated with this procedure so I wrote the included program.  Given the
+description above, the program should be self-explanatory.  If not, email me
+at mklotz@alum.mit.edu.
+
+

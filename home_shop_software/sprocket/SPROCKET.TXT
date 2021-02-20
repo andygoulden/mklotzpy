@@ -1,0 +1,48 @@
+Martin Vinnicombe, over in Oz, asked me to write a calculator to obtain
+dimensions for ANSI standard roller chain sprockets.
+
+Most of the pertinent data is in "Machinery's Handbook" (pg. 2293 in the 23rd
+edition) so only a brief recapitulation is reproduced here.
+
+----- begin quote from MH -----
+
+The pitch diameter is the diameter of the pitch circle that passes through the
+centers of the link pins as the chain is wrapped on the sprocket.  Since the
+chain pitch is measured on a straight line between the centers of adjacent
+pins, the chain pitch lines form a series of chords of the sprocket pitch
+circle.
+...
+The bottom diameter is the diameter of a circle tangent to the curve (called
+the seating curve) at the bottom of the tooth gap.  It equals the pitch
+diameter minus the diameter of the roller.
+...
+The caliper diameter is the same as the bottom diameter for a sprocket with an
+even number of teeth.  For a sprocket with an odd number of teeth, it is
+defined as the distance from the bottom of one tooth gap to that of the nearest
+opposite tooth gap.  The caliper diameter for an even tooth sprocket is equal
+to pitch diameter-roller diameter.  The caliper diameter for an odd tooth
+sprocket is equal to caliper factor-roller diameter.  Here:
+
+	caliper factor = pitch diameter * (cos(180/n))
+
+where n=number of teeth.
+
+The outside diameter is the diameter over the tips of the teeth.
+
+----- end quote -----
+
+The maximum hub diameter is, as the name suggests, is the recommended largest
+permissible diameter of the hub consistent with not interfering with the chain
+motion.
+
+The calculation of all the quantities mentioned above is carried out by the
+SPROCKET program using input values for:
+
+	number of teeth in sprocket
+	chain pitch (in)
+	roller diameter (in)
+
+A companion program, CHAIN, contained in this archive, computes the
+center-to-center distance spacing of two sprockets if the length of the chain,
+measured in pitches, and the number of teeth on the two sprockets are known.
+

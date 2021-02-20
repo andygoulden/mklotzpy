@@ -1,0 +1,37 @@
+I want an accurate division plate with 14 divisions.  Not a problem - just whip
+out the dividing head and ....  But wait!  The dividing head doesn't have a 14
+hole plate (we'll pretend).  What to do?  I need a 14 hole plate to make a 14
+hole plate.  The proverbial chicken-egg problem.
+
+Well, they didn't have a dividing head when they made the first plate.  There
+must be some way to do it that doesn't require a dividing head.  It's either
+that or I have to admit to myself that the dividing head sitting in front of me
+doesn't really exist.
+
+The technique described here requires only a lathe and a bit of mathematics.
+I can't provide an historical reference that proves this was how the first
+accurate plate was made but, nevertheless, it's a fascinating technique and may
+serve you in good stead some day.
+
+Imagine you've turned yourself a top-hat shaped piece of steel.  Now imagine
+you've turned 14 circular disks.  When you paste these disks on the brim of the
+hat, touching (what I'll call) the 'crown' of the hat, they all just fit,
+simultaneously touching the adjacent disks and the crown.  Voila, a '14 hole'
+dividing plate.  All that's required is to make a suitable detent to locate
+between adjacent disks and you've got a dividing plate.  With such a
+contrivance it would be easy to use it as a locator to drill a more
+conventional dividing head plate.
+
+If the diameter of the crown of the hat is known, it's only a bit of
+elementary trigonometry to compute the required disk diameter for any number
+of divisions. The attached .jpg file illustrates the arrangement and the math
+that must be done.  While straightforward, a small program makes things
+easier. After all, the program will never transpose a digit, forget a term,
+take a cosine instead of a sine or make any of those other idiotic mistakes
+we're all so prone to make.  Moreover, you'll probably want to experiment a
+bit to get a combination of crown diameter and disk diameter that fits your
+available stock.  That means solving the same equation several times.  So much
+easier with a program than a calculator.
+
+
+

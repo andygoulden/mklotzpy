@@ -1,0 +1,182 @@
+	Cutting complex profiles on the lathe can be a trial.  Of course, the
+best way would be to use a CNC lathe, program the profile, and let the computer
+do the work.  Not all can afford such an expensive setup, so what to do?
+
+	One way with non-critical shapes is to take many small simple shoulder
+cuts that approximate the final shape and then finish file (I DID say
+non-critical) the part to final shape.
+
+	This is the way BALLCUT works for strictly spherical shapes and it's
+come in handy many times. But BALLCUT can be generalized to cut ANY
+non-critical shape.  PROFILE is the result of such generalization.
+
+	Basically, you specify the radius of the workpiece at various points
+along the axis of the workpiece.  Using a square-tipped tool (ground to
+resemble a cutoff tool), you make a series of cuts to the depths specified by
+the program to rough shape the part.  Finish is then by any method that suits
+you.  I generally file the roughed out part to shape but you may wish to use
+some other method (such as hand-turning).
+
+	The example supplied (PROFILE.DAT) is for a tiny handle needed for a
+model tool I was making.  The relevant part of the data file is reproduced
+below with my embedded comments.
+
+==============================================================================
+ds=0.125			;stock diameter
+wt=0.050			;tool tip width
+dxd=0.005			;axial stock cutting increment
+scalex = 0.015625		;x axis scale factor
+scaler = 0.015625		;radius scale factor
+
+	The stock diameter and the width of the tip of the tool to be used are
+specified.  Inches are assumed here but any (consistent) set of units may be
+used.  I wanted to get very close to the final shape so I specified that I
+would make a cut every five thousandths along the axis of the work.  Tedious,
+but it minimizes the amount of filing I need to do to finish the part. 
+Besides, this wasn't a production run.
+
+;x is measured positive from end of stock (which is defined as x=0)
+;r is RADIUS (not diameter) of stock at point x
+;if using diameter values is easier for you, divide the value used for scaler
+;by two.
+
+;x,r values
+
+0,0		;right hand end of stock
+1,2
+2,2.75		;2*scalex from end of stock the radius is 2.75*scaler
+3,3.2		;3*scalex from end of stock the radius is 3.2*scaler
+4,3.5
+5,3.9
+6,4
+8,4
+9,3.95
+10,3.8
+11,3.1
+12,2.3
+13,2
+14,2
+15,2
+16,2
+17,2.1
+18,2.3
+19,2.9
+20,4
+24,4
+
+	I made a large scale half-drawing of the part.  The scale of the
+drawing was such that each increment on the drawing represented 1/64" on the
+part.  The (drawing) increments along the axis of the part were labeled 0 to
+24. It was easy to measure from the drawing the radius at each of these
+points.  Thus, at 17/64" from the end of the part (i.e. seventeen increments
+on the drawing), the radius was 2.1 increments (a radius of 2.1/64").  The
+scaling between the drawing and the part is handled by setting both scalex and
+scaler to 1/64 = 0.015625.  These scale factors need not be equal but in this
+case they were.
+
+	Note that there is no need for the x data increments to be a multiple
+of the tool width.  Obviously, one wants the tool tip narrow to make this
+technique work well, but the intervals used for entering the data are
+determined by how accurately you wish to reproduce the shape.  Note also that
+the data points need not be spaced at equal x intervals despite the fact that
+that is true in the example.  This is particularly true where the profile can
+be easily interpolated linearly.  For example, a conical section of a profile
+needs only to have an (x,r) pair specified at its "beginning" and another pair
+at its "end".  The linear interpolator can then calculate any needed
+intervening point - no need for you to type them in.
+
+	So what happens when you're making a cut that lies somewhere between
+two data points you entered?  The radius at that intermediate point is
+interpolated from the x,r data you've input.  You can specify two forms of data
+interpolation.
+
+;if spline fit not specified, linear interpolation is used
+sseg=0,6	;spline fit interpolation between 0th and 5th data points
+sseg=8,19	;spline fit interpolation between 8th and 19th data points
+
+	Here I've specified that the program should use (cubic) spline
+interpolation between the zeroth and sixth data points and between the eighth
+and nineteenth data points.  Splines have the following advantages for this
+application:
+
+	* Interpolated curve passes through each data point - something that
+doesn't happen with a lot of other curve fitting techniques.
+
+	* Slope of curve is continuous at each data point - the interpolated
+curve is smooth with no "bumps" at the data points.
+
+	* Technique is computationally simple and fast.
+
+	Note that spline interpolated sections may NOT overlap.
+
+	In the other areas the program will, by default, linearly interpolate.
+This is fine if the part is cylindrical in that area or has some simple contour
+such as a conical section.  The second example (PROFILE1.DAT) shows a case with
+no spline interpolation used, although such a part would more conveniently be
+made with techniques other than this profiling method.
+
+==============================================================================
+
+	When you run the program, it reads the data file and plots to the
+screen an outline of the part (white) and shows (yellow) the tool positions
+for each of the cuts.  This allows you to visually check that (1) you input
+the data to describe the part profile correctly and (2) the program isn't
+specifying a cut that penetrates into the final form of the part (see notes on
+use below).
+
+	As the program plots, it also writes the tool positioning and
+depth-of-cut data to a file (PROFILE.OUT, a cutting "schedule") that you can
+print and carry to the lathe for reference.
+
+	After the figure is drawn, you can use the mouse to read coordinates
+from the screen by clicking on the desired point.  Exit by clicking on the menu
+option or by pressing "Esc".
+
+------------------------------------------------------------------------------
+Some notes on use:
+
+	If it's more convenient to specify diameter rather than radius, enter
+the diameter figures in the program and then set "scaler" to one-half it's
+nominal value.  Since input radius data is multiplied internally by scaler
+before being used, this will automate the process of converting to the radius
+values that the program uses internally.
+
+	Use common sense when selecting the "wt" and "dxd" parameters. 
+Obviously, a very wide tool can't be used to approximate fine part detail. 
+Also, when the program calculates depth-of-cut (doc) for the tool, it checks
+the right edge, left edge and middle of the tool.  Doc is calculated for each
+of these locations and the minimum of the three values is used.  If you've
+chosen wt and dxd such that a small protruding part feature lies somewhere
+between the left/right tool edge and the middle of the tool, the program may
+calculate a cut that removes the material needed for that small feature. 
+Scrutinize the plot produced by the program for such oversights and adjust the
+values of wt and dxd accordingly.  In general, narrow tools and small steps
+give the best results, but the optimum combination (best approximation with
+minimum number of cuts) depends strongly on the profile of the part in
+question and thus requires some thought on the part of the user.
+
+------------------------------------------------------------------------------
+
+	This program is very much a work in progress.  Although I've checked
+it for a few cases, I haven't used it extensively so it may still have small
+problems.  If you find any or have a good suggestion for improving the
+interface, contact me via email at mklotz@alum.mit.edu.
+
+------------------------------------------------------------------------------
+Update 5/2001:
+
+Alfred Salzmann, in Australia, pointed out that I didn't specify in this file
+that there are some limits on the .DAT file inputs.
+
+	number of data points in profile = 400
+	number of spline segments = 20
+	number of points in any spline segment = 200
+
+The program now checks that none of these limits are exceeded.  If they are,
+the program will abort with a suitable error message.
+
+Al also wanted a capability to use a lathe tool with a round point.  I added
+this capability.  It's controlled by the variable, toolt, in the data file.
+Personally, I prefer to do this sort of work with a square-ground bit (toolt=1)
+but there may be situations where the round-tipped bit is more convenient.
+

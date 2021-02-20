@@ -1,0 +1,133 @@
+Update 3 August 2000:
+
+	I finally obtained an 81 block set of *real* gage blocks.  Playing with
+them made me realize that the generalized search routine programmed in SPACEBLK
+was too cumbersome given that I knew exactly which blocks were available a
+priori.  I mention in my notes below that:
+
+"A program that works for a particular set of blocks and exploits their
+properties can be written easily ..."
+
+	This is true and so I wrote GAGEBLK which does just that for the
+(Imperial) standard set of 81 blocks (as outlined in SPACEBLK.81).  In
+addition to being *much* faster, it has the advantage of not needing a data
+file since the block sizes are built into the code.
+
+	It's fast enough that it was practical to write a test program that
+tests all spacer sizes between zero and one inch in increments of 0.0001". 
+Naturally, below 0.2" there are a lot of sizes that can't be made with the set
+(a consequece of the sizes available in the 81 block set) but for sizes >=0.2"
+the program always produces a solution.  Clearly, I didn't check that all
+those solutions are feasible - i.e., not use the same block twice or calculate
+a block size not in the set.  If you find such a case, alert me.
+
+Update 18 January 2000:
+
+	Redgie Joy pointed out a mistake in my approach in this program that
+could cause problems when one uses a full set of gage blocks.  I completely
+rewrote the program to correct this but, as pointed out below, it's not
+possible to test every possibility so someone may yet find another problem.
+Redgie also sent along a data file for all the blocks in a standard (Imperial)
+81 gage block set.  It's included as the file "SPACEBLK.81".  If you want to
+use it, simply rename it to "SPACEBLK.DAT".  I also included SPACEBLK.36, which
+contains the data for a typical (Imperial) 36 gage block set.
+
+Original text file:
+
+	I have a set of so-called "space blocks" - a poor man's version of a
+machinist's precision gage blocks.  They are ground steel cylinders centrally
+threaded so they can be screwed together to make accurate spacers of a required
+size.
+
+	The assortment of sizes is somewhat counter-intuitive when one wants
+to make a spacer of a given size.  For instance, for obvious practical
+reasons, there are no blocks of size .001, .002, ..., .009 inches.  Instead,
+there are blocks of size .101, .102, ..., .109 in.  This means certain sizes
+can't be constructed.  Since there is no 0.010 block, one can't make 0.111
+using just the blocks available - instead one would need to use the 0.101
+block with a 0.01 feeler gauge. Additionally there is only one block with ten
+thousandths - 0.0625 - so a spacer of size .1234 is impossible to construct.
+
+	Deciding which blocks to use to construct a spacer of known size got
+to be a little tedious so I wrote a program to do the thinking for me.
+
+	The program seems to work satisfactorily for my selection of blocks
+(the data in SPACEBLK.DAT) but I haven't had an opportunity to test it on
+other assortments of sizes.  Exhaustive testing for all possible assortments
+is clearly out of the question.
+
+	In order to accomodate ANY set of blocks, this program would require a
+solution for the (NP complete) knapsack problem.  None exists.  A program that
+works for a particular set of blocks and exploits their properties can be
+written easily, but handling the general case is far more difficult.  I chose
+to write it as a variable depth search program since that will work for most
+practical problems.  The unfortunate upshot of that approach is that the
+execution time rises dramatically as the number of available blocks and/or the
+depth of the search increases. (But some thought before use can help - see
+below.)
+
+	The program first trys to match the unknown with a single block.  If
+that fails it then tries combinations of 2,3,4 and 5 blocks.  I haven't found
+a case that required more than that.  That said, someone probably will in the
+near future.  If that happens, contact me. (This means that if you plug in the
+total length of all the blocks as the unknown, you won't get a solution unless
+your set only contains five blocks.  If so, why are you using this
+program?  In other words, I'm assuming the user is using the program for a
+practical problem - picking (up to 5) blocks to make a spacer.)
+
+	Exercise care that the specified spacer size can indeed be built with
+the blocks in the data file.  If the blocks in the data file only go down to
+"tenths" (i.e., 0.xxxx) and you specify a spacer size of 1.23456, the program
+will fail to find a solution and it will take some time to discover that it
+can't find a solution.  A little care in input will save you a lot of waiting.
+
+	You can make things easier for yourself by minimizing the searching
+the program has to do.  In a standard 81 block set there's a 3.0000 block.  If
+you want a spacer of length 3.9999, you'll clearly use the 3.0000 block. 
+Don't ask the program to solve for a block of length, 3.9999.  Instead have it
+solve for 0.9999 and mentally add the 3.0000 block.  The smaller you can
+make the spacer searched for, the fewer the number of blocks to search
+through, and the faster the search time.  A five level deep search of 81
+blocks requires examining 3.5 BILLION combinations!  If you want a spacer of
+9.9999, solve for a spacer of 9.0000 to get 4.0000+3.0000+2.0000 (if you can't
+do it in your head), and then solve for a spacer of 0.9999.  Since the same
+block isn't used in both cases, the two solutions can be conjoined into the
+solution for 9.9999.
+
+	If the program IS taking too long for your patience level, hitting a
+key while it's working will cause it to exit immediately.
+
+	Note that the program will report the first solution it encounters,
+which may not necessarily be the "fewest blocks" solution, depending on the
+block set data used.
+
+	If you enter your own data in the data file and get curious results
+from the program, email me (mklotz@alum.mit.edu) your data file and I'll try
+to make the program smarter.
+
+ASIDE:
+
+	Note that if you construct a graduated set of anything (e.g. spacers
+or weights for a scale) the best approach is to use the binary system.  For
+instance, five weights should be constructed according to:
+
+		2^0	=	1
+		2^1	=	2
+		2^2	=	4
+		2^3	=	8
+		2^4	=	16
+
+	This is the MINIMUM number of weights needed to make any weight up to
+a maximum of 2^5-1 = 31.  Not only is this the minimum number of weights,
+using the binary system makes it very simple to select which weights are
+needed for a given.  Write the given as a binary number:
+
+	25 (decimal) = 11001 (binary)
+		       ^^^^^
+		       43210
+
+	Wherever a '1' occurs in the binary representation, use the weight
+corresponding to that position.  In this case:
+
+	25 = 16 + 8 + 1
+

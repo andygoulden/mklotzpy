@@ -1,0 +1,48 @@
+;Data for SPACEBLK program
+;Enter the size of every block in your set.
+;Units here are inches but could be anything as long as you're consistent.
+;Blocks lengths need not be entered in order - program sorts before using.
+
+1.0		;my set happens to have two
+1.0		;one inch blocks
+0.900
+0.800
+0.700
+0.600
+0.500
+0.400
+0.300
+0.200
+0.190
+0.180
+0.170
+0.160
+0.150
+0.140
+0.130
+0.125
+0.120
+0.110
+0.109
+0.108
+0.107
+0.106
+0.105
+0.104
+0.103
+0.102
+0.101
+0.100
+0.090
+0.080
+0.070
+0.0625
+0.060
+0.050
+
+;Anything entered below the next line will be ignored
+ENDOFDATA
+
+You can add notes here without the need to preface each line with the
+comment character (";").
+

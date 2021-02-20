@@ -1,0 +1,33 @@
+Data for FITS program (Shaft/Hole fit computation)
+
+Entries are:   fit name,constant,allowance
+constant is measured in thousandths of an inch
+allowance is measured in thousandths of an inch per inch of shaft diameter
+Example:  For a push fit on a nominal 1" shaft, machine the hole to exactly
+1.0000", and machine the shaft to -0.35*(1.0)-0.15 = -0.5 thou less than the
+nominal size (0.9995").
+You can add your personal data to this file using any ascii text editor
+Program can handle up to 100 entries - if you need more contact me
+via email at: mklotz@alum.mit.edu
+
+anything above the line below is ignored by the program
+STARTOFDATA
+
+Shrink,0.5,1.5
+Force,0.5,0.75
+Drive,0.3,0.45
+Push,-0.15,-0.35
+Slide,-0.3,-0.45
+Precision Running,-0.5,-0.65
+Close Running,-0.6,-0.8
+Normal Running,-1.0,-1.5
+Easy Running,-1.5,-2.25
+Small Clearance,-2.0,-3.0
+Large Clearance,-3.0,-5.0
+
+;Anything entered below the next line will be ignored
+ENDOFDATA
+
+You can add notes here without the need to preface each line with the
+comment character (";").
+

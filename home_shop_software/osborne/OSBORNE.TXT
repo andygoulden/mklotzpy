@@ -1,0 +1,55 @@
+	In his book, "Home Machinist's Bedside Reader #2 (pg. 159)", Guy
+Lautard describes the "Osborne Maneuver" for accurately centering round stock
+in the milling machine using nothing more than an edge finder.
+
+	It works like this.  Accurately measure the diameter of the stock. 
+For description purposes, let's assume that the y axis is along the 12-6
+o'clock line of the stock and the x axis is along the 3-9 o'clock line. Align
+the edge finder by eye to the 3 o'clock position and locate the edge of the
+workpiece. Now move by half the diameter towards the center of the stock along
+the x axis.  Now, use the y axis controls to find the edge of the stock near
+the 12 o'clock position.  Move half the diameter towards the center of the
+stock along the y axis.
+
+	Now do it again.  Use the x axis controls to find the edge of the
+stock near the 3 o'clock position.  Move half the diameter towards the center
+of the stock along the x axis.  Use the y axis controls to find the edge of the
+stock near the 12 o'clock position.  Move half the diameter towards the center
+of the stock along the y axis.
+
+	As you repeat this procedure again and again you will approach the
+center of the stock with ever increasing accuracy.  (In mathematical terms,
+the procedure converges to the center of the stock.)
+
+	The question becomes, "How often do I have to do this?".  The answer
+is, "Probably fewer times than you think!".  I wrote OSBORNE.EXE to examine
+how fast the process converges.  For example:
+
+OSBORNE MANEUVER
+ 
+Workpiece diameter [2] ?
+Initial offset [0.1] ?
+ 
+iteration: del1,del2,error= 1: 0.10000000, 0.00501256, 0.10012555
+iteration: del1,del2,error= 2: 0.00501256, 0.00001256, 0.00501258
+iteration: del1,del2,error= 3: 0.00001256, 0.00000000, 0.00001256
+iteration: del1,del2,error= 4: 0.00000000, 0.00000000, 0.00000000
+iteration: del1,del2,error= 5: 0.00000000, 0.00000000, 0.00000000
+iteration: del1,del2,error= 6: 0.00000000, 0.00000000, 0.00000000
+
+	Here we have a 2 (we'll say inch but units don't matter) diameter
+workpiece and we initially aligned with an error of 0.1".  That is to say, we
+initially aligned by eye to the x axis at the 3 o'clock position with an error
+of 0.1".  If your eyes are that bad, you need better glasses!  After the first
+iteration we're still 0.1" off the x axis (del1), but we're within 0.005"
+(del2) of being on the y axis.  Our radial error (distance from the center of
+the workpiece) is the root-sum-squared of del1 and del2 or 0.100126".  On the
+second iteration, del1 becomes the del2 of the previous iteration and that
+puts us within 0.0000126 on the x axis.  The iterations continue in this
+fashion with del1 always becoming the del2 of the previous iteration.
+
+	As you can see, even with a hideous initial error we've converged to a
+nearly unmeasurable error after only three iterations.  You can use the
+program to experiment with other combinations of workpiece diameter and
+initial error.  Personally, I do it twice and don't worry about it.
+

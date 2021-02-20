@@ -1,0 +1,60 @@
+Ted Edwards, in Canada, published some minimum thread engagement data on the
+Usenet news group.  I've reproduced his article below.
+
+I added another column to Ted's original data.  The factor 'F' is:
+
+		F = LE3/diam
+
+I've seen 'rules-of-thumb' that state that minimum thread engagement should be
+equal to the diameter of the bolt.  From Ted's data, that would be adequate for
+the LE1 case where the nut and bolt are the same strength.
+
+On the other hand, I've seen rules that say minimum thread engagement should be
+1.5 times the diameter (or, equivalently, an 'F' factor of 1.5).  Again, from
+Ted's data, that would appear to be a reasonable rule to use that would cover
+both the LE1 and LE3 cases.
+
+============================================================================
+
+From Ted_E@telus.net Thu Feb 27 10:31:08 2003
+Newsgroups: rec.crafts.metalworking
+Subject: Re: Thread engagement
+From: Ted Edwards <Ted_E@telus.net>
+Date: Thu, 27 Feb 2003 18:31:08 GMT
+
+          Data for Calculating Thread Strength
+
+             | --  --    UNC   --           | --  --    UNF   -     
+ nom. diam.  | tpi ETA   LE1   LE3    F     | tpi ETA   LE1   LE3   F
+ #4   0.112  | 40  0.006 0.07  0.123  1.098 | 48  0.007 0.076 0.135 1.205
+ #6   0.138  | 32  0.009 0.085 0.149  1.080 | 40  0.01  0.093 0.168 1.217
+ #8   0.164  | 32  0.014 0.106 0.194  1.183 | 36  0.015 0.111 0.205 1.250
+ #10  0.19   | 24  0.018 0.116 0.209  1.100 | 32  0.02  0.128 0.239 1.258
+ 1/4  0.25   | 20  0.032 0.155 0.287  1.148 | 28  0.036 0.172 0.331 1.324
+ 5/16 0.3125 | 18  0.052 0.198 0.378  1.210 | 24  0.058 0.215 0.421 1.347
+ 3/8  0.375  | 16  0.077 0.24  0.465  1.240 | 24  0.088 0.266 0.532 1.419
+ 7/16 0.4375 | 14  0.106 0.279 0.546  1.248 | 20  0.119 0.305 0.614 1.403
+ 1/2  0.5    | 13  0.142 0.322 0.637  1.274 | 20  0.16  0.356 0.725 1.450
+ 5/8  0.625  | 11  0.226 0.403 0.81   1.296 | 18  0.256 0.448 0.927 1.483
+ 3/4  0.75   | 10  0.334 0.489 0.999  1.332 | 16  0.373 0.538 1.125 1.500
+ 7/8  0.875  | 9   0.462 0.572 1.18   1.349 | 14  0.509 0.622 1.313 1.501
+ 1    1      | 8   0.606 0.652 1.354  1.354 | 12  0.663 0.703 1.492 1.492
+
+diam is nominal diameter (inches)
+
+ETA is Effective Tension Area (square inches)
+
+Length of Engagement (LE) is the length (inches) of thread engagement in 
+nut (or tapped hole) such that the bolt will break before the threads 
+strip.
+
+LE1 is the LE assuming bolt and "nut" are the same strength.
+
+LE3 is the LE assuming the bolt is three times as strong as the nut.
+  e.g. Grade 5 bolt into mild steel or 6061-T6 Aluminum
+
+These values have worked for me in the cases I've tried but I give no 
+guarantees.  Use at your own risk.
+
+Ted
+

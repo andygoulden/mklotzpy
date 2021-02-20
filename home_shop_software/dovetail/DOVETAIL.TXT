@@ -1,0 +1,10 @@
+One way to measure a dovetail is to put cylindrical pins into the angles of the
+dovetail and measure across the pins.  Knowing the dovetail angle and the
+diameter of the pins, it is then possible to derive the measurements across the
+top and bottom of the dovetail.
+
+This program implements the calculations for this operation.
+
+Any type of units may be used for the inputs so long as the user is consistent
+and doesn't mix units.  Output units will be the same as the input units used.
+
