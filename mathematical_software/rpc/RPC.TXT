@@ -1,0 +1,204 @@
+	I have about a half-dozen scientific calculators and, frankly, all of
+them have some quirk that annoys me.  I finally got to work and condensed all
+my preferences into a single program that I find very accommodating to my way
+of thinking.  This tool isn't for everybody and, since it's organized around
+the way I think, may be really annoying to some users.  On the other hand, some
+of you may find some of my ideas about how to do this sort of thing useful. 
+While I'm not willing to write an infinity of calculators geared to your
+specific thought processes (write your own!), I am willing to make changes or
+additions to this one if I like the suggested alteration.  Email me your ideas
+at mklotz@alum.mit.edu.
+
+	RPC is an RPN (Reverse Polish Notation) stack-oriented scientific
+calculator.  If you're not familiar with RPN (used widely in Hewlett Packard
+calculators), there are numerous texts that deal with their operation. 
+Basically, RPN calculators contain a stack of (often four) registers into
+which data is entered, either manually or by virtue of the implementation of a
+function.  Postfix notation is used and there is no 'equals (=)' key as in
+ordinary four-bangers.  For instance to add 3 and 4 one presses:
+
+		3
+		enter		3 is loaded into the x register
+		4
+		enter		3 is pushed to the y register and 4 is loaded
+				 into the x register
+		+		the x and y registers are added and the answer,
+				7 appears in the x register
+
+	Actually, the second 'enter' above is not needed in RPC. If an entry
+(4 in this case) is pending, any legitimate operator (such as +) will
+automatically 'enter' the pending entry before performing the operation.
+
+	The left side of the RPC screen contains an array of operations that
+can be invoked by clicking on them with the mouse.  If the entry has a key
+indicated, one can invoke that function by pressing that key.  For instance,
+to enter pi (3.14159...) into the x register one can click anywhere on the
+field that reads:
+				ã.....P
+or one can simply press the 'p' key (rpc is case insensitive so 'p' or 'P')
+will both enter pi.
+
+roll.. roll.. xy.end xm.... .......
+y+x.... y-x.... y*x.... y/x.... x/y....
+e...... Lastx.. 1/x...I chs...' .......
+ã.....P xý..... û...... x!..... .......
+store.. store+. store-. store*. store/.
+rcall.. rcall+. rcall-. rcall*. rcall/.
+sin.... cos.... tan.... rss.... xy¯ré..
+asin... acos... atan... unrss.. ré¯xy..
+ø¯rad.. rad¯ø.. atan2.. ....... .......
+frac... int.... split.. ymodx.. .......
+floor.. ceil... round.. gcd.... lcm....
+e^x.... 10^x... 2^x.... y^x.... y^(1/x)
+ln..... log.... log2... ylogx.. .......
+and.... or..... 1comp.. xor.... .......
+øF¯øC.. oz¯lb.. in¯mm.. ....... .......
+....... ....... ....... ....... .......		space for future operators
+....... ....... ....... ....... .......		  "    "     "       "
+FIX.... ENG.... SCI.... .dd.... ADJ...Z
+DEC.... HEX.... BIN.... OCT.... DEG....
+clearX. clrStk. clrmem. clrall. .......
+Quit... Notes.. swap... swapx.. Undo...
+
+	A brief explanation of the operators follows:
+
+roll.. roll..		roll the stack up/down (or use up/down arrow keys)
+			used in conjunction with  xy to rearrange numbers in
+			the stack
+xy.end			exchange the values in the x and y registers
+xm....			exchange the values in the x and memory registers
+y+x.... y-x.... y*x.... y/x....		these are the fundamental operations
+					(can also be invoked with +,-,*,/ keys)
+x/y....			it often happens that one ends up with the intended
+			dividend in the x register and the divisor in the y
+			register.  to perform division one would have to first
+			exchange the x and y registers and then press '/'.
+			this operator consolidates all that into a single
+			click for convenience.
+e......			enter base of natural logarithms (2.71828...) into x
+Lastx..			recall the last value entered into x
+1/x...I			invert the value in the x register
+chs...'			toggles the sign of the value in the x register.
+			if you want to enter a negative value directly, precede
+			it with '=', i.e. to enter -3 press =3. (or press 3,
+			enter, and then press ''' or click 'chs'.
+ã.....P			enter pi (3.14159) into x
+xý..... û......		square and square root of value in x
+x!.....			compute factorial of value in x
+			x! = 1*2*3*...*x
+			only (positive) integer values of x are permissible
+			this function gets very large very fast so trying to
+			compute the factorial of large integers may lead to an
+			error because the result exceeds the size of numbers
+			that can be handled by C.
+			the limit is 170! ~= 7E+306.
+store.. store+. store-. store*. store/.
+rcall.. rcall+. rcall-. rcall*. rcall/.
+			store/recall numbers into memory using the indicated
+			operation
+sin.... cos.... tan.... the basic trig functions.  the angle in x is
+			interpreted as degrees or radians according to the
+			setting discussed below.
+rss....			sqrt (x*x+y*y). compute the root-sum-squared of x and
+			y.  this is the hypotenuse of a right triangle with
+			sides x and y.
+xy¯ré..			convert the x and y coordinates (in those respective
+			registers) to polar notation (radius in x, angle in y)
+asin... acos... atan...	the inverse trig functions.  the angle returned in x
+			is either degrees or radians according to the setting
+			discussed below.
+unrss..			the opposite of rss; sqrt (a*a-b*b) where a is the
+			larger of x and y and b is the smaller.
+ré¯xy..			convert polar coordinates to rectangular. r in x.
+ø¯rad.. rad¯ø..		convert back and forth between degrees and radians
+atan2..			four quadrant arctangent of (x,y).
+frac...			x=fractional part of value originally in x
+int....			x=integer part of value originally in x
+split..			y=int(x), x=frac(x)
+ymodx..			y modulo x (the remainder after division 7 mod 5 = 2)
+floor..			greatest integer smaller than x
+ceil...			smallest integer larger than x
+round..			round x to the number of decimal places currently being
+			displayed
+gcd....			greatest common divisor of the values in x and y
+lcm....			least common multiple of the values in x and y
+e^x.... 10^x... 2^x....	common exponential functions
+y^x....			self-explanatory
+y^(1/x)			the xth root of y
+ln.....			natural logarithm of x
+log....			common (base 10) logarithm of x
+log2...			logarithm to base 2 of x
+ylogx..			generalized logarithm to any base
+and.... or..... xor.... common Boolean operators
+1comp..			one's complement of x
+øF¯øC.. oz¯lb.. in¯mm.. unit conversion
+			click on the (red highlighted) unit to toggle it among
+			its permissible values and then click on the
+			unhighlighted portion ('..') to perform the conversion.
+FIX....			set fixed point mode for stack display
+ENG....			set engineering mode for stack display (engineering
+			mode is like scientific notation but the exponent is
+			always a multiple of three.)
+SCI....			set scientific mode for stack display
+.dd....			allows one to directly enter the number of decimal
+			places displayed in FIX, ENG, SCI mode.
+			The left/right arrow keys can also be used to adjust
+			the number of decimals displayed.
+ADJ...Z			the program will automatically adjust the number of
+			decimal places needed to display each stack entry with
+			fifteen digit precision.
+DEC....			allows input of numbers in base 10 (digits = 0-9)
+HEX....			allows input of numbers in base 16 (digits = 0-9,a-f)
+BIN....			allows input of numbers in base 2 (digits = 0-1)
+OCT....			allows input of numbers in base 8 (digits = 0-7)
+DEG....			toggles calculator between degrees/radians mode in any
+			angular computation
+clearX.			clear the x register (or press 'x' key)
+clrStk.			clear the entire stack (or press 's' key)
+clrmem.			clear the memory register
+clrall.			same as clrstk+clrmem
+Quit...			self-explanatory (space bar or Esc key quits, also)
+Notes..			calls up a screen of information (or press 'n' key)
+			these notes are reproduced below for reference.
+swap...			swap the entire calculator with the secondary
+			calculator.  you can perform auxiliary computations in
+			the secondary calendar without affecting the settings
+			in the primary.  click on 'swap' to get back to where
+			you were.
+swapx..			swaps the x register between the primary and secondary
+			calculator.  if using the secondary, leave your answer
+			in the x register and then after 'swap'ping back to the
+			primary, recall the secondary result with this command.
+Undo...			returns the stack to the state that existed before the
+			last calculation was performed.
+
+	When the value in the x register is an integer and falls within the
+allowable four byte C range (0 - FFFFFFFF hex), RPC will display it in hex,
+octal and binary automatically.  This is for the convenience of programmers and
+can be largely ignored by casual users.
+
+What you get when you click on 'notes':
+
+Computational accuracy ÷ 15 significant digits.
+Usable range ÷ 1E+/-300.
+Hex values limited to FFFFFFFF (integer values only).
+If an entry is pending, any legitimate operation will enter it into the stack
+ before the operation is performed.
+ADJ sets the number of decimal places to display each number with
+ a precision of 1E-15.
+Any number that would display as 0.0... in FIX mode is displayed with
+ at least one significant digit, regardless of the .dd setting.
+Numbers with absolute value outside the range 1E+/-15 are automatically
+ displayed in engineering/scientific notation if FIX is active.
+Clicking on any stack element will swap it with the x element.
+ 
+Exit   Q/Quit on menu or spacebar or Esc or both mouse buttons
+del    delete any pending entry
+®/¯    decrease/increase decimal places displayed
+Home   restore to 2 decimal place default
+Z      (Zoom) toggle between ADJ and .dd mode
+=      unary minus for negative entries (or chs if pending entry)
+swap   swap calculators (to make auxiliary calculations)
+round  round x to number of places currently displayed in FIX mode
+       use floor/ceil to truncate +/- numbers to an integer
+

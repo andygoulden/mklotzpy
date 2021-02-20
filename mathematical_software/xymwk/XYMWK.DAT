@@ -1,0 +1,35 @@
+Data for XYMWK
+
+Enter x,y coordinates of each data point as read directly from height gauge.
+Any (metric,Imperial,etc.) system of units is acceptable as long as all
+measurements are made in the same system.
+
+anything above the line below is ignored
+STARTOFDATA
+
+150,100			;first x,y pair
+193.301,75		;second pair
+150,150			;etc. ...
+106.699,75
+180,140
+
+;the data below is temporarily commented out.  remove the leading semicolons
+;to use these data points.
+
+;150,-100
+;193.301,-75
+;150,-150
+;106.699,-75
+;180,-140
+
+;above the line below requires a semicolon
+ENDOFDATA
+this is below the line and has no semicolon
+
+150,-100
+150,-100
+193.301,-75
+150,-150
+106.699,-75
+180,-140
+

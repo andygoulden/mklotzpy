@@ -1,0 +1,124 @@
+If you tinker long enough, eventually you'll find yourself faced with the
+prospect of calibrating a linear scale.  Let's say you acquire a Celsius
+thermometer of unknown provenance and want to calibrate it.  You stick it in
+ice water and it reads 2 deg.  In boiling water, it reads 102.
+
+I don't need any fancy math, he says.  The damn thing reads 2 deg high.  Well,
+mathophobe, just keep reading.
+
+Calibration of a linear scale involves a simple equation:
+
+			y = A*x + B
+
+here y is the measured value (2 or 102 in our example) and x is the "truth"
+value (0 and 100 in our case).  A and B are tbd constants that specify the
+linear relationship between truth and what's measured.  If we substitute our
+observations we get two equations in A and B
+
+			102 = A*100 + B
+			  2 = A*0 + B
+
+Two equations, two unknowns.  Piece of cake.  Solve them and we find:
+
+			A = 1
+			B = 2
+
+so our calibration equation is:
+
+			y = x + 2
+
+or:
+
+			x = y - 2
+
+Just like you said, the math shows that the damn thing reads two degrees high.
+
+But, you're smart enough to realize that basing a calibration on just two
+points is a bit iffy so you take it to your friend's lab and he sticks it in a
+precise, calibrated oven set to 50 deg.  Your thermometer reads 51 deg (!)
+What do you do now?
+
+Can't use the procedure above.  Now you've got three equations in two unknowns.
+What the mathematicians call an "overdetermined system".
+
+One of the most famous and prolific mathematicians, Karl Gauss, worked this
+problem.  His genius was to develop a procedure to minimize the square of the
+error, known unsurprisingly as the "least squares" solution.  I'm not going to
+try to explain it to you - it's in any decent math textbook.  Suffice it to say
+that it's what we need when we have a number of checkpoints on a linear scale
+and want the best fit straight line to that data.  It's what this program does.
+
+The default case in the data file already contains the data I described.  When
+we run it, we get a program output that looks like:
+
+------------------------------------------------------
+
+CALIBRATE A LINEAR SCALE
+ 
+3 data pairs read
+ 
+Calibration Equations:
+ 
+x=truth value, y=measured value
+y = A*x + B  or x = (y-B)/A
+A = 1.000000
+B = 1.666667
+
+------------------------------------------------------
+
+Using a B of 1.666667 "smears" the offset over the whole data interval in an
+optimum, least squares way.
+
+The program also asks if we want a calibration table for our thermometer.
+ 
+------------------------------------------------------
+
+Do you want to construct a calibration table [Y]/N ?
+Table starting truth value [0] ?
+Table ending truth value [100] ? 102
+Table increment [34] ? 51
+ 
+Your data is on: CALIBRAT.OUT
+
+and produces:
+
+Calibration Table
+
+First entry is measured, second is truth value
+
+0.000000 <=> -1.666667
+50.000000 <=> 48.333333
+100.000000 <=> 98.333333
+
+First entry is truth, second is measured value
+
+0.000000 <=> 1.666667
+50.000000 <=> 51.666667
+100.000000 <=> 101.666667
+
+------------------------------------------------------
+
+Note that one effect of distributing the error in an optimal fashion means that
+the calibration doesn't exactly reproduce our observed data.  When truth is
+100, the calibrated value is 101.666667, not the 102 we observed.  The best
+fit, least squares line doesn't necessarily pass through *any* of the data
+points.  What it does is minimize the error between the best fit and the data
+over *all* the points.
+
+Of course, if you're smart, you'll calibrate using a number of check points
+along the scale.  If your instrument is really linear, the calibration
+equation will get better and better as you give it more data.  If your
+instrument is non-linear, no amount of linear calibration will ever set things
+right.  (Email me about calibrating instruments with *known* non-linear
+responses that can be modelled mathematically.)
+
+The program can accommodate 400 data pairs.  If you have the patience to
+take more than that number, let me know and I'll expand it.
+
+mklotz@alum.mit.edu
+
+PS:  If you only have two data pairs and you're too lazy to solve the
+simultaneous equations, the least squares approach used in this program will
+still give you the correct answer.  Try it by commenting out the 50,51 entry
+in the default data file.
+

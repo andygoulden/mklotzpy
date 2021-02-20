@@ -1,0 +1,17 @@
+	Given any three points that aren't colinear, one can find a circle that
+passes through all three points.  An example might be the case where you want
+to make a replacement for a gear and you only have a fragment of the original
+part.  What was the diameter of the original?
+
+	Number the three points 1-3.  Which point receives which number doesn't
+matter.  Measure the distances between each pair of points and enter the data
+into the program as instructed.  Assuming you've measured correctly and the
+points don't lie in a straight line, the program will then deliver up the
+radius of the circle that passes through all three points.
+
+	To find the center of the circle, set your compass to the specified
+radius and use it to draw a circle around each of the three points.  The point
+where the three circles intersect is the center of the circle.
+
+As mentioned, CIRC3 takes as input the distances between the three points.  Several folks have requested a version of the program that accepts the Cartesian coordinates of the points and outputs the radius and the coordinates of the center of the circle.  CIRC3C was written to do this.
+

@@ -1,0 +1,24 @@
+This program calculates properties of *regular* polygons - polygons with equal
+length sides.  After entering the number of sides, you have your option of
+specifying the "size" of the polygon in one of four ways.
+
+	Length of a side.
+
+	Distance across the flats if number of sides even.
+
+	Distance from one flat to the opposite vertex if number of sides odd.
+
+	Diameter of circumscribed circle.  That is the circle that passes
+through each vertex.
+
+	Diameter of inscribed circle.  That is the circle that lies inside the
+polygon and is tangent to each of the edges.
+
+	Skip over whichever you *don't* know by pressing the enter key. 
+However, you must specify at least one of the above to obtain a solution.
+Units don't matter.  All output will be implicitly in the units assumed by you
+when you answer one of the three questions.
+
+	Once one of these three is specified the program will compute and
+display all relevant information for the polygon.
+

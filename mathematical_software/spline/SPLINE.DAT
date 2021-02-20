@@ -1,0 +1,19 @@
+Data for SPLINE.EXE
+Entries are x,y
+Entries need not be ordered - program will order them by increasing x
+Maximum number of data pairs = 400
+
+Anything entered before the next line will be ignored
+STARTOFDATA
+
+-50,-30		;this entry is purposely out of order
+-180,50		;same line comments separated by ';' are ok
+-150,-50
+-100,-80
+
+;Anything entered below the next line will be ignored
+ENDOFDATA
+
+You can add notes here without the need to preface each line with the
+comment character (";").
+

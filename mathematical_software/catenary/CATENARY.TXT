@@ -1,0 +1,3 @@
+A catenary (name derived from the Latin word for chain) is the shape assumed by an flexible, non-extensible chain or cable hung from two points under the influence of gravity.
+
+This program allows one to compute the droop at the middle of the chain and the total length of the chain as a function of the support separation, the chain tension and the chain weight per unit length.

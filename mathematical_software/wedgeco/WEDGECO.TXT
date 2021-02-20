@@ -1,0 +1,11 @@
+Imagine a cone being sliced by a plane parallel to the axis of the cone.  If
+the slicing is done along a line offset from the axis, the cone will be divided
+into two pieces.  The smaller of these two pieces is referred to as a conical
+wedge.  Calculating the volume of this wedge involves an ugly triple integral
+which yields a complex formula.  This program implements that formula in a
+user-friendly format.
+
+The program asks for the "sagitta" of the wedge.  This is the distance from the
+edge (i.e., circumference) of the cone base to the plane which slices the cone,
+measured along a diameter of the cone base.
+

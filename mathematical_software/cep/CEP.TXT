@@ -1,0 +1,8 @@
+There are situations where two random errors combine to produce an error "offset" of some sort.  The crossrange and downrange errors of a missile combine to produce a final target miss error.  Similarly, the x axis and y axis milling machine errors combine to produce an error offset between the mill spindle's actual and intended positions.
+
+One wants to know how to characterize the final error produced by the two random effects.  For the missile case, the concept of CEP (Circular Error Probable) is used.  The CEP is conventionally defined to be the radius of a circle such that 50% of repeated missile shots are expected to impact within that circle.  Other definitions are possible...one might want to consider the 90% CEP, a (larger) circle into which the missile will impact 90% of the time.
+
+Typically, the contributory error sources are assumed to have zero-mean Gaussian error distributions.  (Normally, any average/mean error would be identified and removed by some sort of compensation.)  Most error sources are the combination of many other random contributions and such combinations can almost always be modeled by the Gaussian distribution.  Sometimes the two Gaussian distributions are correlated - the two error sources are not totally independent of each other.  In mathematics, this interdependence is quantified by a correlation coefficient with a value varying between zero (no correlation) and one (complete correlation).
+
+This program accepts as input the mean and sigma (standard deviation) of the two Gaussian error sources, the correlation coefficient between them (rho), and the desired CEP probability and then computes the radius of the CEP for that probability.
+

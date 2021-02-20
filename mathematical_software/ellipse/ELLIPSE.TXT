@@ -1,0 +1,26 @@
+Most regular geometric figures have simple rational expressions for their perimeters, e.g. 2*(l+w) for a rectangle or 2*pi*r for a circle.  Unfortunately, this is not true for an ellipse.  The perimeter of an ellipse is found using a complete elliptical integral of the second kind.  Typically this involves looking up values in tables of this integral and then laboriously interpolating to get accurate values.
+
+In this program, a high accuracy (2E-8) approximation to this integral is implemented to find the perimeter.  This value is then used as a reference to test the accuracy of several algebraic approximations to the perimeter.
+
+The rms approximation to the perimeter, P, is found in many math handbooks and is given by:
+
+P = 2*PI*sqrt(0.5*(a*a+b*b))
+
+Not particularly accurate, it's error (relative to the elliptic integral reference value) can be as high as 5%.
+
+Ramanujuan, the genius Indiam mathematician, derived a much better algebraic approximation given by:
+
+P = PI*(3.*(a+b)-sqrt((3.*a+b)*(a+3.*b)))
+
+which is listed as the "Ramanujuan1" approximation in the program output.
+
+Ultimately, he derived an even better, though slightly more complicated, rational approximation given by:
+
+P = PI*(a+b)*(1+3*x*x/(10+sqrt(4-3*x*x)))
+
+where x is given by:
+
+x=(a-b)/(a+b)
+
+and a and b are the semi-major and semi-minor axes of the ellipse, respectively.
+

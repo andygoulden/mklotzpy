@@ -1,0 +1,61 @@
+Many measurement tasks are simplified if one can express the location of
+various part features in x-y coordinates.  A handy technique for establishing
+x-y coordinates involves using a surface plate and a height gauge.  Clamp the
+part to a precision 90 degree angle plate.  Using the height gauge, measure
+the height of various part features to establish the x coordinates for each
+feature.  Rotate the angle plate (and attached part) through 90 degrees and
+measure the same part features to establish the y coordinates for each
+feature.
+
+Obviously, the x-y coordinates so obtained for each feature will be referenced
+to the surface plate.  Generally this is not the most convenient reference for
+checking dimensions or calculating functions of the coordinates (e.g. feature
+to feature spacing, angles, etc.)
+
+That's where this program becomes useful.  Enter the raw data measured with
+the height gauge into the data file.  Now, using the program, you can perform
+a number of useful operations on the data.
+
+Reference
+
+Select this option from the menu.  You will be instructed to select a
+reference point.  When you do, the selected point becomes the origin of the
+x-y coordinate system and all the other points are referenced to it.
+
+Align
+
+You pick two points.  The first becomes the origin of the x-y coordinates as
+above.  Then the coordinate system is rotated so that the second point picked
+lies on the x-axis.  
+
+Distance
+
+By selecting any two points the program will report the distance between them.
+You can accomplish the same thing by making one of the points the origin. 
+Then the radius displayed for the second point is the distance separating
+them.
+
+Pitch Circle
+
+Select three points.  The program will calculate the radius and center of the
+circle that passes through all three points.
+
+In all cases, the program displays the x and y coordinates in the current
+coordinate system as well as the radius and angle to each of the points.  In
+standard mathematical notation, the angle is measured positive ccw from the
+current x-axis.  Radius is, of course, measured relative to the origin.
+
+This program is so general that I won't attempt to give examples of why one
+might want to do all the operations listed above.  If you're comfortable with
+Cartesian coordinate systems you'll understand.  If not, it's worth doing a
+bit of studying.
+
+The menu contains a Snap option.  This is "on" by default when the program
+begins but can be toggled by clicking on the menu entry.  When on, clicking
+anywhere near a point in the plot window will cause the program to select the
+nearest data point - the selection "snaps" to the nearest data point.  When
+off, the exact location of the mouse cursor is selected.
+
+If you can think of other menu options that might be useful, let me know via
+email (mklotz@alum.mit.edu) and I'll consider adding them.
+

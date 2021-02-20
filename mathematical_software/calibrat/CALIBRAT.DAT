@@ -1,0 +1,17 @@
+Data for CALIBRAT
+
+data need not be in numerical order - program sorts before use
+
+anything above the line below is ignored
+STARTOFDATA
+
+;data pair = truth value, measured value
+
+100,102
+0,2
+50,51
+
+;above the line below requires a semicolon
+ENDOFDATA
+this is below the line and has no semicolon
+

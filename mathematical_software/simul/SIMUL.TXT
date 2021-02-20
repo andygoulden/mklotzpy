@@ -1,0 +1,38 @@
+I needed to solve some simultaneous (linear) equations and realized I'd never
+ported my ancient Fortran routine to C.  I did and this is the result.
+
+We'll assume that your unknowns are labeled xi (i=1,2,3,...,N).
+If you have N unknowns you must have N *independent* equations.  Note that:
+
+		x + y = 3
+		2*x + 2*y = 6
+
+are not independent equations since the second can be formed from the first by
+multiplying both sides by two.  An independent equation (such as x - y = 1) is
+needed before a solution can be found.
+
+Arrange your equations in the standard canonical form, e.g.:
+
+0    * x1 + 3    * x2 - 2   * x3 + 7.5 * x4 = 34.25
+4.25 * x1 + 5    * x2 + 6   * x3 + 3   * x4 = 53.375
+1    * x1 + 3.75 * x2 + 5   * x3 + 7   * x4 = 59.875
+4    * x1 - 3    * x2 + 2.5 * x3 + 5   * x4 = 29.75
+
+Then the entries for the data file are formed very simply:
+
+0    , 3    ,-2    , 7.5 , 34.25
+4.25 , 5    , 6    , 3   , 53.375
+1    , 3.75 , 5    , 7   , 59.875
+4    ,-3    , 2.5  , 5   , 29.75
+
+Each line must consist of N coefficients separated by commas and followed by a
+constant term.  Note that if a given unknown does not occur in an equation
+(e.g., x1 does not occur in the first equation), a zero entry must still be
+made in the data file.
+
+The program uses the Gauss-Jordan technique to solve the system of equations. 
+If a solution is found, it is printed to the screen.  Some input checking is
+done but no attempt is made to find all the errors a resourceful idiot could
+introduce.  The program currently handles a maximum of fifty variables but that
+could probably be extended if someone really has a problem bigger than that.
+

@@ -1,0 +1,56 @@
+Note to the mathematically unsophisticated:
+
+If you're unfamiliar with terms like quadratic, cubic, quartic equations or
+real, imaginary, complex numbers this program may be way over your head.  I
+don't have the time to provide a comprehensive discussion of these aspects of
+mathematics.  Refer to your local mathematical guru or that neglected algebra
+textbook.
+
+	While working a geometry problem recently, I encountered a quartic
+equation.  I honestly believe that, in 30+ years of doing applied mathematics,
+this is the first time I've ever encountered a quartic in a useful application.
+The equation was:
+
+	x^4 - 12*x^3 -328*x^2 + 4800*x - 14400 = 0
+
+	The CRC handbook contains a closed form solution for quartics but,
+unless you implement it on a computer, the likelihood of weaving through its
+intricacies without an error is pretty low.  So I decided to program it.  The
+(quartic) solution requires one to solve a cubic as part of the algorithm.  So
+I threw in the analytic solution for a cubic as well.  And, as long as I was
+about it, completeness demanded I add the relatively trivial solution for a
+quadratic.
+
+	First express your equation in the appropriate canonical form:
+
+	ax^2 + bx + c = 0			(quadratic)
+	ax^3 + bx^2 + cx + d = 0		(cubic)
+	ax^4 + bx^3 + cx^2 + dx + e = 0		(quartic)
+
+	We'll assume that whatever equation you have arose from a real world
+problem (as opposed to a mathematical or electrical problem) and so all the
+coefficients (a,...,e) are real numbers.  (If that's not true, you're on your
+own.)  When the program runs, specify the order (2,3,4) of your equation and
+then proceed to enter the coefficients as they're requested.  The program will
+then print out the solutions as complex numbers.  For real world problems,
+you'll probably only be interested in the real solutions.  If you don't get at
+least one real solution, check your equation closely - you've probably got one
+or more of the coefficients wrong.  If you get multiple real solutions, there
+will probably be other constraints in the problem which allow you to pick the
+one that "makes sense" in the context of the problem.
+
+Some warnings:
+
+	Like so many programs, it's impossible to exhaustively check the
+operation of this one.  Should you locate an error in what I've done, be sure
+to contact me (mklotz@alum.mit.edu) with a complete description of the problem.
+
+	While the quartic solution worked for my problem as well as several
+test problems I fed it, there is still a term in the solution that could be
+problematical.  In the solution, I've treated this quantity (R) as a real
+despite the fact that it is the result of a square root and therefore *could
+possibly* be a complex number.  I haven't the patience to attempt a proof that
+R is always real for real world problems - in fact, that may not be provable.
+If R does turn out to be complex, the program will refuse to generate a
+solution for the quartic.  Contact me if this happens.
+

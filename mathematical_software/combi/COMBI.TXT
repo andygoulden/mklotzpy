@@ -1,0 +1,40 @@
+Calculating the number of combinations of N things taken M at a time is
+straightforward - many scientific calculators have a key to perform this
+computation.  For reference, the relevant equation is:
+
+		C(N,M) = N!/[M! * (N-M)!]
+
+where the notation x! denotes x factorial (1*2*...x).
+
+However, I find that most often what I really need is an *enumeration* of all
+the combinations - a list of the type:
+
+6 things taken 4 at a time
+Number of combinations = 15
+1: ABCE
+2: ABCF
+3: ACEF
+4: ACDE
+5: ACDF
+6: ADEF
+7: CDEF
+8: BCEF
+9: BCDE
+10: BCDF
+11: BDEF
+12: ABEF
+13: ABDE
+14: ABDF
+15: ABCD
+
+so that I can try all the different combinations in something I'm doing (e.g.,
+exhaustive testing of program option combinations or optimal fitting of not
+quite identical parts).
+
+As written, the program will accept values of N and M up to 52 (the number of
+letters in the combined upper/lower case alphabets).  If you have need of
+greater than that number, let me know - the program is not memory-bound and can
+be expanded.
+
+Output is written to a file that can be printed and carried to the shop.
+

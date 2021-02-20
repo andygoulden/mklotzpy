@@ -1,0 +1,20 @@
+Data for SIMUL.C
+
+
+anything above the line below is ignored
+STARTOFDATA
+
+4			;number of unknowns (n)
+
+;n coefficients and a constant for each equation
+
+0    , 3    ,-2    , 7.5 , 34.25
+4.25 , 5    , 6    , 3   , 53.375
+1    , 3.75 , 5    , 7   , 59.875
+4    ,-3    , 2.5  , 5   , 29.75
+
+;above the line below a comment requires a leading semicolon
+ENDOFDATA
+this comment is below the line and has no semicolon
+you can store data for other equation sets in this area
+

@@ -1,0 +1,29 @@
+If you put a small amount of water in a cylindrical glass and then tilt the
+glass so the water doesn't completely cover the bottom of the glass, the water
+takes on a shape that is called an ungula in mathematics.  [This term derives
+from the fact that the shape resembles the hoof of a cow, which is 'ungula' in
+Latin.  In biology, the order Ungulata includes the hoofed animals - horses,
+cattle, pigs, elephants, etc..]
+
+The program calculates the volume of this shape.  Inputs are:
+
+The diameter of the cylinder (diameter of the glass in the example)
+
+The height of the ungula (how far up the side of the glass does the water
+extend - measured along the side of the glass from the bottom)
+
+The sagitta of the ungula.  This is the distance from the wall of the cylinder
+to the straight line formed by the fluid across the bottom, measured along a
+diameter from the wetted side of the glass.
+
+The formula implemented in the program is valid for sagittas greater than zero
+and less than or equal to the diameter of the cylinder (glass).  In the case
+where the sagitta equals the diameter of the cylinder, the somewhat complex
+formula reduces to a simple result - volume = (2/3)*h*r*r where h is the height
+mentioned above and r is the radius of the cylinder.
+
+As with many of my programs, no units are specified for the input measurements.
+Use any consistent units for the input dimensions and the resulting volume will
+be expressed in the cube of the dimensions used, e.g., for dimensions expressed
+in inches, the volume will be in cubic inches.
+

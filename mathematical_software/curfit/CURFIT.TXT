@@ -1,0 +1,27 @@
+This is a handy tool to calculate various types of curve fits to a set of
+bivarate data.  Enter data pairs into the data file in the form:
+
+	x,y
+
+where:
+
+	x = independent variable
+	y = dependent variable
+
+and then run the program.  You may choose from four types of fits.
+
+polynomial  fit: Y = A0 + A1*X + A2*X^2 + A3*X^3 + ...
+logarithmic fit: Y = A + B * ln(X)
+exponential fit: Y = A * exp (B * X)
+power       fit: Y = A * X^B
+
+The program will then provide the best least squares estimate of the
+parameters (A,B) needed to fit the curve.  A summary showing the error of the
+fit at each value of x is printed as is the correlation coefficient, a measure
+of how good the fit is.
+
+Use care.  The program does not check for obvious idiocies, e.g., logarithmic
+fits to data that is <= zero will cause crashes.
+
+
+

@@ -1,0 +1,23 @@
+With a programmable calculator, it's easy to throw together a small program to
+do some offbeat calculation, such as 1/Z = 1/z1 + 1/z2 + ... + 1/zn.  However,
+not everyone has a programmable calculator and many who do can't figure out how
+to write a program.  Sometimes the calculator isn't to hand.
+
+To make things easier for myself when working at the computer, I collected all
+my little calculator programs into one computer program so they're available at
+the touch of a (few) keys.
+
+The individual calculators are pretty much self-explanatory.  The only thing
+remarkable is the use of negative values in:
+
+		RSS = sqrt (x1*x1 + x2*x2 + ...)
+		RMS = sqrt [(x1*x1 + x2*x2 + ...)/n]
+
+to 'remove' a (presumably erroneously entered) value.
+
+If you have a favorite calculation that you'd like to see added to this little
+program, send it along (mklotz@alum.mit.edu) and I'll add it.
+
+
+
+

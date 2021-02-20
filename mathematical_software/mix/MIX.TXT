@@ -1,0 +1,183 @@
+Update: 4/15/02
+	In many cases, the fractional ft/in display will be somewhat in error
+because an arbitrary decimal number can't always be displayed *exactly* as a
+proper fraction.  The user should be aware of this so I added an error
+calculation to this portion of the display as a warning.  Note that this error
+refers *only* to the fractional ft/in display.  The internal arithmetic is
+always done with 15 digit precision so the decimal displays are always accurate
+to that precision.
+
+Update: 2/25/99
+	Since writing the below description I was encouraged by a friend to add
+yards to the units accepted by and displayed by the program.  All of the
+description below remains valid - just remember that yards (with the expected
+abbreviation of 'yd') is also permitted.
+
+	MIX is a four function calculator that can handle MIXed linear
+dimensions - both metric and Imperial.  It's roughly like having a hand-held
+calculator with five screens.  Each of the screens (termed accumulators here)
+displays the ongoing calculation in one of the following unit systems:
+
+		meter
+		centimeter
+		millimeter
+		feet
+		inch
+
+	For instance, to add 3.2 in to 1.5 cm one would input the following
+commands:
+
+	clear		;set all the accumulators to zero
+	+3.2in		;add 3.2 inches
+	+1.5cm		;add 1.5 centimeters
+
+and the display would show:
+
+0.10 m
+9.63 cm
+96.28 mm
+0.32 ft
+3.79 in
+ 3 & 25/32 in
+
+	Thus the answer is 9.63 cm or 3.79 in.  To the nearest (default) 64th
+of an inch, 3.79 in is 3 & 25/32 in.  The precision of this mixed fraction
+approximation to the answer can be adjusted with the 'fracd=.." command.  If
+we desired the answer to the nearest eighth of an inch, we'd execute the
+command 'fracd=8'. Note that this affects only the mixed fraction
+approximation.  The accumulators always operate with 15 digit precision
+regardless of the setting of fracd.  This fractional ft-in approximation is
+only displayed when the exponent of the units is unity - expressing areas or
+volumes thusly doesn't make much sense and is of no utility.
+
+	If we want to view the answer more precisely, we can adjust the number
+of decimal places displayed with the command:
+
+	decimals=6
+
+to produce:
+
+0.096280 m
+9.628000 cm
+96.280000 mm
+0.315879 ft
+3.790551 in
+ 3 & 25/32 in
+
+	On the other hand, we can make the number of decimal places displayed
+self-adjusting by setting dflag=1, to yield only the significant digits:
+
+0.09628 m
+9.628 cm
+96.28 mm
+0.315879265091864 ft
+3.790551181102362 in
+ 3 & 25/32 in
+
+	If working with very large or very small dimensions, you can invoke
+scientific or engineering (exponent a multiple of three) notation via the dtype
+command.  Should a particular entry grow beyond the bounds of 10^(+/-15),
+engineering notation will be used automatically.
+
+	In the example above, it wasn't really necessary to specify the '+'
+operator since that is the default operation.  Moreover, if the default input
+units were set to 'inch' (via the unit=.. command) the above problem could have
+been entered as:
+
+		(unit=in)	(assumed)
+		3.2		(default input units are inches)
+		1.5 cm
+
+	Note that the 'cm' must still be specified to override the default
+'inch' input units.
+
+	Mixed fraction input is allowed for any unit.  3.75 mm can be entered
+as either of:
+
+		3.75 mm
+		3&3/4 mm
+
+	An eighth of an inch could be entered as:
+
+		.125 in
+		1/8 in
+
+	Now for something a bit more complicated.  What's the area of a circle
+with a radius of 5.25 in ?  The formula is pi*r*r so we proceed as:
+
+	unit=in
+	clear
+	5.25		(add 5.25 in into the accumulator)
+	*5&1/4		(multiply by 5.25 in)
+	*3.14159nd	(multiply by the constant, pi)
+
+to produce:
+
+0.06 m^2
+558.64 cm^2
+55,864.45 mm^2
+0.60 ft^2
+86.59 in^2
+
+	Note that we had to specify the 'units' of pi as 'nd' (non-dimensional)
+so that it wouldn't be 'converted' before being multiplied into the various
+accumulators.
+
+	Note also that the answer correctly reflects the units of area (length
+squared).  As dimensioned quantities are multiplied or divided into the
+accumulators the dimension exponent of the result is tracked.  If we compute
+the 'taper' of a 3.2 in rise in a run of 1.5 cm, we get:
+
+	unit=in
+	decimals=5
+	clear
+	3.2
+	/1.5cm
+
+5.41867
+5.41867
+5.41867
+5.41867
+5.41867
+
+	The absence of any unit designations indicates that the answer is a
+dimensionless quantity (length/length).  Since it's dimensionless, it has the
+same value in any unit system and all of the accumulators read the same value.
+
+	If the accumulators already have a dimension (i.e., some length has
+been added into them) then 'nd' constants cannot be added or subtracted - that
+would make no sense.  As above, however, they can be multiplied and divided
+because such an operation makes physical sense.
+
+	When the program starts, the accumulators have no dimension.  By
+setting the default units to 'nd' (unit=nd), one could then use MIX as an
+ordinary four-function calculator.  For instance to compute the
+(dimensionless) product:
+
+			3 3/4 * 1 1/2
+we'd enter:
+
+	clear
+	unit=nd
+	3&3/4
+	*1&1/2
+
+to produce an answer of 5.625.
+
+	Of course, using MIX as a four-function calculator is pretty silly but
+this proves that it handles dimensionless calculations correctly.
+
+	If you make a data entry error, you can recover to the last values with
+the 'undo' command.
+
+	If you're reading dimensions off a scaled drawing, you can have them
+automatically scaled as they're entered into the calculator.  Any quantity
+entered with units other than 'nd' is multiplied by the scale factor which, of
+course, has a default value of unity.  You can set the scale factor to any
+value with the command 'scale=...'.
+
+	If you discover any errors or think of features that should be added,
+you can contact me via email at:
+
+		mklotz@alum.mit.edu
+
